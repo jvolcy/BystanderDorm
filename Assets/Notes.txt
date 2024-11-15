@@ -1,0 +1,30 @@
+Bystander Scenario
+
+You are walking towards your dorm room when your friend in the room next door tells you that her boyfriend has flown in from out of town and she has snuck him into her room.  This is the same boyfriend that in the past she has said is trouble.  She tells you they can be loud when having a good time and under no circumstances should she be disturbed.  DO NOT DISTURB!  It is also the case that if the RA finds out about her visitor, she will kicked out of the dorm as this would be a second violation.
+
+You retreat to your room and settle in for the night.  A couple of hours later, you are awakened by shouting voices from the neighboring room.  You can't make out what is being said, but you sense that it's possible that your neighbor is in danger of bodily harm.
+
+What do you do?
+
+
+697446__whoopsadaisy__230529_0237.wav
+https://freesound.org/people/whoopsadaisy/sounds/697446/
+
+105265__carminooch__neighbors.aiff
+https://freesound.org/people/carminooch/sounds/105265/
+
+
+building-hallway.zip -> .dae
+https://sketchfab.com/3d-models/building-hallway-b407c0f316b94b1cbcf0bf254c3c2442
+"Building Hallway" (https://skfb.ly/oqAQJ) by jimbogies is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+
+warm-dorm-room.zip -> .fbx
+https://sketchfab.com/3d-models/warm-dorm-room-b387c759822241fb966d0d573455cbd3
+"Warm Dorm Room" (https://skfb.ly/oxpqr) by darylsteak is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+
+two-bedroom-dormitory.zip -> .obj
+https://sketchfab.com/3d-models/two-bedroom-dormitory-6ebf7304bd564a2e9124f0999bc5cf5f
+"Two Bedroom Dormitory" (https://skfb.ly/6o6Bp) by QA Graphics is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
