@@ -28,3 +28,7 @@ two-bedroom-dormitory.zip -> .obj
 https://sketchfab.com/3d-models/two-bedroom-dormitory-6ebf7304bd564a2e9124f0999bc5cf5f
 "Two Bedroom Dormitory" (https://skfb.ly/6o6Bp) by QA Graphics is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
+direction arrow
+https://sketchfab.com/3d-models/direction-arrow-6ef46718c7b242e39fcad7f27ee858a5#download
+"Direction Arrow" (https://skfb.ly/ozHGW) by Alihan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
