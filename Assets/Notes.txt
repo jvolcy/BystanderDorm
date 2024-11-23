@@ -9,9 +9,12 @@ What do you do?
 
 697446__whoopsadaisy__230529_0237.wav
 https://freesound.org/people/whoopsadaisy/sounds/697446/
+230529_0237.wav by whoopsadaisy -- https://freesound.org/s/697446/ -- License: Creative Commons 0
+
 
 105265__carminooch__neighbors.aiff
 https://freesound.org/people/carminooch/sounds/105265/
+Neighbors.aiff by carminooch -- https://freesound.org/s/105265/ -- License: Creative Commons 0
 
 
 building-hallway.zip -> .dae
@@ -31,4 +34,8 @@ https://sketchfab.com/3d-models/two-bedroom-dormitory-6ebf7304bd564a2e9124f0999b
 direction arrow
 https://sketchfab.com/3d-models/direction-arrow-6ef46718c7b242e39fcad7f27ee858a5#download
 "Direction Arrow" (https://skfb.ly/ozHGW) by Alihan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+clock
+https://sketchfab.com/3d-models/digital-clock-456fc79850774ceb81727dcc76de7808#download
+"Digital_Clock" (https://skfb.ly/oNsIN) by .Krissami. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
