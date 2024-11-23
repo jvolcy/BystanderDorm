@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class TeleportTagController : MonoBehaviour
+public class TeleportPadController : MonoBehaviour
 {
     public string DefaultTeleportPadText = "X";
 

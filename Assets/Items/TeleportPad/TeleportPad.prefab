@@ -184,9 +184,9 @@ GameObject:
   - component: {fileID: 5206950244359634066}
   - component: {fileID: 5968699138095254128}
   - component: {fileID: 5163565533020392437}
-  - component: {fileID: 6966796407197172868}
+  - component: {fileID: 6922829886200234306}
   m_Layer: 0
-  m_Name: TeleportTag
+  m_Name: TeleportPad
   m_TagString: TeleportPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,7 +302,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6966796407197172868
+--- !u!114 &6922829886200234306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
