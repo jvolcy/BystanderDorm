@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [System.Serializable] struct MyStruct { public string item1; public int item2; }
-    [SerializeField] MyStruct myStruct = new MyStruct{ item1="default string", item2=1234};
+    //Select the playmode with an ejum
+    enum PlayMode { Desktop, XR }
+    [SerializeField] PlayMode playMode = PlayMode.Desktop;
+
+    //set the parent gameObjects for XR and DESKTOP specific GOs
+    [SerializeField] GameObject DESKTOP;
+    [SerializeField] GameObject XR;
 
     GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
+        //Enable/Disable XR/DESKTOP player and other GOs
+        if (playMode == PlayMode.Desktop)
+        {
+            XR.SetActive(false);
+            DESKTOP.SetActive(true);
+        }
+        else
+        {
+            DESKTOP.SetActive(false);
+            XR.SetActive(true);
+        }
+
+        //find the Player object.  There should be on under XR
+        //and one under DESKTOP, but only one of these will be active.
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
