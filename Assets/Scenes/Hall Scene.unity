@@ -186,6 +186,10 @@ MonoBehaviour:
   playMode: 0
   DESKTOP: {fileID: 1768821872}
   XR: {fileID: 1997149267}
+  DontDestroyObjList:
+  - {fileID: 56333026}
+  - {fileID: 1768821872}
+  - {fileID: 1997149267}
 --- !u!4 &56333029
 Transform:
   m_ObjectHideFlags: 0
@@ -1813,7 +1817,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1997149268}
+    m_TransformParent: {fileID: 1768821873}
     m_Modifications:
     - target: {fileID: 1978471637655604388, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: canPush
@@ -2590,7 +2594,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: fbea6a54dcf5f4936b53cbfbc5c95418, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -2601,6 +2605,8 @@ PlayableDirector:
     value: {fileID: 1639748616}
   - key: {fileID: -4046829281666483198, guid: fbea6a54dcf5f4936b53cbfbc5c95418, type: 2}
     value: {fileID: 56333027}
+  - key: {fileID: 431977385654634512, guid: fbea6a54dcf5f4936b53cbfbc5c95418, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &670325133 stripped
@@ -5572,7 +5578,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2096743926}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772401516
@@ -5957,8 +5964,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2096743926}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016219676

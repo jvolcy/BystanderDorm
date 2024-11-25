@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     //set the parent gameObjects for XR and DESKTOP specific GOs
     [SerializeField] GameObject DESKTOP;
     [SerializeField] GameObject XR;
+    [SerializeField] GameObject[] DontDestroyObjList;
 
     GameObject Player;
     // Start is called before the first frame update
@@ -28,6 +30,11 @@ public class GameManager : MonoBehaviour
             XR.SetActive(true);
         }
 
+        foreach (var obj in DontDestroyObjList)
+        {
+            DontDestroyOnLoad(obj);
+        }
+
         //find the Player object.  There should be on under XR
         //and one under DESKTOP, but only one of these will be active.
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -39,7 +46,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("X");
-
+            SceneManager.LoadScene("Campus Scene");
 
         }
     }
