@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //Select the playmode with an ejum
+    //Select the playmode with an enum
     enum PlayMode { Desktop, XR }
     [SerializeField] PlayMode playMode = PlayMode.Desktop;
 
@@ -15,7 +15,45 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] DontDestroyObjList;
 
     GameObject Player;
-    // Start is called before the first frame update
+
+    static GameManager instance;
+
+   /* ======================================================================
+    * 
+    ====================================================================== */
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+            return;
+        }
+
+        //configure our CanvasQuad objects
+        CanvasQuad[] quads = FindObjectsByType<CanvasQuad>(FindObjectsSortMode.None);
+        foreach (var quad in quads)
+        {
+            if (playMode == PlayMode.Desktop)
+            { quad.playMode = CanvasQuad.PlayMode.Desktop; }
+            else
+            { quad.playMode = CanvasQuad.PlayMode.XR; }
+        }
+
+        //configure our persistent objects
+        foreach (var obj in DontDestroyObjList)
+        {
+            DontDestroyOnLoad(obj);
+        }
+    }
+
+
+    /* ======================================================================
+     * Start is called before the first frame update
+     ====================================================================== */
     void Start()
     {
         //Enable/Disable XR/DESKTOP player and other GOs
@@ -30,32 +68,68 @@ public class GameManager : MonoBehaviour
             XR.SetActive(true);
         }
 
-        foreach (var obj in DontDestroyObjList)
-        {
-            DontDestroyOnLoad(obj);
-        }
+        //subscribe to the scene load event
+        //SceneManager.sceneLoaded += OnSceneLoaded;
 
         //find the Player object.  There should be on under XR
         //and one under DESKTOP, but only one of these will be active.
         Player = GameObject.FindGameObjectWithTag("Player");
+
+        SetPlayerStartPosition();
     }
 
-    // Update is called once per frame
+
+    /* ======================================================================
+     * Update is called once per frame
+     ====================================================================== */
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("X");
-            SceneManager.LoadScene("Campus Scene");
+        }
 
+        if (Input.GetKeyDown(KeyCode.Period))
+        {
+            //load the next scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Comma))
+        {
+            //load the prev scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
+    void SetPlayerStartPosition()
+    {
+        Debug.Log("SetPlayerStartPosition()...");
+        GameObject PlayerStartPosition = GameObject.FindGameObjectWithTag("PlayerStartPosition");
+        if (!PlayerStartPosition) { Debug.Log("Could not find object of type 'PlayerStartPosition'."); return; }
+
+        Player.transform.position = PlayerStartPosition.transform.position;
+        Player.transform.rotation = PlayerStartPosition.transform.rotation;
+    }
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        Debug.Log("Loaded scene " + scene.name);
+        SetPlayerStartPosition();
+    }
+
 
     /* ======================================================================
      * This signal handler is called immediately after the lights are
      * dimmed in the room.  Here, we will close the door (if it is open)
      * and reposition the player so that she is facing the clock.
-    ====================================================================== */
+     ====================================================================== */
     public void PrepareRoomScene()
     {
         Debug.Log("signaled");
@@ -70,4 +144,4 @@ public class GameManager : MonoBehaviour
 
 /* ======================================================================
  * 
-====================================================================== */
+ ====================================================================== */
