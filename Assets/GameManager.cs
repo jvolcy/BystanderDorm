@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayMode playMode = PlayMode.Desktop;
 
     //set the parent gameObjects for XR and DESKTOP specific GOs
-    [SerializeField] GameObject DESKTOP;
-    [SerializeField] GameObject XR;
+    //[SerializeField] GameObject DESKTOP;
+    //[SerializeField] GameObject XR;
     [SerializeField] GameObject[] DontDestroyObjList;
+    [SerializeField] string FirstScene = "Campus Scene";
 
     GameObject Player;
 
@@ -56,6 +57,9 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Start()
     {
+        EnableDisableXrAndDesktopObjs();
+
+        /*
         //Enable/Disable XR/DESKTOP player and other GOs
         if (playMode == PlayMode.Desktop)
         {
@@ -67,13 +71,15 @@ public class GameManager : MonoBehaviour
             DESKTOP.SetActive(false);
             XR.SetActive(true);
         }
-
-
+        */
+        //subscribe to the scene load event
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
         //find the Player object.  There should be on under XR
         //and one under DESKTOP, but only one of these will be active.
         Player = GameObject.FindGameObjectWithTag("Player");
 
+        SceneManager.LoadScene(FirstScene);
     }
 
 
@@ -100,6 +106,41 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
+    void EnableDisableXrAndDesktopObjs()
+    {
+        GameObject[] XR;
+        GameObject[] DESKTOP;
+
+        XR = GameObject.FindGameObjectsWithTag("XR");
+        DESKTOP = GameObject.FindGameObjectsWithTag("DESKTOP");
+
+        //Enable/Disable XR/DESKTOP player and other GOs
+        if (playMode == PlayMode.Desktop)
+        {
+            foreach (var xr in XR) { xr.SetActive(false); }
+            foreach (var desktop in DESKTOP) { desktop.SetActive(true); }
+        }
+        else
+        {
+            foreach (var xr in XR) { xr.SetActive(true); }
+            foreach (var desktop in DESKTOP) { desktop.SetActive(false); }
+        }
+    }
+
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        Debug.Log("GM: Loaded scene " + scene.name);
+        //Look for XR and DESKTOP labels and enable/disable accordingly
+        EnableDisableXrAndDesktopObjs();
+    }
 
     /* ======================================================================
      * This signal handler is called immediately after the lights are

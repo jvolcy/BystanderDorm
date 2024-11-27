@@ -31,6 +31,10 @@ public class PlayerStartPosition : MonoBehaviour
         }
     }
 
+    /* ======================================================================
+     * When this object is destroyed, unsubscribe to the scene loaded
+     * event.
+     ====================================================================== */
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -51,7 +55,7 @@ public class PlayerStartPosition : MonoBehaviour
      ====================================================================== */
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        Debug.Log("Loaded scene " + scene.name);
+        Debug.Log("PlayerStartPosition: Loaded scene " + scene.name);
         SetPlayerStartPosition();
     }
 

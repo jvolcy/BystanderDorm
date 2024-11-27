@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* ======================================================================
+ * The LightController controls the lighting intensities in the hall, 
+ * the room and the ambient light.  Each of these can be individually set.
+ * To avoid busy setting these intensities in Update(), we create
+ * shadow registers to keep track of when the intensity values change.
+ ====================================================================== */
 public class LightController : MonoBehaviour
 {
     [SerializeField] [Range(0f, 1f)] float SkyboxIntensity = 1f;
@@ -11,33 +17,63 @@ public class LightController : MonoBehaviour
     [SerializeField] [Range(0f, 10f)] float RoomLightIntensity = 1f;
     [SerializeField] bool DisableSkybox = false;
 
-    // Start is called before the first frame update
+    //---------- Shadow registers ----------
+    float oldSkyboxIntensity;
+    float oldHallLightIntensity;
+    float oldRoomLightIntensity;
+
+
+    /* ======================================================================
+     * Start is called before the first frame update
+     ====================================================================== */
     void Start()
     {
         if (DisableSkybox)
         RenderSettings.skybox = null;
 
+        SetLightIntensities();
+
     }
 
-    // Update is called once per frame
+    /* ======================================================================
+     * Update is called once per frame
+     ====================================================================== */
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.X))
-        //{
-            //RenderSettings.skybox = DisableSkybox ? null : SkyboxMaterial;
-            RenderSettings.ambientIntensity = SkyboxIntensity;
-            RenderSettings.reflectionIntensity = SkyboxIntensity;
-            foreach (Light light in HallLights)
-            {
-                light.intensity = HallLightIntensity;
-            }
+        if (oldHallLightIntensity != HallLightIntensity) { SetLightIntensities(); }
+        else if (oldRoomLightIntensity != RoomLightIntensity) { SetLightIntensities(); }
+        else if (oldSkyboxIntensity != SkyboxIntensity) { SetLightIntensities(); }
+    }
 
-            foreach (Light light in RoomLights)
-            {
-                light.intensity = RoomLightIntensity;
-            }
-        //}
+    /* ======================================================================
+    * 
+    ====================================================================== */
+    void SetLightIntensities()
+    {
+        RenderSettings.ambientIntensity = SkyboxIntensity;
+        RenderSettings.reflectionIntensity = SkyboxIntensity;
+        foreach (Light light in HallLights)
+        {
+            light.intensity = HallLightIntensity;
+        }
+
+        foreach (Light light in RoomLights)
+        {
+            light.intensity = RoomLightIntensity;
+        }
+
+        //---------- Update our shadow registers ----------
+        oldSkyboxIntensity = SkyboxIntensity;
+        oldHallLightIntensity = HallLightIntensity;
+        oldRoomLightIntensity = RoomLightIntensity;
     }
 
 
+
+    //----------  ----------
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
 }
+
