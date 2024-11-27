@@ -68,14 +68,12 @@ public class GameManager : MonoBehaviour
             XR.SetActive(true);
         }
 
-        //subscribe to the scene load event
-        //SceneManager.sceneLoaded += OnSceneLoaded;
+
 
         //find the Player object.  There should be on under XR
         //and one under DESKTOP, but only one of these will be active.
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        SetPlayerStartPosition();
     }
 
 
@@ -100,28 +98,6 @@ public class GameManager : MonoBehaviour
             //load the prev scene
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
-    }
-
-    /* ======================================================================
-     * 
-     ====================================================================== */
-    void SetPlayerStartPosition()
-    {
-        Debug.Log("SetPlayerStartPosition()...");
-        GameObject PlayerStartPosition = GameObject.FindGameObjectWithTag("PlayerStartPosition");
-        if (!PlayerStartPosition) { Debug.Log("Could not find object of type 'PlayerStartPosition'."); return; }
-
-        Player.transform.position = PlayerStartPosition.transform.position;
-        Player.transform.rotation = PlayerStartPosition.transform.rotation;
-    }
-
-    /* ======================================================================
-     * 
-     ====================================================================== */
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
-    {
-        Debug.Log("Loaded scene " + scene.name);
-        SetPlayerStartPosition();
     }
 
 
