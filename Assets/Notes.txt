@@ -7,6 +7,10 @@ You retreat to your room and settle in for the night.  A couple of hours later, 
 What do you do?
 
 ---------------
+[Practice Scene]
+Magic Melanator
+
+
 [Opening Scene]
 9:00PM. You are walking towards your dorm room, tired after a long day.  It is a women's dorm.
 Your friend in the room next door tells you that her boyfriend has flown in from out of town and she has snuck him into her room.  This is the same boyfriend that in the past she has said is trouble.  She tells you they can be loud when having a good time and under no circumstances should she be disturbed.  It is also the case that if the RA finds out about her visitor, she will kicked out of the dorm as this would be a second violation.
@@ -24,7 +28,13 @@ Friend: "Just in time too, this place got me stressed out; I need some stress re
 {You, to yourslef}: "Bye." (facetiously)
  
 Room Scene
-You retreat to your room and settle in for the night.  A few hours later, you are awakened by shouting voices from the neighboring room.  You can't make out what is being said, but you sense that it's possible that your neighbor is in danger of bodily harm.
+{It's been a long day.}
+{You've made it back to your room and prepare to settle in for the peaceful night of rest.}
+[Fade to balck for ~4 seconds]
+[audible disturbance]
+[digital clock shows it is 2AM]
+[lights brighten to reveal the rest of the dimly lit room]
+You are awakened by shouting voices from the neighboring room.  You can't make out what is being said, but you sense that it's possible that your neighbor is in danger of bodily harm.
  
 What do you do?
  
@@ -124,7 +134,7 @@ https://www.cgtrader.com/free-3d-models/exterior/house/building-lowpoly-03
 https://www.cgtrader.com/free-3d-models/exterior/house/hungarian-language-teaching-vambery-armin-high-school
 
 
-
-
+[Magic Melanator]
+"Disneyland Resort Entrance Plaza Metal Detector" (https://skfb.ly/6WVCE) by Kastle is licensed under CC Attribution-NonCommercial-ShareAlike (http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 

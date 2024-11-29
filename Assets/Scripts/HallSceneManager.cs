@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class HallSceneManager : MonoBehaviour
 {
     [SerializeField] GameObject objToEnableAfterGFTL;
+    //[SerializeField] PlayableDirector RoomDoorTL;
     
     GameObject Player;
 
@@ -26,15 +28,24 @@ public class HallSceneManager : MonoBehaviour
     /* ======================================================================
      * Update is called once per frame
      ====================================================================== */
-    /*
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Debug.Log("H");
+            CharacterController characterController = Player.GetComponent<CharacterController>();
+
+            //put us in front of our room
+            characterController.enabled = false;
+            Player.transform.position = new Vector3(10.98f, 9.15f, -0.45f);
+            //Player.transform.Rotate(0, 0f, 0);
+            characterController.enabled = true;
+
+            EndOfGirlfriendTLSignalReceiver();
+
         }
     }
-    */
+    
 
     /* ======================================================================
      * Here, we need to enable Hall Arrow #3 when the girlfriend timeline
