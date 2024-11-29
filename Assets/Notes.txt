@@ -6,6 +6,32 @@ You retreat to your room and settle in for the night.  A couple of hours later, 
 
 What do you do?
 
+---------------
+[Opening Scene]
+9:00PM. You are walking towards your dorm room, tired after a long day.  It is a women's dorm.
+Your friend in the room next door tells you that her boyfriend has flown in from out of town and she has snuck him into her room.  This is the same boyfriend that in the past she has said is trouble.  She tells you they can be loud when having a good time and under no circumstances should she be disturbed.  It is also the case that if the RA finds out about her visitor, she will kicked out of the dorm as this would be a second violation.
+ 
+ 
+[Opening Dialog]
+This dialog occurs between the friend and the player’s {thoughts}.  The player says nothing, but you can hear her thoughts.
+ 
+Friend: "Hey Neighbor!"
+Friend, as she walks towards you: "Giiiiirl!"
+Friend: "My Boo is in town... he drove down six hours to surprise me."
+{You, to yourself}: "The one she always says is trouble?" or "You mean the one you called a dog?"
+Friend: "Just in time too, this place got me stressed out; I need some stress relief!  So, I know what you thinkin', but he ain't all that bad.  No worse than the rest of 'em.  Girl, he in my room right now, so I'mma need you to tell folks that I'm out of town 'cause you know I can't get caught again plus I.DO.NOT.WANT  to be disturbed!  Me and him can be kinda loud when we're having a good time, but don't pay us no mind if you hear anything.  Just do no disturb!  Ok, I gotta go.  See you later!"
+{You, to yourself}: "Girlfriend, please!"
+{You, to yourslef}: "Bye." (facetiously)
+ 
+Room Scene
+You retreat to your room and settle in for the night.  A few hours later, you are awakened by shouting voices from the neighboring room.  You can't make out what is being said, but you sense that it's possible that your neighbor is in danger of bodily harm.
+ 
+What do you do?
+ 
+
+---------------
+
+
 
 
 105265__carminooch__neighbors.aiff
