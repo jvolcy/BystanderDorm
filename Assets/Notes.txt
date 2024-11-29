@@ -31,51 +31,59 @@ What do you do?
 
 ---------------
 
-
-
-
-105265__carminooch__neighbors.aiff
-https://freesound.org/people/carminooch/sounds/105265/
-Neighbors.aiff by carminooch -- https://freesound.org/s/105265/ -- License: Creative Commons 0
-
-
-building-hallway.zip -> .dae
+[Hallway]
 https://sketchfab.com/3d-models/building-hallway-b407c0f316b94b1cbcf0bf254c3c2442
 "Building Hallway" (https://skfb.ly/oqAQJ) by jimbogies is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-
-warm-dorm-room.zip -> .fbx
+[Dorm Room]
 https://sketchfab.com/3d-models/warm-dorm-room-b387c759822241fb966d0d573455cbd3
 "Warm Dorm Room" (https://skfb.ly/oxpqr) by darylsteak is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-
-two-bedroom-dormitory.zip -> .obj
-https://sketchfab.com/3d-models/two-bedroom-dormitory-6ebf7304bd564a2e9124f0999bc5cf5f
-"Two Bedroom Dormitory" (https://skfb.ly/6o6Bp) by QA Graphics is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-
-direction arrow
+[Direction Arrows]
 https://sketchfab.com/3d-models/direction-arrow-6ef46718c7b242e39fcad7f27ee858a5#download
 "Direction Arrow" (https://skfb.ly/ozHGW) by Alihan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-clock
+[Digital Clock]
 https://sketchfab.com/3d-models/digital-clock-456fc79850774ceb81727dcc76de7808#download
 "Digital_Clock" (https://skfb.ly/oNsIN) by .Krissami. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-
-Digital-7 Font Family
+[Digital Clock Fonts]
 By: Style-7
 https://www.1001fonts.com/digital-7-font.html
 Sizenko Alexander
 http://www.styleseven.com
 Created: October 7 2008
 
-Picture Frame
+[Picture Frame (No Men Allowed Signs)]
 https://sketchfab.com/3d-models/picture-frame-db449a93609a40c3a5ea26b330b0b3b6
 "Picture Frame" by suryajayabudimulia is License under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
+[Door sounds]
+https://freesound.org/people/CapsLok/sounds/181259/?
+Squeaky Wooden Door Open Close.wav by CapsLok -- https://freesound.org/s/181259/ -- License: Creative Commons 0
+
+[Room Sound Track (4 clips)]
+    [1] S03-21 Fight and body falls on stone.wav by craigsmith -- https://freesound.org/s/675925/ -- License: Creative Commons 0
+
+    [2] woman-screaming-and-crying-no-sound-effect-238459689_nw_prev.mp4
+        https://www.pond5.com/sound-effects/item/238459689-woman-screaming-and-crying-no-horror-movie-sound-effect
+        A Woman Screaming And Crying "No" Horror Movie Sound Effect - by RoughCoast
+
+    [3] Terrified Screams - young lady by AderuMoro -- https://freesound.org/s/264918/ -- License: Attribution 4.0
+
+    [4] night background early spring 2.30 AM.25.04.2014 Wav by mario1298 -- https://freesound.org/s/238064/ -- License: Attribution 4.0
+
+[Campus]
+Lowpoly British School Building - by Gabriel Quintana
+https://www.fab.com/listings/fa1b793d-5432-46d0-80a1-7a07497dee2d?quickBuyOfferId=859345e5a7c44778844558f76bbcd575
+
+[Voice Actors]
+    [1] Girlfriend: Mariama Barry, Spelman College Class of ???
+    [2] Player Internal Voice: TBD
 
 
-[Not Yet Used]
+
+[Not Used]
 -------------------------------------------------------------
 697446__whoopsadaisy__230529_0237.wav
 https://freesound.org/people/whoopsadaisy/sounds/697446/
@@ -87,9 +95,9 @@ WomanScreamingLuber.wav by busymaxvictor -- https://freesound.org/s/386055/ -- L
 (spanish, 10 seconds)
 woman screaming yelling at drunk husband domestic violence dramatic intense.wav by bulbastre -- https://freesound.org/s/127004/ -- License: Attribution 4.0
 
-(no voices, 30 seconds)
-S03-21 Fight and body falls on stone.wav by craigsmith -- https://freesound.org/s/675925/ -- License: Creative Commons 0
-
+105265__carminooch__neighbors.aiff
+https://freesound.org/people/carminooch/sounds/105265/
+Neighbors.aiff by carminooch -- https://freesound.org/s/105265/ -- License: Creative Commons 0
 
 ($4.95)
 woman-crying-individual-woman-wailing-sound-effect-116224301_nw_prev.mp4
@@ -97,11 +105,10 @@ https://www.pond5.com/sound-effects/item/116224301-woman-crying-individual-woman
 Woman Crying, Individual Woman, Wailing, Pain, Sad, Lots Of Variation
 By: ProSoundEffects
 
-$9
-woman-screaming-and-crying-no-sound-effect-238459689_nw_prev.mp4
-https://www.pond5.com/sound-effects/item/238459689-woman-screaming-and-crying-no-horror-movie-sound-effect
-A Woman Screaming And Crying "No" Horror Movie Sound Effect
-By: RoughCoast
+
+two-bedroom-dormitory.zip -> .obj
+https://sketchfab.com/3d-models/two-bedroom-dormitory-6ebf7304bd564a2e9124f0999bc5cf5f
+"Two Bedroom Dormitory" (https://skfb.ly/6o6Bp) by QA Graphics is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 
 https://sketchfab.com/3d-models/city-building-downtown-02-7fbeffa5e541493ba65a0ec27dd295ef
@@ -118,5 +125,6 @@ https://www.cgtrader.com/free-3d-models/exterior/house/hungarian-language-teachi
 
 
 
-https://www.fab.com/listings/fa1b793d-5432-46d0-80a1-7a07497dee2d?quickBuyOfferId=859345e5a7c44778844558f76bbcd575
+
+
 
