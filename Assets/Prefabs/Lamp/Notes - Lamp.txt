@@ -1,0 +1,8 @@
+The animations on the lamp (LampOn and LampOff) do two things.  First, they
+set the intensity of the point light source centered on the bulb.  Second,
+they set the emission intensity of the shade material.  Be mindful when
+altering this material.
+
+The lamp is a modification of the model by M.Zamzam found here:
+"Table Lamp" (https://skfb.ly/oANpU) by M. Zamzam is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+

@@ -10,46 +10,40 @@ using UnityEngine;
  ====================================================================== */
 public class LightController : MonoBehaviour
 {
-    [SerializeField] [Range(0f, 1f)] float SkyboxIntensity = 0f;
-    [SerializeField] Light[] HallLights;
-    [SerializeField] Light[] RoomLights;
-    [SerializeField] [Range(0f, 10f)] float HallLightIntensity = 1f;
-    [SerializeField] [Range(0f, 10f)] float RoomLightIntensity = 1f;
-    [SerializeField] bool DisableSkybox = false;
-
-    //---------- Shadow registers ----------
-    float oldSkyboxIntensity;
-    float oldHallLightIntensity;
-    float oldRoomLightIntensity;
-
+    public bool UpdateInRealTime = false;
+    public Color AmbientLightColor = Color.black;
 
     /* ======================================================================
      * Start is called before the first frame update
      ====================================================================== */
-    void Start()
-    {
+    //void Start()
+    //{
+        /*
         if (DisableSkybox)
         RenderSettings.skybox = null;
 
         SetLightIntensities();
-
-    }
+        */
+    //}
 
     /* ======================================================================
      * Update is called once per frame
      ====================================================================== */
     void Update()
     {
-        if (oldHallLightIntensity != HallLightIntensity) { SetLightIntensities(); }
-        else if (oldRoomLightIntensity != RoomLightIntensity) { SetLightIntensities(); }
-        else if (oldSkyboxIntensity != SkyboxIntensity) { SetLightIntensities(); }
+        if (UpdateInRealTime)
+        {
+            RenderSettings.ambientLight = AmbientLightColor;
+        }
     }
 
     /* ======================================================================
     * 
     ====================================================================== */
+    /*
     void SetLightIntensities()
     {
+        
         //RenderSettings.ambientIntensity = SkyboxIntensity;
         byte clr = (byte)(168 * SkyboxIntensity);
         RenderSettings.ambientLight = new Color32(clr, clr, clr, 255);
@@ -71,7 +65,7 @@ public class LightController : MonoBehaviour
     }
 
 
-
+    */
     //----------  ----------
 
     /* ======================================================================
