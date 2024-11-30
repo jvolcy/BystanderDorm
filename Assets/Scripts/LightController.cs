@@ -10,7 +10,7 @@ using UnityEngine;
  ====================================================================== */
 public class LightController : MonoBehaviour
 {
-    [SerializeField] [Range(0f, 1f)] float SkyboxIntensity = 1f;
+    [SerializeField] [Range(0f, 1f)] float SkyboxIntensity = 0f;
     [SerializeField] Light[] HallLights;
     [SerializeField] Light[] RoomLights;
     [SerializeField] [Range(0f, 10f)] float HallLightIntensity = 1f;
@@ -50,8 +50,10 @@ public class LightController : MonoBehaviour
     ====================================================================== */
     void SetLightIntensities()
     {
-        RenderSettings.ambientIntensity = SkyboxIntensity;
-        RenderSettings.reflectionIntensity = SkyboxIntensity;
+        //RenderSettings.ambientIntensity = SkyboxIntensity;
+        byte clr = (byte)(168 * SkyboxIntensity);
+        RenderSettings.ambientLight = new Color32(clr, clr, clr, 255);
+        //RenderSettings.reflectionIntensity = SkyboxIntensity;
         foreach (Light light in HallLights)
         {
             light.intensity = HallLightIntensity;
