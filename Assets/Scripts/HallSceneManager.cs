@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HallSceneManager : MonoBehaviour
 {
-    [SerializeField] GameObject objToEnableAfterGFTL;
+    [SerializeField] GameObject objToEnableAfterGFTL;   //for debugging only
     //[SerializeField] PlayableDirector RoomDoorTL;
     
     GameObject Player;
@@ -51,11 +51,12 @@ public class HallSceneManager : MonoBehaviour
      * Here, we need to enable Hall Arrow #3 when the girlfriend timeline
      * concludes.
      ====================================================================== */
+    
     public void EndOfGirlfriendTLSignalReceiver()
     {
         objToEnableAfterGFTL.SetActive(true);
     }
-
+    
 
     /* ======================================================================
      * This signal handler is called immediately after the lights are
