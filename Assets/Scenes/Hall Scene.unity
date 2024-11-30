@@ -6499,7 +6499,9 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: fe56eb47e12854fcf84ed927d96b2dfb, type: 2}
+    - {fileID: 0}
     - {fileID: 11400000, guid: fa4cf65a072524de2999b1107067df18, type: 2}
+    - {fileID: 11400000, guid: ae019164c7e144f55a6b5bf68838aa79, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -6512,7 +6514,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: The text we want to display
+            m_StringArgument: It's been a long day.
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
@@ -6527,6 +6529,35 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1820723991}
+          m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: You've made it back to your room and prepare to settle
+              in for the peaceful night of rest.
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1820723991}
+          m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Turn off the lamp to get the rest you need.
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &1820723991
