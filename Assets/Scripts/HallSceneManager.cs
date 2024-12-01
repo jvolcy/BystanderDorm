@@ -7,14 +7,10 @@ using UnityEngine.SceneManagement;
 public class HallSceneManager : MonoBehaviour
 {
     [SerializeField] GameObject objToEnableAfterGFTL;   //for debugging only
-    //[SerializeField] PlayableDirector RoomDoorTL;
-    
+    [SerializeField] Vector3 playerWakeUpPosition = new Vector3(11f, 9.15f, 0f);
+    [SerializeField] Vector3 playerWakeUpOrientation = new Vector3(0f, 180f, 0f);
+
     GameObject Player;
-
-   /* ======================================================================
-    * 
-    ====================================================================== */
-
 
     /* ======================================================================
      * Start is called before the first frame update
@@ -28,7 +24,6 @@ public class HallSceneManager : MonoBehaviour
     /* ======================================================================
      * Update is called once per frame
      ====================================================================== */
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
@@ -37,27 +32,14 @@ public class HallSceneManager : MonoBehaviour
 
             //put us in front of our room
             characterController.enabled = false;
-            Player.transform.position = new Vector3(10.98f, 9.15f, -0.45f);
-            //Player.transform.Rotate(0, 0f, 0);
+            Player.transform.position = playerWakeUpPosition;
+            Player.transform.localEulerAngles = playerWakeUpOrientation;
             characterController.enabled = true;
 
-            EndOfGirlfriendTLSignalReceiver();
+            objToEnableAfterGFTL.SetActive(true);
 
         }
     }
-    
-
-    /* ======================================================================
-     * Here, we need to enable Hall Arrow #3 when the girlfriend timeline
-     * concludes.
-     ====================================================================== */
-    
-    public void EndOfGirlfriendTLSignalReceiver()
-    {
-        objToEnableAfterGFTL.SetActive(true);
-    }
-    
-
     /* ======================================================================
      * This signal handler is called immediately after the lights are
      * dimmed in the room.  Here, we will close the door (if it is open)
@@ -65,14 +47,18 @@ public class HallSceneManager : MonoBehaviour
      ====================================================================== */
     public void PrepareRoomSceneSignalReceiver()
     {
-        Debug.Log("signaled");
         CharacterController characterController = Player.GetComponent<CharacterController>();
         characterController.enabled = false;
+
+        //put us in position in the room before the lights come back on
         Player.transform.position = new Vector3(11.4f, 9.25f, -4.20f);
         Player.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
+
         characterController.enabled = true;
 
     }
+
+
 }
 
 /* ======================================================================
