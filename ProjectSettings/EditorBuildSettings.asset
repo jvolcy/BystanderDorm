@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hall Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ab72d49892f85e64a99495ba7fd36f29, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 02f1de8899a518e4ea35787b38684d5e, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e6598d08c9c489a47b0758e5b4dbfe05, type: 2}
