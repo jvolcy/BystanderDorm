@@ -73,7 +73,7 @@ https://sketchfab.com/3d-models/picture-frame-db449a93609a40c3a5ea26b330b0b3b6
 https://freesound.org/people/CapsLok/sounds/181259/?
 Squeaky Wooden Door Open Close.wav by CapsLok -- https://freesound.org/s/181259/ -- License: Creative Commons 0
 
-[Room Sound Track (4 clips)]
+[Room Sound Track (3 clips)]
     [1] S03-21 Fight and body falls on stone.wav by craigsmith -- https://freesound.org/s/675925/ -- License: Creative Commons 0
 
     [2] woman-screaming-and-crying-no-sound-effect-238459689_nw_prev.mp4
@@ -82,7 +82,6 @@ Squeaky Wooden Door Open Close.wav by CapsLok -- https://freesound.org/s/181259/
 
     [3] Terrified Screams - young lady by AderuMoro -- https://freesound.org/s/264918/ -- License: Attribution 4.0
 
-    [4] indoors dorm dormitory ambient room tone distant traffic in street 2.wav by bulbastre -- https://freesound.org/s/126927/ -- License: Attribution 4.0
 
 [Campus]
 Lowpoly British School Building - by Gabriel Quintana
@@ -95,7 +94,16 @@ https://www.fab.com/listings/fa1b793d-5432-46d0-80a1-7a07497dee2d?quickBuyOfferI
 [Lamp]
 "Table Lamp" (https://skfb.ly/oANpU) by M. Zamzam is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
+[Ambient Dorm Sound]
 indoors dorm dormitory ambient room tone distant traffic in street 2.wav by bulbastre -- https://freesound.org/s/126927/ -- License: Attribution 4.0
+
+[Campus Shrubs]
+"Stylized Bush" (https://skfb.ly/oTDpD) by Daniel is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Low Poly Trees]
+"Trees Low Poly" (https://skfb.ly/6YpAS) by Igor_K. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+
 
 [Not Used]
 -------------------------------------------------------------
