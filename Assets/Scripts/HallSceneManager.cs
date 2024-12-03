@@ -28,18 +28,13 @@ public class HallSceneManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            CharacterController characterController = Player.GetComponent<CharacterController>();
-
-            //put us in front of our room
-            characterController.enabled = false;
-            Player.transform.position = playerWakeUpPosition;
-            Player.transform.localEulerAngles = playerWakeUpOrientation;
-            characterController.enabled = true;
-
+            //put us in front of our room, facing the door
+            Player.GetComponent<PlayerCtrl>().TelePort(new Vector3(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f));
             objToEnableAfterGFTL.SetActive(true);
-
         }
     }
+
+
     /* ======================================================================
      * This signal handler is called immediately after the lights are
      * dimmed in the room.  Here, we will close the door (if it is open)
@@ -47,17 +42,8 @@ public class HallSceneManager : MonoBehaviour
      ====================================================================== */
     public void PrepareRoomSceneSignalReceiver()
     {
-        CharacterController characterController = Player.GetComponent<CharacterController>();
-        characterController.enabled = false;
-
-        //put us in position in the room before the lights come back on
-        Player.transform.position = new Vector3(11.4f, 9.25f, -4.20f);
-        Player.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
-
-        characterController.enabled = true;
-
+        Player.GetComponent<PlayerCtrl>().TelePort(playerWakeUpPosition, playerWakeUpOrientation);
     }
-
 
 }
 

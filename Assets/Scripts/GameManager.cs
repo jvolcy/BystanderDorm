@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
     enum PlayMode { Desktop, XR }
     [SerializeField] PlayMode playMode = PlayMode.Desktop;
 
-    //set the parent gameObjects for XR and DESKTOP specific GOs
-    //[SerializeField] GameObject DESKTOP;
-    //[SerializeField] GameObject XR;
     [SerializeField] GameObject[] DontDestroyObjList;
     [SerializeField] string FirstScene = "Campus Scene";
+
+    //the public sceneManager is used by the timelines
+    public SceneManager sceneManager;
 
     GameObject Player;
 
@@ -24,7 +24,14 @@ public class GameManager : MonoBehaviour
     ====================================================================== */
     private void Awake()
     {
-        if (instance == null)
+        EnableDisableXrAndDesktopObjs();
+        /*
+        string tag;
+        if (playMode == PlayMode.Desktop) { tag = "DESKTOP"; }
+        else if (playMode == PlayMode.XR) { tag = "XR"; }
+        else { tag = "Unknown"; }
+        */
+        if (instance == null && CompareTag(tag))
         {
             instance = this;
         }
@@ -34,6 +41,11 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        /* Per https://docs.unity3d.com/ScriptReference/MonoBehaviour.Awake.html:
+         * For active GameObjects placed in a Scene, Unity calls Awake after all
+         * active GameObjects in the Scene are initialized, so you can safely 
+         * use methods such as GameObject.FindWithTag to query other GameObjects.
+         */
         //configure our CanvasQuad objects
         CanvasQuad[] quads = FindObjectsByType<CanvasQuad>(FindObjectsSortMode.None);
         foreach (var quad in quads)
@@ -57,21 +69,7 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Start()
     {
-        EnableDisableXrAndDesktopObjs();
 
-        /*
-        //Enable/Disable XR/DESKTOP player and other GOs
-        if (playMode == PlayMode.Desktop)
-        {
-            XR.SetActive(false);
-            DESKTOP.SetActive(true);
-        }
-        else
-        {
-            DESKTOP.SetActive(false);
-            XR.SetActive(true);
-        }
-        */
         //subscribe to the scene load event
         SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -79,7 +77,7 @@ public class GameManager : MonoBehaviour
         //and one under DESKTOP, but only one of these will be active.
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        SceneManager.LoadScene(FirstScene);
+        //SceneManager.LoadScene(FirstScene);
     }
 
 
@@ -110,7 +108,7 @@ public class GameManager : MonoBehaviour
     /* ======================================================================
      * 
      ====================================================================== */
-    void EnableDisableXrAndDesktopObjs()
+    public void EnableDisableXrAndDesktopObjs()
     {
         GameObject[] XR;
         GameObject[] DESKTOP;
@@ -132,6 +130,7 @@ public class GameManager : MonoBehaviour
     }
 
 
+
     /* ======================================================================
      * 
      ====================================================================== */
@@ -143,22 +142,26 @@ public class GameManager : MonoBehaviour
     }
 
     /* ======================================================================
-     * This signal handler is called immediately after the lights are
-     * dimmed in the room.  Here, we will close the door (if it is open)
-     * and reposition the player so that she is facing the clock.
+     * 
      ====================================================================== */
-    public void PrepareRoomScene()
+    public void LoadNextScene()
     {
-        Debug.Log("signaled");
-        CharacterController characterController = Player.GetComponent<CharacterController>();
-        characterController.enabled = false;
-        Player.transform.position = new Vector3(11.4f, 9.25f, -4.20f);
-        Player.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
-        characterController.enabled = true;
-
+        //load the next scene
+        Debug.Log("Load Next Scene...");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
+    public void LoadScene(string sceneName)
+    {
+        //load the next scene
+        SceneManager.LoadScene(sceneName);
+    }
+
 }
 
 /* ======================================================================
  * 
- ====================================================================== */
+ * ====================================================================== */
