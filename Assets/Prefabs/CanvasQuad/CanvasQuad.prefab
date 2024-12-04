@@ -248,7 +248,7 @@ RectTransform:
   m_GameObject: {fileID: 1866722409022469405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 524408833736158939}
@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 76931743545333674}
   - component: {fileID: 8289647234620141486}
   - component: {fileID: 5136344924800384251}
+  - component: {fileID: 6190853211429681857}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -599,6 +600,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6190853211429681857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666115657963316072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b358ab44d812540f3927b7df57db5c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 99
 --- !u!1 &8666836922519986874
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +678,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: <u><b>C</b></u>ontinue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -25,13 +25,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         EnableDisableXrAndDesktopObjs();
-        /*
-        string tag;
-        if (playMode == PlayMode.Desktop) { tag = "DESKTOP"; }
-        else if (playMode == PlayMode.XR) { tag = "XR"; }
-        else { tag = "Unknown"; }
-        */
-        if (instance == null && CompareTag(tag))
+
+        if (instance == null)
         {
             instance = this;
         }

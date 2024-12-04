@@ -76,7 +76,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -284,3 +284,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf7c37a80a13474ab4b1df89f4ff84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyIfDuplicate: 1
