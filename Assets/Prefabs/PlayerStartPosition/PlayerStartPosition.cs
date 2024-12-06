@@ -48,6 +48,11 @@ public class PlayerStartPosition : MonoBehaviour
     {
         Player.transform.position = transform.position;
         Player.transform.localEulerAngles = transform.localEulerAngles;
+
+        //var cam = GameObject.FindGameObjectWithTag("MainCamera"); ;
+        //cam.transform.position = Vector3.zero;
+        //cam.transform.rotation = Quaternion.identity;
+
         Physics.SyncTransforms();
     }
 
