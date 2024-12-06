@@ -47,7 +47,8 @@ public class PlayerStartPosition : MonoBehaviour
     void SetPlayerStartPosition()
     {
         Player.transform.position = transform.position;
-        Player.transform.rotation = transform.rotation;
+        Player.transform.localEulerAngles = transform.localEulerAngles;
+        Physics.SyncTransforms();
     }
 
     /* ======================================================================
