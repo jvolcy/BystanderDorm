@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7431271325681377720, guid: 893219773891c784ab469a39151879b4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47822eb958e976d41827e11e6c30dd0b, type: 2}
+    - target: {fileID: 8202421675942458386, guid: 893219773891c784ab469a39151879b4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47822eb958e976d41827e11e6c30dd0b, type: 2}
     - target: {fileID: 8568544637412148623, guid: 893219773891c784ab469a39151879b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -77,12 +85,16 @@ PrefabInstance:
       value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 8604691383457356503, guid: 893219773891c784ab469a39151879b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1983
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604691383457356503, guid: 893219773891c784ab469a39151879b4, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8748868027195207512, guid: 893219773891c784ab469a39151879b4, type: 3}
       propertyPath: m_Name
-      value: Directional Teleport Reticle Variant
+      value: Reticle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
