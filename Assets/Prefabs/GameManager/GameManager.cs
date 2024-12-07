@@ -52,12 +52,9 @@ public class GameManager : MonoBehaviour
         }
 
         //configure our persistent objects
-        if (DontDestroyObjList != null)
+        foreach (var obj in DontDestroyObjList)
         {
-            foreach (var obj in DontDestroyObjList)
-            {
-                DontDestroyOnLoad(obj);
-            }
+            DontDestroyOnLoad(obj);
         }
     }
 
