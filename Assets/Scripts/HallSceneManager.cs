@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
+using UnityEngine.XR.Management;
 
 public class HallSceneManager : MonoBehaviour
 {
@@ -31,6 +33,13 @@ public class HallSceneManager : MonoBehaviour
             //put us in front of our room, facing the door
             Player.GetComponent<PlayerCtrl>().TelePort(new Vector3(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f));
             objToEnableAfterGFTL.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            //InputTracking.Recenter();
+           // var x = XRGeneralSettings.Instance.Manager.activeLoader.GetLoadedSubsystem<XRInputSubsystem>().TryRecenter();
+            //Debug.Log("Recentering " + (x ? "succeeded." : "failed."));
         }
     }
 

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class PlayerStartPosition : MonoBehaviour
 {
     public bool AutoMovePlayerOnSceneLoad = true;
     public bool AutoMovePlayerOnSceneReLoad = true;
+    public XRInputSubsystem inputSubsystem;
 
     GameObject Player;
 
@@ -48,6 +50,8 @@ public class PlayerStartPosition : MonoBehaviour
     {
         Player.transform.position = transform.position;
         Player.transform.localEulerAngles = transform.localEulerAngles;
+
+        inputSubsystem.TryRecenter();
 
         //var cam = GameObject.FindGameObjectWithTag("MainCamera"); ;
         //cam.transform.position = Vector3.zero;
