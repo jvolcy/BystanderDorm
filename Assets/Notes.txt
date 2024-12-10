@@ -107,6 +107,9 @@ indoors dorm dormitory ambient room tone distant traffic in street 2.wav by bulb
 10 Skyboxes Pack : Day - Night by Wello Soft
 https://assetstore.unity.com/packages/2d/textures-materials/sky/10-skyboxes-pack-day-night-32236
 
+[Building Sign Light]
+"Wall Light" (https://skfb.ly/oPWBY) by Blizzy is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
 
 [Not Used]
 -------------------------------------------------------------
