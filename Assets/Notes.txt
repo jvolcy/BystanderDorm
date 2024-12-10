@@ -110,6 +110,12 @@ https://assetstore.unity.com/packages/2d/textures-materials/sky/10-skyboxes-pack
 [Building Sign Light]
 "Wall Light" (https://skfb.ly/oPWBY) by Blizzy is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
+[Night Sound]
+https://freesound.org/people/arnaud%20coutancier/sounds/456986/
+
+[Silhouette of female hand]
+"Silhouette of female hand isolated on a white background" by Nobilior 
+https://www.alamy.com/silhouette-of-female-hand-isolated-on-a-white-background-image184649914.html
 
 [Not Used]
 -------------------------------------------------------------
@@ -155,7 +161,7 @@ https://www.cgtrader.com/free-3d-models/exterior/house/hungarian-language-teachi
 [Magic Melanator]
 "Disneyland Resort Entrance Plaza Metal Detector" (https://skfb.ly/6WVCE) by Kastle is licensed under CC Attribution-NonCommercial-ShareAlike (http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-
-
+[hand2]
+https://www.freepik.com/free-vector/hand-drawn-hand-silhouette-set_158777725.htm
 
 
