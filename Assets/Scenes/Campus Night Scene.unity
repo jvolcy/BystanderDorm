@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.13513187, g: 0.14836773, b: 0.1614475, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,6 +484,14 @@ PrefabInstance:
     - target: {fileID: 4366086851909048627, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: m_Name
       value: campus
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606120200846942723, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682393891594951818, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
