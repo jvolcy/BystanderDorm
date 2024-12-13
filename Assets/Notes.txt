@@ -122,6 +122,16 @@ Borel Font
 https://fonts.google.com/specimen/Borel
 The Borel Project Authors (https://github.com/RosaWagner/Borel)
 
+[Hand Colors]
+Gray - #8E8E8E
+White Chocolate - #F4D2AC
+Cafe-au-Lait - #EFAB87
+Caramel - #C0733F
+Dark Chocolate - #8E4B23
+Mocha - #582E16
+
+
+
 
 [Not Used]
 -------------------------------------------------------------
@@ -169,5 +179,13 @@ https://www.cgtrader.com/free-3d-models/exterior/house/hungarian-language-teachi
 
 [hand2]
 https://www.freepik.com/free-vector/hand-drawn-hand-silhouette-set_158777725.htm
+
+
+Gray - #8E8E8E
+White Chocolate - #F4D2AC
+Cafe-au-Lait - #EFAB87
+Caramel - #C0733F
+Dark Chocolate - #8E4B23
+Mocha - #582E16
 
 
