@@ -58,6 +58,15 @@ public class PlayerCtrl : MonoBehaviour
     {
         //make a copy of the target GO's material
         Renderer renderer = args.interactableObject.transform.GetComponentInChildren<Renderer>();
+
+        if (renderer == null)
+        {
+            Debug.Log("PlayerCtrl.cs - OnHoverEnter(): No Renderer found on object " + args.interactableObject.transform.name);
+            return;
+        }
+
+        Debug.Log("PlayerCtrl.cs - OnHoverEnter() " + args.interactableObject.transform.name);
+
         Material mat = new(renderer.material);
 
         //turn on the material's emission and set its color
@@ -75,6 +84,8 @@ public class PlayerCtrl : MonoBehaviour
     /// <param name="args"></param>
     public void OnHoverExit(HoverExitEventArgs args)
     {
+        Debug.Log("PlayerCtrl.cs - OnHoverExit() " + args.interactableObject.transform.name);
+
         //turn off the GO's Renderer's material's emission
         args.interactableObject.transform.GetComponentInChildren<Renderer>().material.DisableKeyword("_EMISSION");
     }
