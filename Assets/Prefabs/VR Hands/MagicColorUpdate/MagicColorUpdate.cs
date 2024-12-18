@@ -63,7 +63,7 @@ public class MagicColorUpdate : MonoBehaviour
 
     public void MagicUpdateAudioCallback()
     {
-        AudioSource.PlayClipAtPoint(magicSound, transform.position);
+        AudioSource.PlayClipAtPoint(magicSound, transform.position, 0.25f);
         //audioSource.PlayOneShot(magicSound);
     }
 

@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MMM_caramel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 215df86d6bdd1438a80396cfc8b1d6c0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5751315934014233222, guid: 215df86d6bdd1438a80396cfc8b1d6c0, type: 3}
       propertyPath: m_Name
       value: Text

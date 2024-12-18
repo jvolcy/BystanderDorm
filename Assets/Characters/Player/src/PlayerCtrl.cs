@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -8,7 +9,7 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] bool DestroyIfDuplicate = true;
 
     //the component that updates the hand color
-    MagicColorUpdate magicColorUpdate;
+    MagicColorUpdate[] magicColorUpdates;
 
     /// <summary>
     /// Awake(): Enforece singleton: if there is already an object tagged as Player, self-destruct
@@ -32,8 +33,8 @@ public class PlayerCtrl : MonoBehaviour
 
     private void Start()
     {
-        var obj = FindObjectOfType<MagicColorUpdate>();
-        magicColorUpdate = obj.GetComponent<MagicColorUpdate>();
+        //var obj =  FindObjectOfType<MagicColorUpdate>();
+
     }
 
 
@@ -61,13 +62,31 @@ public class PlayerCtrl : MonoBehaviour
     /// <param name="clr"></param>
     public void SetHandColor(Color clr)
     {
-        magicColorUpdate.MagicUpdate(clr);
+        magicColorUpdates = GetComponentsInChildren<MagicColorUpdate>(true);
+        Debug.Log("Found " + magicColorUpdates.Length + " MagicColorUpdate components.");
+
+        foreach (var magicColorUpdate in magicColorUpdates)
+        {
+            magicColorUpdate.MagicUpdate(clr);
+        }
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("PalyerCtrl triggered by " + other.name);
+        //Debug.Log("PlayerCtrl triggered by " + other.tag);
+        if (other.CompareTag("MMM"))
+        {
+            //Debug.Log("changing colors...");
+
+            //Get the color of the MMM that hit our mouth
+            var renderer = other.GetComponent<Renderer>();
+            var clr = renderer.material.color;
+
+            //set this as the target color for our hands
+            SetHandColor(clr);
+            Destroy(renderer.transform.parent.gameObject, 0.5f);
+        }
     }
 
 }

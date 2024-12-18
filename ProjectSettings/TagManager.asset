@@ -9,6 +9,7 @@ TagManager:
   - PlayerStartPosition
   - XR
   - DESKTOP
+  - MMM
   layers:
   - Default
   - TransparentFX
