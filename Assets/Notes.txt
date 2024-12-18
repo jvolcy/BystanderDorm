@@ -130,6 +130,9 @@ Caramel - #C0733F
 Dark Chocolate - #8E4B23
 Mocha - #582E16
 
+[Magic Sound FX]
+https://freesound.org/people/vr/sounds/349465/
+magic_bell.wav by vr -- https://freesound.org/s/349465/ -- License: Attribution 4.0
 
 
 
