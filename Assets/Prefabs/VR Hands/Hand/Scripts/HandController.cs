@@ -33,7 +33,13 @@ public class HandController : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x * (RightHand ? 1f : -1f), transform.localScale.y, transform.localScale.z);
     }
 
-   
+
+/*    
+    // Update is called once per frame
+    void Update()
+    {
+    }
+*/    
 
     private void Activate(InputAction.CallbackContext obj)
     {
@@ -57,12 +63,4 @@ public class HandController : MonoBehaviour
         animator.SetBool("select", false);
         //Debug.Log("DeSelected!!");
     }
-
-    /* ======================================================================
-     * 
-     ====================================================================== */
-
 }
-
-
-
