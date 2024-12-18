@@ -672,12 +672,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399046509}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1768821873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &585528352 stripped
 BoxCollider:
@@ -881,10 +881,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3096445032992184590, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107162587641055895, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_StartingHoverFilters.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8567868712229875856, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
@@ -1538,6 +1534,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 337744422}
+  - {fileID: 399046512}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997149267
@@ -1748,7 +1745,6 @@ SceneRoots:
   - {fileID: 1768821873}
   - {fileID: 1997149268}
   - {fileID: 2687852757728590323}
-  - {fileID: 399046512}
   - {fileID: 142703663}
   - {fileID: 662528051}
   - {fileID: 1054986964960502083}
