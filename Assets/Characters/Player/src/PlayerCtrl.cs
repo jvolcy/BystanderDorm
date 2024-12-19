@@ -7,6 +7,13 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PlayerCtrl : MonoBehaviour
 {
     [SerializeField] bool DestroyIfDuplicate = true;
+    //[SerializeField] Transform LeftControllerPrefab;
+    //[SerializeField] Transform RightControllerPrefab;
+    //[SerializeField] Transform LeftHandPrefab;
+    //[SerializeField] Transform RightHandPrefab;
+    //[SerializeField] ActionBasedController LeftController;
+    //[SerializeField] ActionBasedController RightController;
+
 
     //the component that updates the hand color
     MagicColorUpdate[] magicColorUpdates;
@@ -29,14 +36,27 @@ public class PlayerCtrl : MonoBehaviour
             }
         //}
     }
-
+    /*
 
     private void Start()
     {
-        //var obj =  FindObjectOfType<MagicColorUpdate>();
-
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {            
+            Debug.Log("Switch to hands");
+            LeftController.model = LeftHandPrefab;
+            RightController.model = RightHandPrefab;
+
+            LeftController.modelPrefab = LeftHandPrefab;
+            RightController.modelPrefab = RightHandPrefab;
+
+            LeftController.
+        }
+    }
+    */
 
     /// <summary>
     /// This functionn teleports the player to the specified position and

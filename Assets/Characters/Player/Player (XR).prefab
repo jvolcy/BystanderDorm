@@ -185,10 +185,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-      propertyPath: m_ModelPrefab
-      value: 
-      objectReference: {fileID: 5378148128809724773, guid: 40be3a822a0e7a1419f95596d24ef24b, type: 3}
     - target: {fileID: 9014170784424948811, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Reticle
       value: 
@@ -207,11 +203,33 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8731676798681260077}
   m_SourcePrefab: {fileID: 100100000, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+--- !u!114 &7962569093033023086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9014170785475729497, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1412018082188152375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7962569094696678920 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
   m_PrefabInstance: {fileID: 1412018082188152375}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7962569094853367438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1412018082188152375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8743700148329803607 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7696548424635294048, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
@@ -230,6 +248,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyIfDuplicate: 1
+  LeftControllerPrefab: {fileID: 8758423527188247893, guid: 1392f805216c47742996d4742c80721c, type: 3}
+  RightControllerPrefab: {fileID: 4283425761326543017, guid: 9f3369e30fbd31f4bb596b1a99babe83, type: 3}
+  LeftHandPrefab: {fileID: 7818597657786091110, guid: d1a83a1788023bf43acf43dea371aba7, type: 3}
+  RightHandPrefab: {fileID: 3770116770657314369, guid: 40be3a822a0e7a1419f95596d24ef24b, type: 3}
+  LeftController: {fileID: 7962569093033023086}
+  RightController: {fileID: 7962569094853367438}
 --- !u!54 &8731676798681260077
 Rigidbody:
   m_ObjectHideFlags: 0
