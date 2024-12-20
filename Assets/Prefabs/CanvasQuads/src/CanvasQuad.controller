@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FadeToTransparent
+  m_Name: FadeOut
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -118,7 +118,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TransparentInstantly
+  m_Name: FadeOutInstantly
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -245,7 +245,7 @@ AnimatorController:
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -286,27 +286,27 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -4124089876229343462}
-    m_Position: {x: 40, y: 380, z: 0}
+    m_Position: {x: 480, y: 570, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8242436100654086900}
-    m_Position: {x: -180, y: 380, z: 0}
+    m_Position: {x: 260, y: 570, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8644163377151151732}
-    m_Position: {x: 40, y: 330, z: 0}
+    m_Position: {x: 480, y: 520, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6084536146558222163}
-    m_Position: {x: -180, y: 330, z: 0}
+    m_Position: {x: 260, y: 520, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2034893540775189402}
-    m_Position: {x: 30, y: 210, z: 0}
+    m_Position: {x: 470, y: 400, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_AnyStatePosition: {x: 490, y: 210, z: 0}
+  m_EntryPosition: {x: 490, y: 310, z: 0}
+  m_ExitPosition: {x: 250, y: 210, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -2034893540775189402}
 --- !u!1102 &6084536146558222163
@@ -316,7 +316,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FadeToOpaque
+  m_Name: FadeIn
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -342,7 +342,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OpaqueInstantly
+  m_Name: FadeInInstantly
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

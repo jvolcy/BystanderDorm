@@ -145,9 +145,9 @@ public class CanvasQuad : MonoBehaviour
 
         //faded on startup?
         if (FadedOutOnStart)
-        { FadeToTransparent(true); }
+        { FadeOut(true); }
         else
-        { FadeToOpaque(true); }
+        { FadeIn(true); }
 
     } //Start()    
 
@@ -191,15 +191,15 @@ public class CanvasQuad : MonoBehaviour
 
 
 
-    public void FadeToOpaque(bool NoAnimation = false)
+    public void FadeIn(bool NoAnimation = false)
     {
         if (NoAnimation)
         {
-            animator.Play("OpaqueInstantly");
+            animator.Play("FadeInInstantly");
         }
         else if (isFadedOut)
         {
-            animator.Play("FadeToOpaque");
+            animator.Play("FadeIn");
         }
 
         isFadedOut = false;
@@ -207,15 +207,15 @@ public class CanvasQuad : MonoBehaviour
 
 
 
-    public void FadeToTransparent(bool NoAnimation = false)
+    public void FadeOut(bool NoAnimation = false)
     {
         if (NoAnimation)
         {
-            animator.Play("TransparentInstantly");
+            animator.Play("FadeOutInstantly");
         }
         else if (!isFadedOut)
         {
-            animator.Play("FadeToTransparent");
+            animator.Play("FadeOut");
         }
 
         isFadedOut = true;
