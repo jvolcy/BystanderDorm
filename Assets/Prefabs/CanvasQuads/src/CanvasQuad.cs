@@ -35,6 +35,22 @@ public class CanvasQuad : MonoBehaviour
     public float DistanceFromCamera = 0.5f;
     public float Scale = 0.5f;
 
+    [SerializeField][Tooltip("Whether or not the CanvasQuad is visible on startup.")]
+    bool MinimizeOnStart = true;
+
+    [SerializeField]
+    [Tooltip("Whether or not the CanvasQuad is faded out on startup.")]
+    bool FadedOutOnStart = false;
+
+    //state variable that tracks whether or not the CanvasQuad is visible
+    bool isMinimized;
+
+    //state variable that tracks whether or not the CanvasQuad is faded out
+    bool isFadedOut;
+
+    Canvas canvas;  //the child canvas associated with this CanvasQuad
+    RectTransform canvasRectTransform;
+
     Animator animator;
     /* ======================================================================
      * Start is called before the first frame update
@@ -116,23 +132,96 @@ public class CanvasQuad : MonoBehaviour
         //get a reference to our animator
         animator = GetComponent<Animator>();
 
+        //get a reference to our Canvas child object
+        canvas = GetComponentInChildren<Canvas>();
+        canvasRectTransform = canvas.GetComponent<RectTransform>();
+
+        //visible on startup?
+        if (MinimizeOnStart)
+        { Hide(true); }
+        else
+        { Show(true); }
+
+
+        //faded on startup?
+        if (FadedOutOnStart)
+        { FadeToTransparent(true); }
+        else
+        { FadeToOpaque(true); }
+
     } //Start()    
 
     /* ======================================================================
      * Show() - uses the animator to show the canvas
      ====================================================================== */
-    public void Show()
+    public void Show(bool NoAnimation = false)
     {
-        animator.SetBool("Show", true);
+        if (NoAnimation)
+        {
+            //Debug.Log("Setting Canvas localScale to Vector3.one");
+            animator.Play("ShowInstantly");
+        }
+        else if (isMinimized)
+        {
+            //Debug.Log("Showing Canvas.");
+            animator.Play("Show");
+        }
+
+        isMinimized = false;
     }
 
     /* ======================================================================
      * Hide() - uses the animator to hide the canvas
      ====================================================================== */
-    public void Hide()
+    public void Hide(bool NoAnimation = false)
     {
-        animator.SetBool("Show", false);
+        if (NoAnimation)
+        {
+            //Debug.Log("Setting Canvas localScale to Vector3.zero");
+            animator.Play("HideInstantly");
+        }
+        else if (!isMinimized)
+        {
+            //Debug.Log("Hinding Canvas.");
+            animator.Play("Hide");
+        }
+
+        isMinimized = true;
     }
+
+
+
+    public void FadeToOpaque(bool NoAnimation = false)
+    {
+        if (NoAnimation)
+        {
+            animator.Play("OpaqueInstantly");
+        }
+        else if (isFadedOut)
+        {
+            animator.Play("FadeToOpaque");
+        }
+
+        isFadedOut = false;
+    }
+
+
+
+    public void FadeToTransparent(bool NoAnimation = false)
+    {
+        if (NoAnimation)
+        {
+            animator.Play("TransparentInstantly");
+        }
+        else if (!isFadedOut)
+        {
+            animator.Play("FadeToTransparent");
+        }
+
+        isFadedOut = true;
+    }
+
+
 }
 
     /* ======================================================================
