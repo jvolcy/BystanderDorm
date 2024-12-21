@@ -232,8 +232,8 @@ GameObject:
   - component: {fileID: 7861631514568606678}
   - component: {fileID: 4931647713294890338}
   - component: {fileID: 6946993013623368958}
-  - component: {fileID: 1427252742577933808}
   - component: {fileID: 3216106401530519020}
+  - component: {fileID: 626051059796772909}
   m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
@@ -324,25 +324,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1427252742577933808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866722409022469405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe3cda3e244f60419474164d6ba3b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 0
-  m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
-  m_MaxDistance: 1000
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!225 &3216106401530519020
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -355,6 +336,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &626051059796772909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866722409022469405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &3950132620794317281
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +457,8 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   DistanceFromCamera: 0.5
   Scale: 0.5
-  VisibleOnStart: 0
+  MinimizeOnStart: 1
+  FadedOutOnStart: 0
 --- !u!95 &6606058167033182218
 Animator:
   serializedVersion: 5
@@ -579,8 +580,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.69182384, g: 0.69182384, b: 0.69182384, a: 1}
+    m_PressedColor: {r: 0.57232696, g: 0.5669276, b: 0.5669276, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1

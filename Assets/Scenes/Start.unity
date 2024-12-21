@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: DistanceFromCamera
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1427252742577933808, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1483998968291224525, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_text
       value: '<color=#ee0000><size=+40><b>WARNING</b></size></color>
@@ -331,6 +335,10 @@ PrefabInstance:
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451550800822173691, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7468503148277414038, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -428,7 +436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &244671476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,7 +2198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7468503148277414038, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2314,7 +2322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: DontDestroyObjList.Array.size
@@ -2334,7 +2342,7 @@ PrefabInstance:
       objectReference: {fileID: 1152119207}
     - target: {fileID: 8980840103790921965, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8980840103790921965, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2342,7 +2350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980840103790921965, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8980840103790921965, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: m_LocalRotation.w

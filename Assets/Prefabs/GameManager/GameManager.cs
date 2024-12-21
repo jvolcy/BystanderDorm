@@ -24,17 +24,21 @@ public class GameManager : MonoBehaviour
     ====================================================================== */
     private void Awake()
     {
-        EnableDisableXrAndDesktopObjs();
 
         if (instance == null)
         {
+            Debug.Log("New GM.");
             instance = this;
         }
         else
         {
+            Debug.Log("A GM already exists... self-terminating.");
             Destroy(this);
             return;
         }
+
+        Debug.Log("Enable/Disable XR/DESKTOP objects...");
+        EnableDisableXrAndDesktopObjs();
 
         /* Per https://docs.unity3d.com/ScriptReference/MonoBehaviour.Awake.html:
          * For active GameObjects placed in a Scene, Unity calls Awake after all
