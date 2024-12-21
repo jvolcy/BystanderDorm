@@ -23,7 +23,7 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        FindObjectOfType<GameManager>().EnableDisableXrAndDesktopObjs();
+        //FindObjectOfType<GameManager>().EnableDisableXrAndDesktopObjs();
 
         //if (DestroyIfDuplicate)
         //{

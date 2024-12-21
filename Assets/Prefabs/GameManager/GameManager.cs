@@ -7,9 +7,20 @@ public class GameManager : MonoBehaviour
 {
     //Select the playmode with an enum
     enum PlayMode { Desktop, XR }
+    [Header("Play Mode")]
     [SerializeField] PlayMode playMode = PlayMode.Desktop;
 
+    [Space]
+    [Header("Player Prefabs")]
+    [SerializeField] GameObject DesktopPlayerPrefab;
+    [SerializeField] GameObject XRPlayerPrefab;
+
+    [Space]
+    [Header("Persistent GOs")]
     [SerializeField] GameObject[] DontDestroyObjList;
+
+    [Space]
+    [Header("Scenes")]
     [SerializeField] string FirstScene = "Campus Scene";
 
     //the public sceneManager is used by the timelines
@@ -55,6 +66,14 @@ public class GameManager : MonoBehaviour
             { quad.playMode = CanvasQuad.PlayMode.XR; }
         }
 
+        //instantiate the player
+
+        if (playMode == PlayMode.Desktop)
+        { Player = Instantiate(DesktopPlayerPrefab); }
+        else
+        { Player = Instantiate(XRPlayerPrefab); }
+        DontDestroyOnLoad(Player);
+
         //configure our persistent objects
         foreach (var obj in DontDestroyObjList)
         {
@@ -74,7 +93,7 @@ public class GameManager : MonoBehaviour
 
         //find the Player object.  There should be on under XR
         //and one under DESKTOP, but only one of these will be active.
-        Player = GameObject.FindGameObjectWithTag("Player");
+        //Player = GameObject.FindGameObjectWithTag("Player");
 
         //SceneManager.LoadScene(FirstScene);
     }
