@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 2d9dcda77061c496e9738eab32777f1b, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5d2f899f723574c2f9dbf09bf5697096, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -688,10 +688,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2019885803002733844, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2660548357633104252, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: On
       value: 0
@@ -711,10 +707,6 @@ PrefabInstance:
     - target: {fileID: 3681920611879291476, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: On
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734799602971807401, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
-      propertyPath: m_text
-      value: Belles Dormatory
       objectReference: {fileID: 0}
     - target: {fileID: 4025272999584891785, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: m_LocalPosition.x

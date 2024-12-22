@@ -11053,13 +11053,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7339995488845243650}
     m_Modifications:
+    - target: {fileID: 53308956980374402, guid: 8a059b2bc263a4f68a3aa1519dd63e70, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2323127251912716113, guid: 8a059b2bc263a4f68a3aa1519dd63e70, type: 3}
       propertyPath: m_Name
       value: BuildingName (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3414250966505734207, guid: 8a059b2bc263a4f68a3aa1519dd63e70, type: 3}
       propertyPath: m_text
-      value: Dormatory
+      value: Belles Dormatory
       objectReference: {fileID: 0}
     - target: {fileID: 6479610827374049521, guid: 8a059b2bc263a4f68a3aa1519dd63e70, type: 3}
       propertyPath: m_LocalScale.x
