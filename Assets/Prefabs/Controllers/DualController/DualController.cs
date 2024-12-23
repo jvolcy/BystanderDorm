@@ -26,7 +26,11 @@ public class DualController : MonoBehaviour
         }
     }
 
-
+    // Start is called before the first frame update
+    void Start()
+    {
+        UseHandController(UseHandControllerOnStartup);
+    }
 
     // Update is called once per frame
     void Update()

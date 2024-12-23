@@ -18,6 +18,8 @@ public class PlayerCtrl : MonoBehaviour
     //the component that updates the hand color
     MagicColorUpdate[] magicColorUpdates;
 
+    DualController[] dualControllers;
+
     /// <summary>
     /// Awake(): Enforece singleton: if there is already an object tagged as Player, self-destruct
     /// </summary>
@@ -36,27 +38,41 @@ public class PlayerCtrl : MonoBehaviour
             }
         //}
     }
-    /*
+    
 
     private void Start()
     {
+        dualControllers = GetComponentsInChildren<DualController>();
+        Debug.Log("PlayerCtrl: found " + dualControllers.Length + " DualController.");
+
+        foreach (DualController dc in dualControllers)
+        {
+            dc.UseHandController(true);
+        }
+        
     }
 
+    
     private void Update()
     {
+
+
+
+        
         if (Input.GetKeyDown(KeyCode.M))
-        {            
-            Debug.Log("Switch to hands");
-            LeftController.model = LeftHandPrefab;
-            RightController.model = RightHandPrefab;
+        {
+            FindObjectsOfType<>()
+            dualControllers = GetComponentsInChildren<DualController>();
+            Debug.Log("PlayerCtrl: found " + dualControllers.Length + " DualController.");
 
-            LeftController.modelPrefab = LeftHandPrefab;
-            RightController.modelPrefab = RightHandPrefab;
-
-            LeftController.
+            foreach (DualController dc in dualControllers)
+            {
+                dc.UseHandController(true);
+            }
         }
+    
     }
-    */
+    
 
     /// <summary>
     /// This functionn teleports the player to the specified position and
