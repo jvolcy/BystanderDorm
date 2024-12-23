@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_ModelPrefab
       value: 
-      objectReference: {fileID: 4413685335112580188, guid: 65f1919e52085b342a7c8484e0d5cc86, type: 3}
+      objectReference: {fileID: 2218882892380450043, guid: 2422cb8902eb5e64db63017df132cef6, type: 3}
     - target: {fileID: 9014170784424948811, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Reticle
       value: 
@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: 9014170785475729497, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_ModelPrefab
       value: 
-      objectReference: {fileID: 8658206698957341818, guid: a08883442f2e51e4990a9e2d49209249, type: 3}
+      objectReference: {fileID: 2218882892380450043, guid: 9b6ac076e856f6d41841e39fb280d27d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3127728406573987378, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
