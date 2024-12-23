@@ -1,0 +1,105 @@
+<b><size=+8>Development Team</size></b>
+Jerry Volcy, Ph.D., SpelmanXR
+<size=-4><color=#DDDDBB>Lead</color></size>
+
+TBD
+<size=-4><color=#DDDDBB>tbd</color></size>
+
+<b><size=+8>Voice Actors</size></b>
+Mariama Barry, Spelman College Class of ???
+<size=-4><color=#DDDDBB>Girlfriend</color></size>
+
+Gianna Gwinn, Spelman College Class of 2025
+<size=-4><color=#DDDDBB>Player Internal Voice</color></size>
+
+<b><size=+8>Consultants</size></b>
+TBD
+
+<b><size=+8>Sound FX</size></b>
+CapsLok
+<size=-4><color=#DDDDBB><b>Door</color></b> - https://freesound.org/people/CapsLok/sounds/181259/?
+Squeaky Wooden Door Open Close.wav -- https://freesound.org/s/181259/ -- License: Creative Commons 0</size>
+
+[Room Sound Track (3 clips)]
+craigsmith
+<size=-4><color=#DDDDBB>Fight/Fall Sound<b>Door</color></b> - S03-21 Fight and body falls on stone.wav -- https://freesound.org/s/675925/ -- License: Creative Commons 0</size>
+
+RoughCoast
+<size=-4><color=#DDDDBB><b>Woman Screaming</color></b> - woman-screaming-and-crying-no-sound-effect-238459689_nw_prev.mp4 -- https://www.pond5.com/sound-effects/item/238459689-woman-screaming-and-crying-no-horror-movie-sound-effect -- A Woman Screaming And Crying "No" Horror Movie Sound Effect</size>
+
+AderuMoro
+<size=-4><color=#DDDDBB><b>Terrified Screams</color></b> - Terrified Screams - young lady -- https://freesound.org/s/264918/ -- License: Attribution 4.0</size>
+
+bulbastre
+<size=-4><color=#DDDDBB><b>Ambient Dorm Sound</color></b> - indoors dorm dormitory ambient room tone distant traffic in street 2.wav -- https://freesound.org/s/126927/ -- License: Attribution 4.0</size>
+
+arnaud coutancier
+<size=-4><color=#DDDDBB></color><b>Night Sound</b> - At night -- https://freesound.org/s/456986/ -- License: Attribution NonCommercial 3.0</size>
+
+vr
+<size=-4><color=#DDDDBB>Magic Sound FX<b></color></b> -- https://freesound.org/people/vr/sounds/349465/
+magic_bell.wav -- https://freesound.org/s/349465/ -- License: Attribution 4.0</size>
+
+
+<b><size=+8>3D Assets</size></b>
+[Campus]
+Lowpoly British School Building - by Gabriel Quintana
+https://www.fab.com/listings/fa1b793d-5432-46d0-80a1-7a07497dee2d?quickBuyOfferId=859345e5a7c44778844558f76bbcd575
+
+[Hallway]
+https://sketchfab.com/3d-models/building-hallway-b407c0f316b94b1cbcf0bf254c3c2442
+"Building Hallway" (https://skfb.ly/oqAQJ) by jimbogies is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Dorm Room]
+https://sketchfab.com/3d-models/warm-dorm-room-b387c759822241fb966d0d573455cbd3
+"Warm Dorm Room" (https://skfb.ly/oxpqr) by darylsteak is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Direction Arrows]
+https://sketchfab.com/3d-models/direction-arrow-6ef46718c7b242e39fcad7f27ee858a5#download
+"Direction Arrow" (https://skfb.ly/ozHGW) by Alihan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Digital Clock]
+https://sketchfab.com/3d-models/digital-clock-456fc79850774ceb81727dcc76de7808#download
+"Digital_Clock" (https://skfb.ly/oNsIN) by .Krissami. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Picture Frame (No Men Allowed Signs)]
+https://sketchfab.com/3d-models/picture-frame-db449a93609a40c3a5ea26b330b0b3b6
+"Picture Frame" by suryajayabudimulia is License under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Lamp]
+"Table Lamp" (https://skfb.ly/oANpU) by M. Zamzam is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Campus Shrubs]
+"Stylized Bush" (https://skfb.ly/oTDpD) by Daniel is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Low Poly Trees]
+"Trees Low Poly" (https://skfb.ly/6YpAS) by Igor_K. is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Night Skybox]
+10 Skyboxes Pack : Day - Night by Wello Soft
+https://assetstore.unity.com/packages/2d/textures-materials/sky/10-skyboxes-pack-day-night-32236
+
+[Building Sign Light]
+"Wall Light" (https://skfb.ly/oPWBY) by Blizzy is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Silhouette of female hand]
+"Silhouette of female hand isolated on a white background" by Nobilior 
+https://www.alamy.com/silhouette-of-female-hand-isolated-on-a-white-background-image184649914.html
+
+
+<b><size=+8>Fonts</size></b>
+[Digital Clock Fonts]
+By: Style-7
+https://www.1001fonts.com/digital-7-font.html
+Sizenko Alexander
+http://www.styleseven.com
+Created: October 7 2008
+
+[Cavolini Font]
+by Carl Crossgrove - https://www.cufonfonts.com/font/cavolini
+
+[MMM Dispenser Font]
+Borel Font
+https://fonts.google.com/specimen/Borel
+The Borel Project Authors (https://github.com/RosaWagner/Borel)
+
