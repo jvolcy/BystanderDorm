@@ -1,0 +1,5 @@
+This project consists of a Meta Quest 3 right hand controller.  This model is suitable for use in VR simulation (the model is the one found in the version #### release of the Unity First Person Starter package.
+To Quest 3 controllers are mirror images of each other.  So, to create a left hand controller, simply scale the right hand controller by -1 in the X direction.  Note that you will also need to scale the thumbstick X value by -1 if you use the controller animations.  See the example TestXRController C# file.  Add this script to an empty game object and use its serialized fields in the Inspector to exercise the controls on the controller.
+
+
+
