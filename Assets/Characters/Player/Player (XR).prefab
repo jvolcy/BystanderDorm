@@ -185,10 +185,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 4413685335112580188, guid: 65f1919e52085b342a7c8484e0d5cc86, type: 3}
     - target: {fileID: 9014170784424948811, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Reticle
       value: 
       objectReference: {fileID: 2743923082992707319, guid: 591ed3fc8306d264680187d065c7b933, type: 3}
+    - target: {fileID: 9014170785475729497, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 8658206698957341818, guid: a08883442f2e51e4990a9e2d49209249, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3127728406573987378, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
