@@ -832,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: DontDestroyObjList.Array.data[1]
@@ -2610,7 +2610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4523931987258090861, guid: 85a44223598b5b14c858ded3d3d37a1c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.2
+      value: 5.83
       objectReference: {fileID: 0}
     - target: {fileID: 4523931987258090861, guid: 85a44223598b5b14c858ded3d3d37a1c, type: 3}
       propertyPath: m_LocalPosition.z
