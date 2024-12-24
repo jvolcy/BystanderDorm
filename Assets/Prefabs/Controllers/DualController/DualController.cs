@@ -9,9 +9,18 @@ public class DualController : MonoBehaviour
     //[SerializeField] ActionBasedController DeviceController;
     [SerializeField] Transform HandController;
     [SerializeField] Transform DeviceController;
-    [SerializeField] bool UseHandControllerOnStartup = false;
 
+    //This static flag "UsingHandController" ensures that
+    //all DualController objects are configured in the
+    //same way:  they either both show a hand or
+    //both show a device.
+    static bool UsingHandController = false;
 
+    /// <summary>
+    /// Function that sets the display mode to either
+    /// "hand" or "device" model.
+    /// </summary>
+    /// <param name="val">true="hand" model; false="device" model.</param>
     public void UseHandController(bool val)
     {
         if (val)
@@ -24,18 +33,28 @@ public class DualController : MonoBehaviour
             DeviceController.gameObject.SetActive(true);
             HandController.gameObject.SetActive(false);
         }
+
+        UsingHandController = val;
     }
 
-    // Start is called before the first frame update
+   /// <summary>
+   /// One hand will set the static UsingHandController flag.  When
+   /// the second hand is instantiated, it will assume the
+   /// same configuration.  This way, we avoid the situation
+   /// where one had is in "hand" mode and the other is in
+   /// "device" mode.
+   /// </summary>
     void Start()
     {
-        UseHandController(UseHandControllerOnStartup);
+        UseHandController(UsingHandController);
     }
 
+    /*
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H)) { UseHandController(true); }
         if (Input.GetKeyDown(KeyCode.D)) { UseHandController(false); }
     }
+    */
 }

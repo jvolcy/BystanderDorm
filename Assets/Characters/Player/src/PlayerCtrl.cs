@@ -19,6 +19,8 @@ public class PlayerCtrl : MonoBehaviour
     MagicColorUpdate[] magicColorUpdates;
 
     DualController[] dualControllers;
+    bool ControllersFound = false;
+    bool UsingHandControls;
 
     /// <summary>
     /// Awake(): Enforece singleton: if there is already an object tagged as Player, self-destruct
@@ -38,41 +40,50 @@ public class PlayerCtrl : MonoBehaviour
             }
         //}
     }
-    
+
 
     private void Start()
     {
-        dualControllers = GetComponentsInChildren<DualController>();
-        Debug.Log("PlayerCtrl: found " + dualControllers.Length + " DualController.");
+        LocateControllers();
+        UseHandControls(false);
+    }
+
+    public void UseHandControls(bool val)
+    {
+        if (!ControllersFound) LocateControllers();
 
         foreach (DualController dc in dualControllers)
         {
-            dc.UseHandController(true);
+            dc.UseHandController(val);
         }
-        
+
+        UsingHandControls = val;
     }
 
+    
     
     private void Update()
     {
 
-
-
-        
-        if (Input.GetKeyDown(KeyCode.M))
+        //toggle between hand and device control visuals
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            FindObjectsOfType<>()
-            dualControllers = GetComponentsInChildren<DualController>();
-            Debug.Log("PlayerCtrl: found " + dualControllers.Length + " DualController.");
-
-            foreach (DualController dc in dualControllers)
-            {
-                dc.UseHandController(true);
-            }
+            UseHandControls(!UsingHandControls);
         }
     
     }
-    
+
+    void LocateControllers()
+    {
+        //if we've already found both controllers, do nothing
+        if (ControllersFound) return;
+
+        dualControllers = GetComponentsInChildren<DualController>(true);
+        Debug.Log("PlayerCtrl: found " + dualControllers.Length + " DualController.");
+
+        ControllersFound = dualControllers.Length == 2;
+    }
+
 
     /// <summary>
     /// This functionn teleports the player to the specified position and

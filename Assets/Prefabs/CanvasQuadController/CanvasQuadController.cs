@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -94,5 +95,13 @@ public class CanvasQuadController : MonoBehaviour
     public void kill(int index)
     {
         Destroy(SecondaryCanvasQuadGroup[index]);
+    }
+
+    public void UnSelectAll()
+    {
+        for (int i = 0; i < SecondaryCanvasQuadGroup.Length; i++)
+        {
+            UnSelect(i);
+        }
     }
 }

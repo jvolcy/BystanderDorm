@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     public SceneManager sceneManager;
 
     GameObject Player;
+    XROrigin xrOrigin = null;
 
     static GameManager instance;
 
@@ -71,7 +73,14 @@ public class GameManager : MonoBehaviour
         if (playMode == PlayMode.Desktop)
         { Player = Instantiate(DesktopPlayerPrefab); }
         else
-        { Player = Instantiate(XRPlayerPrefab); }
+        {
+            Player = Instantiate(XRPlayerPrefab);
+            xrOrigin = Player.GetComponentInChildren<XROrigin>();
+            if (xrOrigin == null)
+            {
+                Debug.Log("GameManager: Could not find the XROrigin. ***************************");
+            }
+        }
         DontDestroyOnLoad(Player);
 
         //configure our persistent objects
@@ -177,6 +186,48 @@ public class GameManager : MonoBehaviour
         //load the next scene
         SceneManager.LoadScene(sceneName);
     }
+
+
+    public void UsePlayerHandModels(bool val)
+    {
+        if (playMode == PlayMode.XR)
+        {
+            if (!xrOrigin)
+            {
+                Debug.Log("ERROR GameManager:UsePlayerHandModels() - No XROrigin.");
+                return;
+            }
+            xrOrigin.GetComponent<PlayerCtrl>().UseHandControls(val);
+        }
+    }
+
+    public void SetHandColor(string clrStr)
+    {
+        Color clr;
+        if (ColorUtility.TryParseHtmlString(clrStr, out clr))
+        {
+            SetHandColor(clr);
+        }
+        else
+        {
+            Debug.Log("GameManager: Failed to parse color sting " + clrStr);
+        }
+    }
+
+    public void SetHandColor(Color clr)
+    {
+        if (playMode == PlayMode.XR)
+        {
+            if (!xrOrigin)
+            {
+                Debug.Log("ERROR GameManager:SetHandColor() - No XROrigin.");
+                return;
+            }
+            xrOrigin.GetComponent<PlayerCtrl>().SetHandColor(clr);
+        }
+    }
+
+
 
 }
 
