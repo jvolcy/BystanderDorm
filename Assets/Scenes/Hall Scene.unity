@@ -6045,19 +6045,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2269192837482206668}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: Play
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: ElevatorOpen
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1357681902}
@@ -9378,8 +9366,10 @@ PlayableDirector:
   - key: {fileID: 3553790744604258942, guid: 05fc9ff82fb3b4afeae0792eaaaa1329, type: 2}
     value: {fileID: 1715771168}
   - key: {fileID: 2173683139180739009, guid: 05fc9ff82fb3b4afeae0792eaaaa1329, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 2269192837482206668}
   - key: {fileID: 8903798922865674066, guid: 05fc9ff82fb3b4afeae0792eaaaa1329, type: 2}
+    value: {fileID: 1715771168}
+  - key: {fileID: -7578876959239183612, guid: 05fc9ff82fb3b4afeae0792eaaaa1329, type: 2}
     value: {fileID: 1715771168}
   m_ExposedReferences:
     m_References: []
