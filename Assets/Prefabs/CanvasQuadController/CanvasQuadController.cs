@@ -44,15 +44,13 @@ public class CanvasQuadController : MonoBehaviour
     /// <summary>
     /// for Debug only.
     /// </summary>
+    /*
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.O)) FadeOut();
         if (Input.GetKeyDown(KeyCode.I)) FadeIn();
-        if (Input.GetKeyDown(KeyCode.Alpha1)) Select(0);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) UnSelect(0);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) Select(1);
-        if (Input.GetKeyDown(KeyCode.Alpha4)) UnSelect(1);
     }
+    */
 
     /// <summary>
     /// Helper function to fade out (fade to black) the display.
