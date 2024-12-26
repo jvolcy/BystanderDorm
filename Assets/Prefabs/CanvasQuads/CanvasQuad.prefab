@@ -459,6 +459,7 @@ MonoBehaviour:
   Scale: 0.5
   MinimizeOnStart: 1
   FadedOutOnStart: 0
+  CanvasChildObj: {fileID: 1866722409022469405}
 --- !u!95 &6606058167033182218
 Animator:
   serializedVersion: 5

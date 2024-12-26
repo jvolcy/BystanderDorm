@@ -48,7 +48,9 @@ public class CanvasQuad : MonoBehaviour
     //state variable that tracks whether or not the CanvasQuad is faded out
     bool isFadedOut;
 
-    Canvas canvas;  //the child canvas associated with this CanvasQuad
+    [SerializeField]
+    GameObject CanvasChildObj;  //the child Canvas object associated with this CanvasQuad
+
     RectTransform canvasRectTransform;
 
     Animator animator;
@@ -133,7 +135,7 @@ public class CanvasQuad : MonoBehaviour
         animator = GetComponent<Animator>();
 
         //get a reference to our Canvas child object
-        canvas = GetComponentInChildren<Canvas>();
+        var canvas = GetComponentInChildren<Canvas>();
         canvasRectTransform = canvas.GetComponent<RectTransform>();
 
         //visible on startup?
@@ -151,11 +153,34 @@ public class CanvasQuad : MonoBehaviour
 
     } //Start()    
 
+
+    /// <summary>
+    /// At the end of the FadeOut and Hide animations, we signal that the
+    /// CanvasQuad needs to be disabled.  That prevents hotkey maps from one
+    /// quad being activated while we are viewing a different quad.  Only
+    /// one quad is active at a time.  Note that we re-enable individual
+    /// quads in the Show() and FadeIn() functions.
+    /// </summary>
+    public void AnimationEnded(string caller)
+    {
+        //Debug.Log(caller + " disabling canvas ("+name+")...");
+        if (CanvasChildObj)
+        {
+            CanvasChildObj.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("CanvasQuad:AnimationEnded --> canvas is null.");
+        }
+    }
+
     /* ======================================================================
      * Show() - uses the animator to show the canvas
      ====================================================================== */
     public void Show(bool NoAnimation = false)
     {
+        CanvasChildObj.SetActive(true);
+
         if (NoAnimation)
         {
             //Debug.Log("Setting Canvas localScale to Vector3.one");
@@ -193,6 +218,8 @@ public class CanvasQuad : MonoBehaviour
 
     public void FadeIn(bool NoAnimation = false)
     {
+        CanvasChildObj.SetActive(true);
+
         if (NoAnimation)
         {
             animator.Play("FadeInInstantly");
