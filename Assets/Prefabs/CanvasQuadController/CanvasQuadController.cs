@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// CanvasQuads are floating UI Panels that attach themselves as children of
@@ -26,6 +27,19 @@ public class CanvasQuadController : MonoBehaviour
         "at a time. When you select to display any one of these, all others " +
         "are automatically de-selected.")]
     public CanvasQuad[] SecondaryCanvasQuadGroup;
+
+
+    private void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        Debug.Log("CanvasQuadController: Loaded scene " + scene.name);
+        FadeIn();
+    }
 
     /// <summary>
     /// for Debug only.
