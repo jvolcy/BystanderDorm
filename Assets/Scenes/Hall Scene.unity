@@ -202,12 +202,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1483998968291224525, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_text
-      value: '9:00pm
+      value: '9:03pm
 
         <color=#ee0000><size=+40><b>Y</b></size></color>ou
-        are returning to your room tired from a long study session for an upcoming
-        exam.  You have a chatty neighbor you would rather avoid today.  But the
-        sound of the elevator always clues her in that someone is approaching.'
+        have a chatty neighbor you would rather avoid today.  But the sound of the
+        elevator always clues her in that someone is approaching.'
       objectReference: {fileID: 0}
     - target: {fileID: 1483998968291224525, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_margin.w
