@@ -32,9 +32,12 @@ public class GameManager : MonoBehaviour
 
     static GameManager instance;
 
-   /* ======================================================================
-    * 
-    ====================================================================== */
+    string CurrentScene;
+    string LastScene;
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
     private void Awake()
     {
 
@@ -96,9 +99,11 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Start()
     {
+        CurrentScene = SceneManager.GetActiveScene().name;
+        LastScene = "";
 
         //subscribe to the scene load event
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        //SceneManager.sceneLoaded += OnSceneLoaded;
 
         //find the Player object.  There should be on under XR
         //and one under DESKTOP, but only one of these will be active.
@@ -161,22 +166,29 @@ public class GameManager : MonoBehaviour
     /* ======================================================================
      * 
      ====================================================================== */
+    /*
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        Debug.Log("GM: Loaded scene " + scene.name);
+        LastScene = CurrentScene;
+        CurrentScene = scene.name;
+
+        Debug.Log("GM: Loaded scene " + CurrentScene + "(from " + LastScene + ").");
         //Look for XR and DESKTOP labels and enable/disable accordingly
         EnableDisableXrAndDesktopObjs();
     }
+    */
 
     /* ======================================================================
      * 
      ====================================================================== */
+    /*
     public void LoadNextScene()
     {
         //load the next scene
         Debug.Log("Load Next Scene...");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    */
 
     /* ======================================================================
      * 
@@ -184,7 +196,25 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         //load the next scene
-        SceneManager.LoadScene(sceneName);
+        Scene scene;
+
+        scene = SceneManager.LoadScene(sceneName, new LoadSceneParameters(LoadSceneMode.Single));
+
+        if (scene == null)
+        {
+            Debug.Log("GM: Failed to Load scene " + sceneName + ".");
+            return;
+        }
+
+        LastScene = CurrentScene;
+        CurrentScene = sceneName;
+        Debug.Log("GM: Loaded scene " + CurrentScene + " (from " + LastScene + ").");
+
+        if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
+        {
+            Debug.Log("Relocating Player *********");
+        }
+
     }
 
 
