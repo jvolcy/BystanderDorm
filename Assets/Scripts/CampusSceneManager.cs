@@ -6,31 +6,34 @@ public class CampusSceneManager : MonoBehaviour
 {
     GameManager gameManager;
 
-    // Start is called before the first frame update
+    /*
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        if (!gameManager)
-        {
-            Debug.Log("MelaninSceneManager:Start - did not find an GameManager.");
-        }
+        FindGameManager();
     }
+    */
 
     public void LoadScene(string sceneName)
     {
+        FindGameManager();
+
         if (!gameManager)
         {
-            Debug.Log("MelaninSceneManager:LoadScene - did not find an GameManager.");
+            Debug.Log("CampusSceneManager:LoadScene - did not find an GameManager.");
+            Debug.Log("Could not load scene " + sceneName);
             return;
         }
 
         gameManager.LoadScene(sceneName);
     }
-    /*
-    // Update is called once per frame
-    void Update()
+
+    void FindGameManager()
     {
-        
+        if (!gameManager) { gameManager = FindObjectOfType<GameManager>(); }
+
+        if (!gameManager)
+        {
+            Debug.Log("CampusSceneManager:FindGameManager - did not find a GameManager.");
+        }
     }
-    */
 }
