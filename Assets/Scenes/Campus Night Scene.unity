@@ -499,13 +499,15 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: c7937cdc39333432f979f8ec419486cd, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 4664732785093913866, guid: c7937cdc39333432f979f8ec419486cd, type: 2}
     value: {fileID: 1096592037}
+  - key: {fileID: -7036879974557852481, guid: c7937cdc39333432f979f8ec419486cd, type: 2}
+    value: {fileID: 1890877454}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &417888027
@@ -711,8 +713,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1019154825794715084, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019154825794715084, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 344120974}
+    - target: {fileID: 1019154825794715084, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019154825794715084, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019154825794715084, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019154825794715084, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3235155342816352712, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: m_LocalScale.z
@@ -772,7 +794,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5720463410883758201, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720463410883758201, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720463410883758201, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 344120974}
+    - target: {fileID: 5720463410883758201, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720463410883758201, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720463410883758201, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720463410883758201, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1151,6 +1197,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1610794696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1890877453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1890877456}
+  - component: {fileID: 1890877455}
+  - component: {fileID: 1890877454}
+  m_Layer: 0
+  m_Name: CampusNightSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1890877454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890877453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 06ae469018a0045358dc8e16dc2a9344, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1890877455}
+          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
+          m_MethodName: LoadScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hall Scene
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1890877455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890877453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184bc71252857424ea20ab68ba3f22f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1890877456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890877453}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997149267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,3 +1380,4 @@ SceneRoots:
   - {fileID: 463386927}
   - {fileID: 274443290}
   - {fileID: 1610794696}
+  - {fileID: 1890877456}

@@ -16,13 +16,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject DesktopPlayerPrefab;
     [SerializeField] GameObject XRPlayerPrefab;
 
-    [Space]
-    [Header("Persistent GOs")]
-    [SerializeField] GameObject[] DontDestroyObjList;
+    //[Space]
+    //[Header("Persistent GOs")]
+    //[SerializeField] GameObject[] DontDestroyObjList;
 
     [Space]
     [Header("Scenes")]
-    [SerializeField] string FirstScene = "Campus Scene";
+    //[SerializeField] string FirstScene = "Campus Scene";
+
+    [SerializeField] Vector3 MelaninToCampusStartPosition = new Vector3(0f, 0f, 7f);
+    [SerializeField] Vector3 MelaninToCampusStartRotation = new Vector3(0f, 180f, 0f);
+
 
     //the public sceneManager is used by the timelines
     public SceneManager sceneManager;
@@ -32,8 +36,8 @@ public class GameManager : MonoBehaviour
 
     static GameManager instance;
 
-    string CurrentScene;
-    string LastScene;
+    string CurrentScene = "None";
+    string LastScene = "None";
 
     /* ======================================================================
      * 
@@ -85,12 +89,11 @@ public class GameManager : MonoBehaviour
             }
         }
         DontDestroyOnLoad(Player);
+        DontDestroyOnLoad(this);    //GameManager
 
-        //configure our persistent objects
-        foreach (var obj in DontDestroyObjList)
-        {
-            DontDestroyOnLoad(obj);
-        }
+        //subscribe to the scene load event
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
 
@@ -99,17 +102,14 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Start()
     {
-        CurrentScene = SceneManager.GetActiveScene().name;
-        LastScene = "";
 
-        //subscribe to the scene load event
-        //SceneManager.sceneLoaded += OnSceneLoaded;
 
-        //find the Player object.  There should be on under XR
+
+
+        //find the Player object.  There should be one under XR
         //and one under DESKTOP, but only one of these will be active.
         //Player = GameObject.FindGameObjectWithTag("Player");
 
-        //SceneManager.LoadScene(FirstScene);
     }
 
 
@@ -166,17 +166,34 @@ public class GameManager : MonoBehaviour
     /* ======================================================================
      * 
      ====================================================================== */
-    /*
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
+        Debug.Log("GM: Loaded scene " + CurrentScene + "(from " + LastScene + ").");
+
         LastScene = CurrentScene;
         CurrentScene = scene.name;
 
-        Debug.Log("GM: Loaded scene " + CurrentScene + "(from " + LastScene + ").");
         //Look for XR and DESKTOP labels and enable/disable accordingly
         EnableDisableXrAndDesktopObjs();
+
+
+        //Position the player in the scene
+        if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
+        {
+            Debug.Log("Relocating Player *********");
+            Player.GetComponent<PlayerCtrl>().SetPosition(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
+        }
+        else
+        {
+            Transform playerStartPosition = GameObject.FindGameObjectWithTag("PlayerStartPosition").transform;
+            if (playerStartPosition)
+            {
+                Debug.Log("GM: Found a 'PlayerStartPosition marker' Relocating player...");
+                Player.GetComponent<PlayerCtrl>().SetPosition(playerStartPosition.position, playerStartPosition.localEulerAngles);
+            }
+        }
     }
-    */
+    
 
     /* ======================================================================
      * 
@@ -205,7 +222,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("GM: Failed to Load scene " + sceneName + ".");
             return;
         }
-
+        /*
         LastScene = CurrentScene;
         CurrentScene = sceneName;
         Debug.Log("GM: Loaded scene " + CurrentScene + " (from " + LastScene + ").");
@@ -213,8 +230,9 @@ public class GameManager : MonoBehaviour
         if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
         {
             Debug.Log("Relocating Player *********");
+            Player.GetComponent<PlayerCtrl>().SetPosition(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
         }
-
+        */
     }
 
 

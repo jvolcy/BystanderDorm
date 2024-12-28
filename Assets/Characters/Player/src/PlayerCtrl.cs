@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerCtrl : MonoBehaviour
     //[SerializeField] ActionBasedController LeftController;
     //[SerializeField] ActionBasedController RightController;
 
+
+    //public XRInputSubsystem inputSubsystem;
 
     //the component that updates the hand color
     MagicColorUpdate[] magicColorUpdates;
@@ -135,5 +138,24 @@ public class PlayerCtrl : MonoBehaviour
             Destroy(renderer.transform.parent.gameObject, 0.5f);
         }
     }
+
+    /* ======================================================================
+     * 
+     ====================================================================== */
+    public void SetPosition(Vector3 position, Vector3 localEulerAngles)
+    {
+        transform.position = position;
+        transform.localEulerAngles = localEulerAngles;
+
+        //inputSubsystem.TryRecenter();
+
+        //var cam = GameObject.FindGameObjectWithTag("MainCamera"); ;
+        //cam.transform.position = Vector3.zero;
+        //cam.transform.rotation = Quaternion.identity;
+
+        Physics.SyncTransforms();
+    }
+
+
 
 }

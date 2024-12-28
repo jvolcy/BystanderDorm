@@ -23,7 +23,9 @@ public class PlayerStartPosition : MonoBehaviour
 
         if (AutoMovePlayerOnSceneLoad)
         {
-            SetPlayerStartPosition();
+            //SetPlayerStartPosition();
+            Player.GetComponent<PlayerCtrl>().SetPosition(transform.position, transform.localEulerAngles);
+
         }
 
         //subscribe to the scene load event
@@ -46,6 +48,7 @@ public class PlayerStartPosition : MonoBehaviour
     /* ======================================================================
      * 
      ====================================================================== */
+    /*
     void SetPlayerStartPosition()
     {
         Player.transform.position = transform.position;
@@ -59,14 +62,15 @@ public class PlayerStartPosition : MonoBehaviour
 
         Physics.SyncTransforms();
     }
-
+    */
     /* ======================================================================
      * 
      ====================================================================== */
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         Debug.Log("PlayerStartPosition: Loaded scene " + scene.name);
-        SetPlayerStartPosition();
+        Player.GetComponent<PlayerCtrl>().SetPosition(transform.position, transform.localEulerAngles);
+        //SetPlayerStartPosition();
     }
 
 }
