@@ -5900,6 +5900,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e279bd63e8b114d30b9110ed0526f8a0, type: 2}
     - {fileID: 11400000, guid: 1b61dac59f7bb4b4a88bd4e6b8349f22, type: 2}
     - {fileID: 11400000, guid: c6aa65531dc234f588cca086ef8705a0, type: 2}
+    - {fileID: 11400000, guid: 5976fca4ec55f4d9c803a852f42fa85e, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -6093,6 +6094,20 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1765010638}
+          m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
+          m_MethodName: Select
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -6554,7 +6569,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5860274659230436438, guid: c36b4212c61b14dd4848df24a5486b48, type: 3}
       propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5860274659230436438, guid: c36b4212c61b14dd4848df24a5486b48, type: 3}
       propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6567,7 +6582,7 @@ PrefabInstance:
     - target: {fileID: 5860274659230436438, guid: c36b4212c61b14dd4848df24a5486b48, type: 3}
       propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 933104645}
     - target: {fileID: 5860274659230436438, guid: c36b4212c61b14dd4848df24a5486b48, type: 3}
       propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -6598,7 +6613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860274659230436438, guid: c36b4212c61b14dd4848df24a5486b48, type: 3}
       propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5860274659230436438, guid: c36b4212c61b14dd4848df24a5486b48, type: 3}
       propertyPath: onEnterTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -7867,6 +7882,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1536927575 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+  m_PrefabInstance: {fileID: 4380586123937358635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84d3297aa63847999e2b39a9c196168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1539003419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8529,8 +8555,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -8699499976196783854, guid: 150f9280b1e6846039fd00ffe511d51f, type: 2}
     value: {fileID: 4872862729329202435}
-  - key: {fileID: 3617702842080553848, guid: 150f9280b1e6846039fd00ffe511d51f, type: 2}
-    value: {fileID: 1863244441}
   - key: {fileID: 472489513325303043, guid: 150f9280b1e6846039fd00ffe511d51f, type: 2}
     value: {fileID: 1314806506}
   - key: {fileID: -6974633830693542340, guid: 150f9280b1e6846039fd00ffe511d51f, type: 2}
@@ -8647,6 +8671,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1765010638}
+          m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
+          m_MethodName: Select
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -8943,7 +8979,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
       propertyPath: SecondaryCanvasQuadGroup.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
       propertyPath: SecondaryCanvasQuadGroup.Array.data[0]
@@ -8953,6 +8989,10 @@ PrefabInstance:
       propertyPath: SecondaryCanvasQuadGroup.Array.data[1]
       value: 
       objectReference: {fileID: 1357681903}
+    - target: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
+      propertyPath: SecondaryCanvasQuadGroup.Array.data[2]
+      value: 
+      objectReference: {fileID: 1536927575}
     - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12012,7 +12052,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option <u><b>2</b></u>
+  m_text: 'Go knock on her door: do a wellness check on your neighbor, ignoring her
+    warning to not disturb.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13609,7 +13650,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option <u><b>3</b></u>
+  m_text: Report the incident to the RA, risking expleling your neighbor from the
+    dorm.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19468,7 +19510,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option <u><b>4</b></u>
+  m_text: Wait until the morning and file an incident report with the police, not
+    specifying where the noises came from.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -21615,9 +21658,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: MinimizeOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1483998968291224525, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_text
-      value: Some Text
+      value: You hear the disturbance nextdoor, but you are unsure what it is.  What
+        will you do?
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Name
@@ -21625,7 +21673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4343774203863185219, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -25619,6 +25667,10 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: MinimizeOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: DistanceFromCamera
       value: 0.75
       objectReference: {fileID: 0}
@@ -25648,6 +25700,10 @@ PrefabInstance:
     - target: {fileID: 1483998968291224525, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_fontSizeBase
       value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866722409022469405, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3216106401530519020, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Alpha
@@ -33418,7 +33474,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option <u><b>1</b></u>
+  m_text: Do not not get involved.  The neighbor did mention you should ignore any
+    loud noises coming from her room.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

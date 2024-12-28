@@ -163,7 +163,7 @@ public class CanvasQuad : MonoBehaviour
     /// </summary>
     public void AnimationEnded(string caller)
     {
-        //Debug.Log(caller + " disabling canvas ("+name+")...");
+        Debug.Log(caller + " disabling canvas ("+name+")...");
         if (CanvasChildObj)
         {
             CanvasChildObj.SetActive(false);
@@ -171,6 +171,19 @@ public class CanvasQuad : MonoBehaviour
         else
         {
             Debug.Log("CanvasQuad:AnimationEnded --> canvas is null.");
+        }
+    }
+
+    public void AnimationStarted(string caller)
+    {
+        Debug.Log(caller + " enabling canvas (" + name + ")...");
+        if (CanvasChildObj)
+        {
+            CanvasChildObj.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("CanvasQuad:AnimationStarted --> canvas is null.");
         }
     }
 
