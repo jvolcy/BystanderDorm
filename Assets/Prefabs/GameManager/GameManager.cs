@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
 
     //the public sceneManager is used by the timelines
-    public SceneManager sceneManager;
+    SceneManager sceneManager;
 
     GameObject Player;
     XROrigin xrOrigin = null;
@@ -210,7 +210,7 @@ public class GameManager : MonoBehaviour
     /* ======================================================================
      * 
      ====================================================================== */
-    public void LoadScene(string sceneName)
+    public static void LoadScene(string sceneName)
     {
         //load the next scene
         Scene scene;

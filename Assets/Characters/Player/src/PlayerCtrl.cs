@@ -7,7 +7,7 @@ using UnityEngine.XR;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    [SerializeField] bool DestroyIfDuplicate = true;
+    //[SerializeField] bool DestroyIfDuplicate = true;
     //[SerializeField] Transform LeftControllerPrefab;
     //[SerializeField] Transform RightControllerPrefab;
     //[SerializeField] Transform LeftHandPrefab;

@@ -25,7 +25,7 @@ public class MelaninSceneManager : MonoBehaviour
             return;
         }
 
-        gameManager.LoadScene(sceneName);
+        GameManager.LoadScene(sceneName);
     }
 
     void FindGameManager()
