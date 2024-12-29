@@ -31,7 +31,9 @@ public class CanvasQuadController : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("CQC: Start()...");
         SceneManager.sceneLoaded += OnSceneLoaded;
+        UnSelectAll();
     }
 
 
@@ -97,7 +99,7 @@ public class CanvasQuadController : MonoBehaviour
     /// <param name="index"></param>
     public void UnSelect(int index)
     {
-        SecondaryCanvasQuadGroup[index].Hide();
+        SecondaryCanvasQuadGroup[index].Hide(true);
     }
 
     /// <summary>
@@ -111,9 +113,12 @@ public class CanvasQuadController : MonoBehaviour
 
     public void UnSelectAll()
     {
+        Debug.Log("CQC: Start UnSelectAll()...");
         for (int i = 0; i < SecondaryCanvasQuadGroup.Length; i++)
         {
             UnSelect(i);
         }
+        Debug.Log("CQC: UnSelectAll() End.");
+
     }
 }

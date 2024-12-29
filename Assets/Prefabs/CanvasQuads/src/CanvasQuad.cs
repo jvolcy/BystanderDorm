@@ -138,18 +138,22 @@ public class CanvasQuad : MonoBehaviour
         var canvas = GetComponentInChildren<Canvas>();
         canvasRectTransform = canvas.GetComponent<RectTransform>();
 
+
+        //faded on startup?
+        /*
+        if (FadedOutOnStart)
+        { FadeOut(true); }
+        else
+        { FadeIn(true); }
+        */
+
+
         //visible on startup?
         if (MinimizeOnStart)
         { Hide(true); }
         else
         { Show(true); }
 
-
-        //faded on startup?
-        if (FadedOutOnStart)
-        { FadeOut(true); }
-        else
-        { FadeIn(true); }
 
     } //Start()    
 
@@ -170,7 +174,7 @@ public class CanvasQuad : MonoBehaviour
         }
         else
         {
-            Debug.Log("CanvasQuad:AnimationEnded --> canvas is null.");
+            Debug.Log(name + ": CanvasQuad:AnimationEnded --> canvas is null.");
         }
     }
 
@@ -183,7 +187,7 @@ public class CanvasQuad : MonoBehaviour
         }
         else
         {
-            Debug.Log("CanvasQuad:AnimationStarted --> canvas is null.");
+            Debug.Log(name + ": CanvasQuad:AnimationStarted --> canvas is null.");
         }
     }
 
@@ -192,7 +196,8 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     public void Show(bool NoAnimation = false)
     {
-        CanvasChildObj.SetActive(true);
+        //CanvasChildObj.SetActive(true);
+        Debug.Log(name + ": CQC: Show()...");
 
         if (NoAnimation)
         {
@@ -213,6 +218,8 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     public void Hide(bool NoAnimation = false)
     {
+        Debug.Log(name + ": CQC: Hide()...");
+
         if (NoAnimation)
         {
             //Debug.Log("Setting Canvas localScale to Vector3.zero");
@@ -231,14 +238,16 @@ public class CanvasQuad : MonoBehaviour
 
     public void FadeIn(bool NoAnimation = false)
     {
-        CanvasChildObj.SetActive(true);
+        //CanvasChildObj.SetActive(true);
 
         if (NoAnimation)
         {
+            Debug.Log(name + ": CQC:FadeIn(NoAnimation)...");
             animator.Play("FadeInInstantly");
         }
         else if (isFadedOut)
         {
+            Debug.Log(name + ": CQC:FadeIn()...");
             animator.Play("FadeIn");
         }
 
@@ -251,10 +260,12 @@ public class CanvasQuad : MonoBehaviour
     {
         if (NoAnimation)
         {
+            Debug.Log(name + ": CQC:FadeOut(NoAnimation)...");
             animator.Play("FadeOutInstantly");
         }
         else if (!isFadedOut)
         {
+            Debug.Log(name + ": CQC:FadeOut()...");
             animator.Play("FadeOut");
         }
 
