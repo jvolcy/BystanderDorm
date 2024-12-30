@@ -1355,6 +1355,10 @@ PrefabInstance:
       propertyPath: m_text
       value: TEXT
       objectReference: {fileID: 0}
+    - target: {fileID: 1866722409022469405, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3547145909016677797, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_text
       value: <b><u>B</u></b>egin Simulation

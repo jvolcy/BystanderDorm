@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Debug.Log("GM: Start()...");
-        //FadeIn();
+        FadeIn();
         //find the Player object.  There should be one under XR
         //and one under DESKTOP, but only one of these will be active.
         //Player = GameObject.FindGameObjectWithTag("Player");

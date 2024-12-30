@@ -54,6 +54,8 @@ public class CanvasQuad : MonoBehaviour
     RectTransform canvasRectTransform;
 
     Animator animator;
+    private IEnumerator disableGO = null;
+
     /* ======================================================================
      * Start is called before the first frame update
      ====================================================================== */
@@ -139,6 +141,7 @@ public class CanvasQuad : MonoBehaviour
         var canvas = GetComponentInChildren<Canvas>();
         canvasRectTransform = canvas.GetComponent<RectTransform>();
 
+        
         //faded on startup?
         if (FadedOutOnStart)
         {
@@ -150,8 +153,7 @@ public class CanvasQuad : MonoBehaviour
             isFadedOut = true;     //synchornize the state variable on startup
             FadeIn(true);
         }
-
-
+       
         //visible on startup?
         if (MinimizeOnStart)
         {
@@ -162,6 +164,19 @@ public class CanvasQuad : MonoBehaviour
         {
             isMinimized = true;     //synchornize the state variable on startup
             Show(true);
+        }
+
+        if (disableGO != null) StopCoroutine(disableGO);
+
+        if (isMinimized || isFadedOut)
+        {
+            Debug.Log("CanvasQuad:OnEnable() --> Deactivating " + name);
+            CanvasChildObj.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("CanvasQuad:OnEnable() --> Aactivating " + name);
+            CanvasChildObj.SetActive(true);
         }
     }
 
@@ -178,7 +193,7 @@ public class CanvasQuad : MonoBehaviour
 
     } //Start()    
     */
-
+    /*
     /// <summary>
     /// At the end of the FadeOut and Hide animations, we signal that the
     /// CanvasQuad needs to be disabled.  That prevents hotkey maps from one
@@ -211,13 +226,14 @@ public class CanvasQuad : MonoBehaviour
             Debug.Log(name + ": CanvasQuad:AnimationStarted --> canvas is null.");
         }
     }
-
+    */
     /* ======================================================================
      * Show() - uses the animator to show the canvas
      ====================================================================== */
     public void Show(bool NoAnimation = false)
     {
-        //CanvasChildObj.SetActive(true);
+        if (disableGO != null) StopCoroutine(disableGO);
+        CanvasChildObj.SetActive(true);
         Debug.Log(name + ": CQC: Show()...");
 
         if (NoAnimation)
@@ -245,21 +261,38 @@ public class CanvasQuad : MonoBehaviour
         {
             //Debug.Log("Setting Canvas localScale to Vector3.zero");
             animator.Play("HideInstantly");
+            DisableGO(0.1f);
         }
         else if (!isMinimized)
         {
             //Debug.Log("Hinding Canvas.");
             animator.Play("Hide");
+            DisableGO(2.0f);
         }
 
         isMinimized = true;
     }
 
+    IEnumerator _DisableGO(float delay)
+    {
+        // delay for the specified time
+        yield return new WaitForSeconds(delay);
 
+        CanvasChildObj.SetActive(false);
+    }
+
+
+    void DisableGO(float delay)
+    {
+        disableGO = _DisableGO(delay);
+        StartCoroutine(disableGO);
+    }
 
     public void FadeIn(bool NoAnimation = false)
     {
-        //CanvasChildObj.SetActive(true);
+        if (disableGO != null) StopCoroutine(disableGO);
+        
+        CanvasChildObj.SetActive(true);
 
         if (NoAnimation)
         {
@@ -283,11 +316,13 @@ public class CanvasQuad : MonoBehaviour
         {
             //Debug.Log(name + ": CQC:FadeOut(NoAnimation)...");
             animator.Play("FadeOutInstantly");
+            DisableGO(0.1f);
         }
         else //if (!isFadedOut)
         {
             //Debug.Log(name + ": CQC:FadeOut()...");
             animator.Play("FadeOut");
+            DisableGO(2.0f);
         }
 
         isFadedOut = true;
