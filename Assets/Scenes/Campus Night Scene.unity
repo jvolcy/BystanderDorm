@@ -467,6 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 344120973}
   - component: {fileID: 344120974}
+  - component: {fileID: 344120975}
   m_Layer: 0
   m_Name: ToBellesDormTL
   m_TagString: Untagged
@@ -507,9 +508,60 @@ PlayableDirector:
   - key: {fileID: 4664732785093913866, guid: c7937cdc39333432f979f8ec419486cd, type: 2}
     value: {fileID: 1096592037}
   - key: {fileID: -7036879974557852481, guid: c7937cdc39333432f979f8ec419486cd, type: 2}
-    value: {fileID: 1890877454}
+    value: {fileID: 0}
+  - key: {fileID: -9107140573195469373, guid: feeb7cdcbff8c4ca5af74234adc4a983, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 932947699401279497, guid: c7937cdc39333432f979f8ec419486cd, type: 2}
+    value: {fileID: 344120975}
+  - key: {fileID: 3197295486337033785, guid: c7937cdc39333432f979f8ec419486cd, type: 2}
+    value: {fileID: 1096592037}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &344120975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344120972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 3993f36c10d894ac6a0fba555ab5c8a3, type: 2}
+    - {fileID: 11400000, guid: 06ae469018a0045358dc8e16dc2a9344, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1890877455}
+          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
+          m_MethodName: FadeOut
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1890877455}
+          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
+          m_MethodName: LoadScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hall Scene
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &417888027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,7 +1279,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1890877456}
   - component: {fileID: 1890877455}
-  - component: {fileID: 1890877454}
   m_Layer: 0
   m_Name: CampusNightSceneManager
   m_TagString: Untagged
@@ -1235,36 +1286,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1890877454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890877453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 06ae469018a0045358dc8e16dc2a9344, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1890877455}
-          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
-          m_MethodName: LoadScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Hall Scene
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1890877455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,6 +1298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184bc71252857424ea20ab68ba3f22f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BeginSimulationRef: {fileID: 0}
+  MelaninHallTriggerRef: {fileID: 0}
+  BellesDormTriggerRef: {fileID: 0}
 --- !u!4 &1890877456
 Transform:
   m_ObjectHideFlags: 0

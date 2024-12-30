@@ -56,13 +56,14 @@ public class CanvasQuad : MonoBehaviour
     Animator animator;
     private IEnumerator disableGO = null;
 
+    bool CameraFound = false;
+
     /* ======================================================================
      * Start is called before the first frame update
      ====================================================================== */
     void OnEnable()
     {
         Debug.Log("CanvasQuad:OnEnable()...");
-        bool CameraFound = false;
 
         if (MainCamera != null)
         //user has specified the camera to use
@@ -168,7 +169,7 @@ public class CanvasQuad : MonoBehaviour
 
         if (disableGO != null) StopCoroutine(disableGO);
 
-        if (isMinimized || isFadedOut)
+        if (FadedOutOnStart || MinimizeOnStart)
         {
             Debug.Log("CanvasQuad:OnEnable() --> Deactivating " + name);
             CanvasChildObj.SetActive(false);
@@ -183,16 +184,21 @@ public class CanvasQuad : MonoBehaviour
     /* ======================================================================
     * Start is called before the first frame update
     ====================================================================== */
-    /*
+    
     void Start()
     {
-        //Debug.Log("CanvasQuad:Start()...");
+        Debug.Log("CanvasQuad:Start()...");
+        if (!CameraFound)
+        {
+            Debug.Log("CanvasQuad:Start()...looking for camera...");
+            OnEnable();
+        }
 
 
 
 
     } //Start()    
-    */
+    
     /*
     /// <summary>
     /// At the end of the FadeOut and Hide animations, we signal that the

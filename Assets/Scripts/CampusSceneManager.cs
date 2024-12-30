@@ -64,8 +64,17 @@ public class CampusSceneManager : MonoBehaviour
         }
         */
         bReadyToBeginSimulation = true;         //signal time to display the "begin simulation" button if we return to this scene
-        Destroy(BeginSimulation.gameObject);    //destroy the canvas quad
+
+        if (BeginSimulation != null)
+        {
+            Destroy(BeginSimulation.gameObject);    //destroy the canvas quad
+        }
+
+        //Debug.Log("CampusSceneManager: Loading scene " + sceneName);
         GameManager.LoadScene(sceneName);       //load the requested scene
+
+        //Debug.Log("CampusSceneManager: Loaded scene " + sceneName);
+
     }
 
     /*

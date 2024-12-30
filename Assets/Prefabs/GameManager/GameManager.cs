@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
     //the public sceneManager is used by the timelines
     //SceneManager sceneManager;
 
-    GameObject Player;
+    [HideInInspector]
+    public GameObject Player;
     PlayerCtrl playerCtrl;
 
     XROrigin xrOrigin = null;
