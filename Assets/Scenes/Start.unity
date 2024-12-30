@@ -4314,8 +4314,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasQuadController
       objectReference: {fileID: 0}
+    - target: {fileID: 9034067046828834509, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9034067046828834509, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}

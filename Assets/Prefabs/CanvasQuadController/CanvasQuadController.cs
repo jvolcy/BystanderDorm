@@ -18,10 +18,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class CanvasQuadController : MonoBehaviour
 {
-    [Tooltip("The primary quad is always displayed, though it may be " +
-        "transparent.  Use this quad for global effects like fade-in " +
-        "and fade-out.")]
-    public CanvasQuad PrimaryCanvasQuad;
 
     [Tooltip("Canvas quads on the list of secondary quads are displayed one " +
         "at a time. When you select to display any one of these, all others " +
@@ -40,7 +36,7 @@ public class CanvasQuadController : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         Debug.Log("CanvasQuadController: Loaded scene " + scene.name);
-        FadeIn();
+        //Player.FadeIn();
     }
 
     /// <summary>
@@ -54,25 +50,7 @@ public class CanvasQuadController : MonoBehaviour
     }
     */
 
-    /// <summary>
-    /// Helper function to fade out (fade to black) the display.
-    /// Note that we have to fade in the primary quad to create a
-    /// black-out of the display.
-    /// </summary>
-    public void FadeOut()
-    {
-        PrimaryCanvasQuad.FadeIn();
-    }
 
-    /// <summary>
-    /// Helper function to fade in (fade from black) the display.
-    /// Note that we have to fade out the primar quad to create a
-    /// fade-in of the display.
-    /// </summary>
-    public void FadeIn()
-    {
-        PrimaryCanvasQuad.FadeOut();
-    }
 
     /// <summary>
     /// Function to select one of the secondary quads to be displayed.

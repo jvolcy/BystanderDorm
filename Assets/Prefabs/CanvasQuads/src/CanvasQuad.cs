@@ -57,17 +57,18 @@ public class CanvasQuad : MonoBehaviour
     /* ======================================================================
      * Start is called before the first frame update
      ====================================================================== */
-    void Start()
+    void OnEnable()
     {
+        Debug.Log("CanvasQuad:OnEnable()...");
         bool CameraFound = false;
 
         if (MainCamera != null)
-            //user has specified the camera to use
+        //user has specified the camera to use
         {
             transform.parent = MainCamera.transform;
             CameraFound = true;
         }
-            //user has not specified the camera to use... look for it
+        //user has not specified the camera to use... look for it
         else
         {
             //find all game objects that are tagged as the main camera
@@ -138,25 +139,45 @@ public class CanvasQuad : MonoBehaviour
         var canvas = GetComponentInChildren<Canvas>();
         canvasRectTransform = canvas.GetComponent<RectTransform>();
 
-
         //faded on startup?
-        
         if (FadedOutOnStart)
-        { FadeOut(true); }
+        {
+            isFadedOut = false;     //synchornize the state variable on startup
+            FadeOut(true);
+        }
         else
-        { FadeIn(true); }
-        
+        {
+            isFadedOut = true;     //synchornize the state variable on startup
+            FadeIn(true);
+        }
 
 
         //visible on startup?
         if (MinimizeOnStart)
-        { Hide(true); }
+        {
+            isMinimized = false;     //synchornize the state variable on startup
+            Hide(true);
+        }
         else
-        { Show(true); }
+        {
+            isMinimized = true;     //synchornize the state variable on startup
+            Show(true);
+        }
+    }
+
+    /* ======================================================================
+    * Start is called before the first frame update
+    ====================================================================== */
+    /*
+    void Start()
+    {
+        //Debug.Log("CanvasQuad:Start()...");
+
+
 
 
     } //Start()    
-
+    */
 
     /// <summary>
     /// At the end of the FadeOut and Hide animations, we signal that the
@@ -167,27 +188,27 @@ public class CanvasQuad : MonoBehaviour
     /// </summary>
     public void AnimationEnded(string caller)
     {
-        //Debug.Log(caller + " disabling canvas ("+name+")...");
+        Debug.Log(caller + " disabling canvas ("+name+")...");
         if (CanvasChildObj)
         {
             CanvasChildObj.SetActive(false);
         }
         else
         {
-            //Debug.Log(name + ": CanvasQuad:AnimationEnded --> canvas is null.");
+            Debug.Log(name + ": CanvasQuad:AnimationEnded --> canvas is null.");
         }
     }
 
     public void AnimationStarted(string caller)
     {
-        //Debug.Log(caller + " enabling canvas (" + name + ")...");
+        Debug.Log(caller + " enabling canvas (" + name + ")...");
         if (CanvasChildObj)
         {
             CanvasChildObj.SetActive(true);
         }
         else
         {
-            //Debug.Log(name + ": CanvasQuad:AnimationStarted --> canvas is null.");
+            Debug.Log(name + ": CanvasQuad:AnimationStarted --> canvas is null.");
         }
     }
 
@@ -197,7 +218,7 @@ public class CanvasQuad : MonoBehaviour
     public void Show(bool NoAnimation = false)
     {
         //CanvasChildObj.SetActive(true);
-        //Debug.Log(name + ": CQC: Show()...");
+        Debug.Log(name + ": CQC: Show()...");
 
         if (NoAnimation)
         {
@@ -218,7 +239,7 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     public void Hide(bool NoAnimation = false)
     {
-        //Debug.Log(name + ": CQC: Hide()...");
+        Debug.Log(name + ": CQC: Hide()...");
 
         if (NoAnimation)
         {
@@ -245,7 +266,7 @@ public class CanvasQuad : MonoBehaviour
             //Debug.Log(name + ": CQC:FadeIn(NoAnimation)...");
             animator.Play("FadeInInstantly");
         }
-        else if (isFadedOut)
+        else //if (isFadedOut)
         {
             //Debug.Log(name + ": CQC:FadeIn()...");
             animator.Play("FadeIn");
@@ -263,7 +284,7 @@ public class CanvasQuad : MonoBehaviour
             //Debug.Log(name + ": CQC:FadeOut(NoAnimation)...");
             animator.Play("FadeOutInstantly");
         }
-        else if (!isFadedOut)
+        else //if (!isFadedOut)
         {
             //Debug.Log(name + ": CQC:FadeOut()...");
             animator.Play("FadeOut");

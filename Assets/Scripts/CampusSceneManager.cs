@@ -5,30 +5,51 @@ using UnityEngine.SceneManagement;
 
 public class CampusSceneManager : MonoBehaviour
 {
-    //GameManager gameManager;
-    [SerializeField] CanvasQuad BeginSimulation;
-    [SerializeField] CanvasQuad ScreenFade;
-    [SerializeField] EventTrigger MelaninHallTrigger;
-    [SerializeField] EventTrigger BellesDormTrigger;
+    GameManager gameManager = null;
+
+    [SerializeField] CanvasQuad BeginSimulationRef;
+    [SerializeField] EventTrigger MelaninHallTriggerRef;
+    [SerializeField] EventTrigger BellesDormTriggerRef;
 
     //flag that turns true after the practice session.  Used by the "campus scene"
     //to allow the player to control transition to the "campus night scene".
-    public bool bReadyToBeginSimulation = false;
+    public static bool bReadyToBeginSimulation = false;
+    static CanvasQuad BeginSimulation = null;   //this reference will persist even when we change scenes.
+    static EventTrigger BellesDormTrigger = null;
+    static EventTrigger MelaninHallTrigger = null;
 
     private void Awake()
     {
         //subscribe to the scene load event
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        //We need to maintain static references to objects that need to survive a scene re-load
+        if (!BeginSimulation) { BeginSimulation = BeginSimulationRef; }
+        if (!BellesDormTrigger) { BellesDormTrigger = BellesDormTriggerRef; }
+        if (!MelaninHallTrigger) { MelaninHallTrigger = MelaninHallTriggerRef; }
     }
 
     void Start()
     {
+        Debug.Log("CampusSceneManager:Start()...");
+        FindGameManager();
+        if (!gameManager)
+        {
+            Debug.Log("CampusSceneManager:Start()...Did not find a game manager. ******************");
+        }
 
-        Debug.Log("CampusSceneManager: Start()...");
-        ScreenFade.FadeOut();
     }
-    
 
+    void FindGameManager()
+    {
+        if (gameManager) return;
+
+        gameManager = FindObjectOfType<GameManager>();
+        if (!gameManager)
+        {
+            Debug.Log("CampusSceneManager:FindGameManager - did not find a GameManager.");
+        }
+    }
 
     public void LoadScene(string sceneName)
     {
@@ -62,18 +83,13 @@ public class CampusSceneManager : MonoBehaviour
     }
     */
 
-    private void OnEnable()
-    {
-        ScreenFade.FadeOut();
-
-    }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         if (bReadyToBeginSimulation && scene.name == "Campus Scene")
         {
             BeginSimulation.Show(true);
-            MelaninHallTrigger.enabled = false;
+            MelaninHallTrigger.gameObject.SetActive(false);
 
             //unsubscribe to the scene load event
             SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -81,5 +97,13 @@ public class CampusSceneManager : MonoBehaviour
 
         }
     }
+
+
+    //pass-through functions for timelines
+    //public void FadeIn(bool instant = false) { FindGameManager(); gameManager.FadeIn(instant); }
+    //public void FadeOut(bool instant = false) { FindGameManager(); gameManager.FadeOut(instant); }
+
+    public void FadeIn(bool instant = false) { gameManager.FadeIn(instant); }
+    public void FadeOut(bool instant = false) { gameManager.FadeOut(instant); }
 
 }

@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class MelaninSceneManager : MonoBehaviour
 {
-    GameManager gameManager = null;
+    public GameManager gameManager = null;
 
     // Start is called before the first frame update
-    /*
+   
     void Start()
     {
+        Debug.Log("MelaninSceneManager:Start()...");
         FindGameManager();
+        if (!gameManager)
+        {
+            Debug.Log("MelaninSceneManager:Start()...Did not find a game manager. ******************");
+        }
     }
-    */
+  
 
     public void LoadScene(string sceneName)
     {
@@ -30,13 +35,21 @@ public class MelaninSceneManager : MonoBehaviour
 
     void FindGameManager()
     {
-        if (!gameManager) { gameManager = FindObjectOfType<GameManager>(); }
+        if (gameManager) return;
 
+        gameManager = FindObjectOfType<GameManager>();
         if (!gameManager)
         {
             Debug.Log("MelaninSceneManager:FindGameManager - did not find a GameManager.");
         }
     }
+
+
+    //pass-through functions for timelines
+    public void FadeIn(bool instant=false) { FindGameManager(); gameManager.FadeIn(instant); }
+    public void FadeOut(bool instant = false) { FindGameManager(); gameManager.FadeOut(instant); }
+
+
     /*
     // Update is called once per frame
     void Update()

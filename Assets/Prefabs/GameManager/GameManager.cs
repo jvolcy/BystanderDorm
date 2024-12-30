@@ -29,9 +29,11 @@ public class GameManager : MonoBehaviour
 
 
     //the public sceneManager is used by the timelines
-    SceneManager sceneManager;
+    //SceneManager sceneManager;
 
     GameObject Player;
+    PlayerCtrl playerCtrl;
+
     XROrigin xrOrigin = null;
 
     static GameManager instance;
@@ -78,7 +80,10 @@ public class GameManager : MonoBehaviour
         //instantiate the player
 
         if (playMode == PlayMode.Desktop)
-        { Player = Instantiate(DesktopPlayerPrefab); }
+        {
+            Player = Instantiate(DesktopPlayerPrefab);
+            playerCtrl = Player.GetComponent<PlayerCtrl>();
+        }
         else
         {
             Player = Instantiate(XRPlayerPrefab);
@@ -86,10 +91,16 @@ public class GameManager : MonoBehaviour
             if (xrOrigin == null)
             {
                 Debug.Log("GameManager: Could not find the XROrigin. ***************************");
+                playerCtrl = null;
+            }
+            else
+            {
+                playerCtrl = xrOrigin.GetComponent<PlayerCtrl>();
             }
         }
         DontDestroyOnLoad(Player);
         DontDestroyOnLoad(this);    //GameManager
+
 
         //subscribe to the scene load event
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -102,10 +113,8 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Start()
     {
-
-
-
-
+        Debug.Log("GM: Start()...");
+        //FadeIn();
         //find the Player object.  There should be one under XR
         //and one under DESKTOP, but only one of these will be active.
         //Player = GameObject.FindGameObjectWithTag("Player");
@@ -181,7 +190,7 @@ public class GameManager : MonoBehaviour
         if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
         {
             Debug.Log("Relocating Player *********");
-            Player.GetComponent<PlayerCtrl>().SetPosition(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
+            playerCtrl.SetPosition(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
         }
         else
         {
@@ -189,9 +198,12 @@ public class GameManager : MonoBehaviour
             if (playerStartPosition)
             {
                 Debug.Log("GM: Found a 'PlayerStartPosition marker' Relocating player...");
-                Player.GetComponent<PlayerCtrl>().SetPosition(playerStartPosition.position, playerStartPosition.localEulerAngles);
+                playerCtrl.SetPosition(playerStartPosition.position, playerStartPosition.localEulerAngles);
             }
         }
+
+        Debug.Log("GameManager:OnSceneLoaded()...Fading In...");
+        FadeIn();
     }
     
 
@@ -245,7 +257,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("ERROR GameManager:UsePlayerHandModels() - No XROrigin.");
                 return;
             }
-            xrOrigin.GetComponent<PlayerCtrl>().UseHandControls(val);
+            playerCtrl.UseHandControls(val);
         }
     }
 
@@ -271,8 +283,32 @@ public class GameManager : MonoBehaviour
                 Debug.Log("ERROR GameManager:SetHandColor() - No XROrigin.");
                 return;
             }
-            xrOrigin.GetComponent<PlayerCtrl>().SetHandColor(clr);
+            playerCtrl.SetHandColor(clr);
         }
+    }
+
+
+
+    /// <summary>
+    /// Helper function to fade out (fade to black) the display.
+    /// Note that we have to fade in the primary quad to create a
+    /// black-out of the display.
+    /// </summary>
+    
+    public void FadeOut(bool instant = false)
+    {
+        playerCtrl.FadeOut(instant);
+    }
+    
+
+    /// <summary>
+    /// Helper function to fade in (fade from black) the display.
+    /// Note that we have to fade out the primar quad to create a
+    /// fade-in of the display.
+    /// </summary>
+    public void FadeIn(bool instant = false)
+    {
+        playerCtrl.FadeIn(instant);
     }
 
 

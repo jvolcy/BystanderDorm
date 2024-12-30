@@ -15,6 +15,9 @@ public class PlayerCtrl : MonoBehaviour
     //[SerializeField] ActionBasedController LeftController;
     //[SerializeField] ActionBasedController RightController;
 
+    [Tooltip("This quad is used for fade-in and fade-out.")]
+    public CanvasQuad CanvasQuadFade;
+    //static CanvasQuad CQFade;
 
     //public XRInputSubsystem inputSubsystem;
 
@@ -30,6 +33,7 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     private void Awake()
     {
+        Debug.Log("PlayerCtrl:Awake()...");
         //FindObjectOfType<GameManager>().EnableDisableXrAndDesktopObjs();
 
         //if (DestroyIfDuplicate)
@@ -42,13 +46,19 @@ public class PlayerCtrl : MonoBehaviour
                 Destroy(gameObject);
             }
         //}
+
+        //var obj = Instantiate(CanvasQuadFadePrefab, transform);
+        //CanvasQuadFade = obj.GetComponent<CanvasQuad>();
+        //CQFade = CanvasQuadFade;
     }
 
 
     private void Start()
     {
+        Debug.Log("PlayerCtrl:Start()...");
         LocateControllers();
         UseHandControls(false);
+        //FadeIn();
     }
 
     public void UseHandControls(bool val)
@@ -75,6 +85,30 @@ public class PlayerCtrl : MonoBehaviour
         }
     
     }
+
+
+    /// <summary>
+    /// Helper function to fade out (fade to black) the display.
+    /// Note that we have to fade in the primary quad to create a
+    /// black-out of the display.
+    /// </summary>
+    public void FadeOut(bool instant = false)
+    {
+        Debug.Log("PlayerCtrl:FadeOut()...");
+        CanvasQuadFade.FadeIn(instant);
+    }
+
+    /// <summary>
+    /// Helper function to fade in (fade from black) the display.
+    /// Note that we have to fade out the primar quad to create a
+    /// fade-in of the display.
+    /// </summary>
+    public void FadeIn(bool instant = false)
+    {
+        Debug.Log("PlayerCtrl:FadeIn()...");
+        CanvasQuadFade.FadeOut(instant);
+    }
+
 
     void LocateControllers()
     {
