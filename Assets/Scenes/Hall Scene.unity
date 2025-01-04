@@ -2435,7 +2435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: DontDestroyObjList.Array.size
@@ -6127,6 +6127,7 @@ MonoBehaviour:
   objToEnableAfterGFTL: {fileID: 1354611026}
   playerWakeUpPosition: {x: 11.4, y: 9.15, z: -4.2}
   playerWakeUpOrientation: {x: 0, y: 90, z: 0}
+  gameManager: {fileID: 0}
 --- !u!4 &1101228272
 Transform:
   m_ObjectHideFlags: 0
@@ -13255,7 +13256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 41ddce7edddc7624aab0771f691adfc9, type: 2}
   m_Color: {r: 0.9339623, g: 0.9046256, b: 0.8590691, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -14375,7 +14376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b358ab44d812540f3927b7df57db5c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 51
+  key: 0
 --- !u!33 &1847229988705925007
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21663,6 +21664,10 @@ PrefabInstance:
       propertyPath: MinimizeOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: DistanceFromCamera
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1483998968291224525, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_text
       value: You hear the disturbance nextdoor, but you are unsure what it is.  What
@@ -25673,7 +25678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: DistanceFromCamera
-      value: 0.75
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1380428578186381629, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_IsActive
@@ -30498,7 +30503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b358ab44d812540f3927b7df57db5c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 52
+  key: 0
 --- !u!23 &7519852764901291856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30568,7 +30573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 41ddce7edddc7624aab0771f691adfc9, type: 2}
   m_Color: {r: 0.9339623, g: 0.9046256, b: 0.8590691, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -32050,7 +32055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 41ddce7edddc7624aab0771f691adfc9, type: 2}
   m_Color: {r: 0.9339623, g: 0.9046256, b: 0.8590691, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -34712,7 +34717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 41ddce7edddc7624aab0771f691adfc9, type: 2}
   m_Color: {r: 0.9339623, g: 0.9046256, b: 0.8590691, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}

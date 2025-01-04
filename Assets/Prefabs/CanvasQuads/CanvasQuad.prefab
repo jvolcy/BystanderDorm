@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 41ddce7edddc7624aab0771f691adfc9, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 0.7058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -455,8 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMode: 1
   MainCamera: {fileID: 0}
-  DistanceFromCamera: 1
-  Scale: 0.5
+  DistanceFromCamera: 2
+  Scale: 1
   MinimizeOnStart: 1
   FadedOutOnStart: 0
   CanvasChildObj: {fileID: 1866722409022469405}
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 41ddce7edddc7624aab0771f691adfc9, type: 2}
   m_Color: {r: 0.9339623, g: 0.9046256, b: 0.8590691, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
