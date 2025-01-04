@@ -455,7 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMode: 1
   MainCamera: {fileID: 0}
-  DistanceFromCamera: 0.5
+  DistanceFromCamera: 1
   Scale: 0.5
   MinimizeOnStart: 1
   FadedOutOnStart: 0
