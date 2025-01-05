@@ -4,22 +4,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    //[SerializeField] bool DestroyIfDuplicate = true;
-    //[SerializeField] Transform LeftControllerPrefab;
-    //[SerializeField] Transform RightControllerPrefab;
-    //[SerializeField] Transform LeftHandPrefab;
-    //[SerializeField] Transform RightHandPrefab;
-    //[SerializeField] ActionBasedController LeftController;
-    //[SerializeField] ActionBasedController RightController;
-
-    [Tooltip("This quad is used for fade-in and fade-out.")]
-    public CanvasQuad CanvasQuadFade;
-    //static CanvasQuad CQFade;
-
-    //public XRInputSubsystem inputSubsystem;
+    ScreenFade screenFade;
 
     //the component that updates the hand color
     MagicColorUpdate[] magicColorUpdates;
@@ -34,22 +23,23 @@ public class PlayerCtrl : MonoBehaviour
     private void Awake()
     {
         Debug.Log("PlayerCtrl:Awake()...");
-        //FindObjectOfType<GameManager>().EnableDisableXrAndDesktopObjs();
 
-        //if (DestroyIfDuplicate)
-        //{
-            var ExistingPlayers = GameObject.FindGameObjectsWithTag("Player");
-            Debug.Log("# of existing players found: " + ExistingPlayers.Length);
-            if (ExistingPlayers.Length > 1)
-            {
-                Debug.Log("Destroying TEMP Player...");
-                Destroy(gameObject);
-            }
-        //}
+        var ExistingPlayers = GameObject.FindGameObjectsWithTag("Player");
+        Debug.Log("# of existing players found: " + ExistingPlayers.Length);
+        if (ExistingPlayers.Length > 1)
+        {
+            Debug.Log("Destroying TEMP Player...");
+            Destroy(gameObject);
+        }
 
-        //var obj = Instantiate(CanvasQuadFadePrefab, transform);
-        //CanvasQuadFade = obj.GetComponent<CanvasQuad>();
-        //CQFade = CanvasQuadFade;
+        screenFade = GetComponentInChildren<ScreenFade>();
+        if (screenFade == null)
+        {
+            Debug.Log("WARNING:PlayerCtrl:Awake() --> Did not find a ScreenFade child object.");
+        }
+
+        GameManager.OnLoadScene += OnLoadScene;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 
@@ -95,7 +85,7 @@ public class PlayerCtrl : MonoBehaviour
     public void FadeOut(bool instant = false)
     {
         Debug.Log("PlayerCtrl:FadeOut()...");
-        CanvasQuadFade.FadeIn(instant);
+        screenFade.FadeIn(instant);
     }
 
     /// <summary>
@@ -106,7 +96,7 @@ public class PlayerCtrl : MonoBehaviour
     public void FadeIn(bool instant = false)
     {
         Debug.Log("PlayerCtrl:FadeIn()...");
-        CanvasQuadFade.FadeOut(instant);
+        screenFade.FadeOut(instant);
     }
 
 
@@ -191,5 +181,28 @@ public class PlayerCtrl : MonoBehaviour
     }
 
 
+    private void OnDestroy()
+    {
+        Debug.Log("ScreenFade: Unsubscribing to OnSelectCanvasQuad...");
+        GameManager.OnLoadScene -= OnLoadScene;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
+
+    /// <summary>
+    /// Not to be confused with OnSceneLoaded, which is invoked immediately
+    /// after a scene is loaded, OnLoadScene is an event defined in our
+    /// GameManager.  It is invoked immediately *before* an attempt is made
+    /// to load a new scene.
+    /// </summary>
+    /// <param name="sender"></param>
+    void OnLoadScene(object sender, System.EventArgs e)
+    {
+        FadeOut();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        FadeIn();
+    }
 }

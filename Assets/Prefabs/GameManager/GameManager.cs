@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;   //for EventHandler
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Vector3 MelaninToCampusStartPosition = new Vector3(0f, 0f, 7f);
     [SerializeField] Vector3 MelaninToCampusStartRotation = new Vector3(0f, 180f, 0f);
 
+    public static event EventHandler<string> OnSelectCanvasQuad;
+    public static event EventHandler OnLoadScene;   //invoked immediately before loading the next scene.
 
     //the public sceneManager is used by the timelines
     //SceneManager sceneManager;
@@ -114,12 +117,8 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Start()
     {
-        Debug.Log("GM: Start()...");
+        //Debug.Log("GM: Start()...");
         FadeIn();
-        //find the Player object.  There should be one under XR
-        //and one under DESKTOP, but only one of these will be active.
-        //Player = GameObject.FindGameObjectWithTag("Player");
-
     }
 
 
@@ -211,20 +210,11 @@ public class GameManager : MonoBehaviour
     /* ======================================================================
      * 
      ====================================================================== */
-    /*
-    public void LoadNextScene()
-    {
-        //load the next scene
-        Debug.Log("Load Next Scene...");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    */
-
-    /* ======================================================================
-     * 
-     ====================================================================== */
     public static void LoadScene(string sceneName)
     {
+
+        OnLoadScene?.Invoke(null, null);
+
         //load the next scene
         Scene scene;
 
@@ -302,8 +292,17 @@ public class GameManager : MonoBehaviour
         playerCtrl.FadeIn(instant);
     }
 
-
-
+    /// <summary>
+    /// Invoke the OnSelectCanvasQuad event.  All quads subscribers
+    /// will receive the event.  The one whose id matches the parameter
+    /// will "Show" itself.  All others will "Hide".  Set the id to a
+    /// string that matches none of the ids to force all quads to hide.
+    /// </summary>
+    /// <param name="id"></param>
+    public static void CanvasQuadSelect(string id)
+    {
+        OnSelectCanvasQuad?.Invoke(null, id);
+    }
 }
 
 /* ======================================================================

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 /* ======================================================================
@@ -41,6 +42,10 @@ public class CanvasQuad : MonoBehaviour
     [SerializeField]
     [Tooltip("Whether or not the CanvasQuad is faded out on startup.")]
     bool FadedOutOnStart = false;
+
+    [SerializeField]
+    [Tooltip("The unique ID for this Quad.")]
+    string ID;
 
     //state variable that tracks whether or not the CanvasQuad is visible
     bool isMinimized;
@@ -179,6 +184,10 @@ public class CanvasQuad : MonoBehaviour
             Debug.Log("CanvasQuad:OnEnable() --> Aactivating " + name);
             CanvasChildObj.SetActive(true);
         }
+
+
+        GameManager.OnSelectCanvasQuad += OnSelectCanvasQuad;
+        GameManager.OnLoadScene += OnLoadScene;
     }
 
     /* ======================================================================
@@ -199,40 +208,7 @@ public class CanvasQuad : MonoBehaviour
 
     } //Start()    
     
-    /*
-    /// <summary>
-    /// At the end of the FadeOut and Hide animations, we signal that the
-    /// CanvasQuad needs to be disabled.  That prevents hotkey maps from one
-    /// quad being activated while we are viewing a different quad.  Only
-    /// one quad is active at a time.  Note that we re-enable individual
-    /// quads in the Show() and FadeIn() functions.
-    /// </summary>
-    public void AnimationEnded(string caller)
-    {
-        Debug.Log(caller + " disabling canvas ("+name+")...");
-        if (CanvasChildObj)
-        {
-            CanvasChildObj.SetActive(false);
-        }
-        else
-        {
-            Debug.Log(name + ": CanvasQuad:AnimationEnded --> canvas is null.");
-        }
-    }
 
-    public void AnimationStarted(string caller)
-    {
-        Debug.Log(caller + " enabling canvas (" + name + ")...");
-        if (CanvasChildObj)
-        {
-            CanvasChildObj.SetActive(true);
-        }
-        else
-        {
-            Debug.Log(name + ": CanvasQuad:AnimationStarted --> canvas is null.");
-        }
-    }
-    */
     /* ======================================================================
      * Show() - uses the animator to show the canvas
      ====================================================================== */
@@ -240,7 +216,7 @@ public class CanvasQuad : MonoBehaviour
     {
         if (disableGO != null) StopCoroutine(disableGO);
         CanvasChildObj.SetActive(true);
-        Debug.Log(name + ": CQC: Show()...");
+        //Debug.Log(name + ": CQC: Show()...");
 
         if (NoAnimation)
         {
@@ -261,7 +237,7 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     public void Hide(bool NoAnimation = false)
     {
-        Debug.Log(name + ": CQC: Hide()...");
+        //Debug.Log(name + ": CQC: Hide()...");
 
         if (NoAnimation)
         {
@@ -334,6 +310,38 @@ public class CanvasQuad : MonoBehaviour
         isFadedOut = true;
     }
 
+    private void OnDestroy()
+    {
+        Debug.Log(ID + ": Unsubscribing to OnSelectCanvasQuad...");
+        GameManager.OnSelectCanvasQuad -= OnSelectCanvasQuad;
+        GameManager.OnLoadScene -= OnLoadScene;
+    }
+
+    /// <summary>
+    /// Not to be confused with OnSceneLoaded, which is invoked immediately
+    /// after a scene is loaded, OnLoadScene is an event defined in our
+    /// GameManager.  It is invoked immediately *before* an attempt is made
+    /// to load a new scene.
+    /// </summary>
+    /// <param name="sender"></param>
+    void OnLoadScene(object sender, System.EventArgs e)
+    {
+        //auto terminate if we are changing scenes.
+        Destroy(gameObject);
+    }
+
+    public void OnSelectCanvasQuad(object sender, string target_id)
+    {
+        if (ID == target_id)
+        {
+            Show();
+        }
+        else
+        {
+            Hide(true);
+        }
+
+    }
 
 }
 
