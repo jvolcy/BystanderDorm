@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     //the public sceneManager is used by the timelines
     //SceneManager sceneManager;
 
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject Player;
     PlayerCtrl playerCtrl;
 
@@ -235,17 +235,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("GM: Failed to Load scene " + sceneName + ".");
             return;
         }
-        /*
-        LastScene = CurrentScene;
-        CurrentScene = sceneName;
-        Debug.Log("GM: Loaded scene " + CurrentScene + " (from " + LastScene + ").");
 
-        if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
-        {
-            Debug.Log("Relocating Player *********");
-            Player.GetComponent<PlayerCtrl>().SetPosition(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
-        }
-        */
     }
 
 

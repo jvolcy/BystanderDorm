@@ -715,6 +715,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5451550800822173691, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5666115657963316072, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Name
       value: ButtonStart

@@ -12,17 +12,18 @@ public class HallSceneManager : MonoBehaviour
     [SerializeField] Vector3 playerWakeUpPosition = new Vector3(11f, 9.15f, 0f);
     [SerializeField] Vector3 playerWakeUpOrientation = new Vector3(0f, 180f, 0f);
 
+    [HideInInspector]
     public GameManager gameManager = null;
 
     // Start is called before the first frame update
 
     void Start()
     {
-        Debug.Log("MelaninSceneManager:Start()...");
+        Debug.Log("HallSceneManager:Start()...");
         FindGameManager();
         if (!gameManager)
         {
-            Debug.Log("MelaninSceneManager:Start()...Did not find a game manager. ******************");
+            Debug.Log("HallSceneManager:Start()...Did not find a game manager. ******************");
         }
     }
 
@@ -33,7 +34,7 @@ public class HallSceneManager : MonoBehaviour
 
         if (!gameManager)
         {
-            Debug.Log("MelaninSceneManager:LoadScene - did not find an GameManager.");
+            Debug.Log("HallSceneManager:LoadScene - did not find an GameManager.");
             Debug.Log("Could not load scene " + sceneName);
             return;
         }
@@ -48,8 +49,9 @@ public class HallSceneManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         if (!gameManager)
         {
-            Debug.Log("MelaninSceneManager:FindGameManager - did not find a GameManager.");
+            Debug.Log("HallSceneManager:FindGameManager - did not find a GameManager.");
         }
+
     }
 
 
@@ -64,8 +66,9 @@ public class HallSceneManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
+            FindGameManager();
             //put us in front of our room, facing the door
-            gameManager.Player.GetComponent<PlayerCtrl>().TelePort(new Vector3(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f));
+            gameManager.Player.GetComponentInChildren<PlayerCtrl>().TelePort(new Vector3(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f));
             objToEnableAfterGFTL.SetActive(true);
         }
 
@@ -85,7 +88,9 @@ public class HallSceneManager : MonoBehaviour
      ====================================================================== */
     public void PrepareRoomSceneSignalReceiver()
     {
-        gameManager.Player.GetComponent<PlayerCtrl>().TelePort(playerWakeUpPosition, playerWakeUpOrientation);
+        //Debug.Log("HallSceneManager: PrepareRoomSceneSignalReceiver()...");
+        FindGameManager();
+        gameManager.Player.GetComponentInChildren<PlayerCtrl>().TelePort(playerWakeUpPosition, playerWakeUpOrientation);
     }
 
 }

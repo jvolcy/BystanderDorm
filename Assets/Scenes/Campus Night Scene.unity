@@ -368,6 +368,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8289647234620141486, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289647234620141486, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289647234620141486, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
