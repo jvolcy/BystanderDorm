@@ -478,6 +478,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7441212675294969044, guid: 65f1919e52085b342a7c8484e0d5cc86, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef961b70f7ab64990b626d8d8e96ad75, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -928,6 +932,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1480730330}
     m_Modifications:
+    - target: {fileID: 2462573938675926258, guid: a08883442f2e51e4990a9e2d49209249, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef961b70f7ab64990b626d8d8e96ad75, type: 2}
     - target: {fileID: 8314755083895234240, guid: a08883442f2e51e4990a9e2d49209249, type: 3}
       propertyPath: m_Name
       value: Left XRController
