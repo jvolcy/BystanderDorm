@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Vector3 MelaninToCampusStartPosition = new Vector3(0f, 0f, 7f);
     [SerializeField] Vector3 MelaninToCampusStartRotation = new Vector3(0f, 180f, 0f);
 
-    public static event EventHandler<string> OnSelectCanvasQuad;
-    public static event EventHandler OnLoadScene;   //invoked immediately before loading the next scene.
+    public static event EventHandler<string> SelectCanvasQuad;
+    public static event EventHandler ExitingScene;   //invoked immediately before loading the next scene.
 
     //the public sceneManager is used by the timelines
     //SceneManager sceneManager;
@@ -40,10 +40,13 @@ public class GameManager : MonoBehaviour
 
     XROrigin xrOrigin = null;
 
-    static GameManager instance;
+    static public GameManager instance;
 
     string CurrentScene = "None";
     string LastScene = "None";
+
+    public static float SceneTransitionDelay = 2.25f;
+    string NextScene;
 
     /* ======================================================================
      * 
@@ -127,6 +130,8 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Update()
     {
+
+        /*
         if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("X");
@@ -143,6 +148,7 @@ public class GameManager : MonoBehaviour
             //load the prev scene
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
+        */
     }
 
 
@@ -202,32 +208,57 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        //unselect all quads after loading
+        //CanvasQuadSelect("");
         Debug.Log("GameManager:OnSceneLoaded()...Fading In...");
         FadeIn();
     }
-    
+
+
+    public static void LoadScene(string sceneName)
+    {
+        instance._LoadScene(sceneName);
+    }
 
     /* ======================================================================
      * 
      ====================================================================== */
-    public static void LoadScene(string sceneName)
+    void _LoadScene(string sceneName)
     {
+        //signal that we are exiting the current scene.  If a GameManager
+        //object has not been instantiated, the delay parameter is ignored
+        //and the scene loads immediately.
+        ExitingScene?.Invoke(null, null);
 
-        OnLoadScene?.Invoke(null, null);
+        //if a GameManager object has been instantiated, the static
+        //'instance' reference will not be null.  We can use this to
+        //delay the loading of the next scene by the specified amount of time.
+        //This gives subscribers to the ExitingScene time to clean up.  For
+        //example, the player begins the camera fade-out animation on this event.
+        NextScene = sceneName;
+        if (instance)
+        {
+            Invoke("ExeLoadScene", SceneTransitionDelay);
+        }
+        else
+        {
+            ExeLoadScene();
+        }
+    }
 
+    void ExeLoadScene()
+    {
         //load the next scene
         Scene scene;
 
-        scene = SceneManager.LoadScene(sceneName, new LoadSceneParameters(LoadSceneMode.Single));
+        scene = SceneManager.LoadScene(NextScene, new LoadSceneParameters(LoadSceneMode.Single));
 
         if (scene == null)
         {
-            Debug.Log("GM: Failed to Load scene " + sceneName + ".");
+            Debug.Log("GM: Failed to Load scene " + NextScene + ".");
             return;
         }
-
     }
-
 
     public void UsePlayerHandModels(bool val)
     {
@@ -301,7 +332,7 @@ public class GameManager : MonoBehaviour
     /// <param name="id"></param>
     public static void CanvasQuadSelect(string id)
     {
-        OnSelectCanvasQuad?.Invoke(null, id);
+        SelectCanvasQuad?.Invoke(null, id);
     }
 }
 

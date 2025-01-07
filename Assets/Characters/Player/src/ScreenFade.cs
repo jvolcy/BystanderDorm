@@ -60,6 +60,11 @@ public class ScreenFade : MonoBehaviour
 
         //get a reference to our animator
         animator = GetComponent<Animator>();
+
+        if (!animator)
+        {
+            Debug.Log("WARNING: ScreenFade:OnEnable() ... no <Animator> component found!");
+        }
        
     }
 
@@ -68,7 +73,9 @@ public class ScreenFade : MonoBehaviour
     ====================================================================== */
 
     public void FadeIn(bool NoAnimation = false)
-    {        
+    {
+        if (!isFadedOut) return;        //nothing to do
+
         if (NoAnimation)
         {
             //Debug.Log(name + ": CQC:FadeIn(NoAnimation)...");
@@ -87,6 +94,8 @@ public class ScreenFade : MonoBehaviour
 
     public void FadeOut(bool NoAnimation = false)
     {
+        if (isFadedOut) return;     //nothing to do
+
         if (NoAnimation)
         {
             //Debug.Log(name + ": CQC:FadeOut(NoAnimation)...");

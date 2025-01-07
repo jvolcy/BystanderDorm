@@ -36,12 +36,12 @@ public class CanvasQuad : MonoBehaviour
     public float DistanceFromCamera = 0.5f;
     public float Scale = 0.5f;
 
-    [SerializeField][Tooltip("Whether or not the CanvasQuad is visible on startup.")]
-    bool MinimizeOnStart = true;
+    //[SerializeField][Tooltip("Whether or not the CanvasQuad is visible on startup.")]
+    //bool MinimizeOnStart = true;
 
-    [SerializeField]
-    [Tooltip("Whether or not the CanvasQuad is faded out on startup.")]
-    bool FadedOutOnStart = false;
+    //[SerializeField]
+    //[Tooltip("Whether or not the CanvasQuad is faded out on startup.")]
+    //bool FadedOutOnStart = false;
 
     [SerializeField]
     [Tooltip("The unique ID for this Quad.")]
@@ -66,9 +66,9 @@ public class CanvasQuad : MonoBehaviour
     /* ======================================================================
      * Start is called before the first frame update
      ====================================================================== */
-    void OnEnable()
+    void Awake()
     {
-        Debug.Log("CanvasQuad:OnEnable()...");
+        Debug.Log(ID + ": CanvasQuad:Awake()...");
 
         if (MainCamera != null)
         //user has specified the camera to use
@@ -91,7 +91,9 @@ public class CanvasQuad : MonoBehaviour
             //verify that there is at least one GO tagged as "MainCamera"
             if (gameObjects.Length == 0)
             {
-                Debug.Log("No object tagged as 'MainCamera' found.");
+                Debug.Log("No object tagged as 'MainCamera' found... will try again in Start().");
+                //abort, we will try again in Start()
+                return;
             }
             //if there is only one GO, parent to it.
             else if (gameObjects.Length == 1)
@@ -147,7 +149,7 @@ public class CanvasQuad : MonoBehaviour
         var canvas = GetComponentInChildren<Canvas>();
         canvasRectTransform = canvas.GetComponent<RectTransform>();
 
-        
+        /*
         //faded on startup?
         if (FadedOutOnStart)
         {
@@ -184,10 +186,10 @@ public class CanvasQuad : MonoBehaviour
             Debug.Log("CanvasQuad:OnEnable() --> Aactivating " + name);
             CanvasChildObj.SetActive(true);
         }
+        */
 
-
-        GameManager.OnSelectCanvasQuad += OnSelectCanvasQuad;
-        GameManager.OnLoadScene += OnLoadScene;
+        GameManager.SelectCanvasQuad += OnSelectCanvasQuad;
+        GameManager.ExitingScene += OnExitingScene;
     }
 
     /* ======================================================================
@@ -200,7 +202,7 @@ public class CanvasQuad : MonoBehaviour
         if (!CameraFound)
         {
             Debug.Log("CanvasQuad:Start()...looking for camera...");
-            OnEnable();
+            Awake();
         }
 
 
@@ -237,7 +239,7 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     public void Hide(bool NoAnimation = false)
     {
-        //Debug.Log(name + ": CQC: Hide()...");
+        Debug.Log(name + ": CQC: Hide()...");
 
         if (NoAnimation)
         {
@@ -313,8 +315,8 @@ public class CanvasQuad : MonoBehaviour
     private void OnDestroy()
     {
         Debug.Log(ID + ": Unsubscribing to OnSelectCanvasQuad...");
-        GameManager.OnSelectCanvasQuad -= OnSelectCanvasQuad;
-        GameManager.OnLoadScene -= OnLoadScene;
+        GameManager.SelectCanvasQuad -= OnSelectCanvasQuad;
+        GameManager.ExitingScene -= OnExitingScene;
     }
 
     /// <summary>
@@ -324,7 +326,7 @@ public class CanvasQuad : MonoBehaviour
     /// to load a new scene.
     /// </summary>
     /// <param name="sender"></param>
-    void OnLoadScene(object sender, System.EventArgs e)
+    void OnExitingScene(object sender, System.EventArgs e)
     {
         //auto terminate if we are changing scenes.
         Destroy(gameObject);
@@ -338,6 +340,7 @@ public class CanvasQuad : MonoBehaviour
         }
         else
         {
+            Debug.Log(ID + "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
             Hide(true);
         }
 

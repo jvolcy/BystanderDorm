@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MelaninSceneManager : MonoBehaviour
 {
-    public GameManager gameManager = null;
+    //public GameManager gameManager = null;
 
     // Start is called before the first frame update
-   
+
+    /*
     void Start()
     {
         Debug.Log("MelaninSceneManager:Start()...");
@@ -17,22 +18,22 @@ public class MelaninSceneManager : MonoBehaviour
             Debug.Log("MelaninSceneManager:Start()...Did not find a game manager. ******************");
         }
     }
-  
+  */
 
     public void LoadScene(string sceneName)
     {
-        FindGameManager();
-
+        //FindGameManager();
+        /*
         if (!gameManager)
         {
             Debug.Log("MelaninSceneManager:LoadScene - did not find an GameManager.");
             Debug.Log("Could not load scene " + sceneName);
             return;
         }
-
+        */
         GameManager.LoadScene(sceneName);
     }
-
+    /*
     void FindGameManager()
     {
         if (gameManager) return;
@@ -43,11 +44,11 @@ public class MelaninSceneManager : MonoBehaviour
             Debug.Log("MelaninSceneManager:FindGameManager - did not find a GameManager.");
         }
     }
-
+    */
 
     //pass-through functions for timelines
-    public void FadeIn(bool instant=false) { FindGameManager(); gameManager.FadeIn(instant); }
-    public void FadeOut(bool instant = false) { FindGameManager(); gameManager.FadeOut(instant); }
+    public void FadeIn(bool instant=false) { GameManager.instance.FadeIn(instant); }
+    public void FadeOut(bool instant = false) { GameManager.instance.FadeOut(instant); }
 
 
     /*

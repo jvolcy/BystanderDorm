@@ -204,6 +204,10 @@ PrefabInstance:
       propertyPath: ID
       value: Introduction
       objectReference: {fileID: 0}
+    - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: MinimizeOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1483998968291224525, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_text
       value: '9:03pm
@@ -275,6 +279,10 @@ PrefabInstance:
     - target: {fileID: 7468503148277414038, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861631514568606678, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8289647234620141486, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Type
@@ -2442,6 +2450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3089786223914572721, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
       value: 0
@@ -3146,17 +3158,6 @@ PlayableDirector:
     value: {fileID: 1828243126}
   m_ExposedReferences:
     m_References: []
---- !u!114 &677256533 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
-  m_PrefabInstance: {fileID: 81903565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84d3297aa63847999e2b39a9c196168, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,6 +5025,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5943322940263609082, guid: e1e3e47abd2b64e50a7f22542565a8fc, type: 3}
   m_PrefabInstance: {fileID: 4219024320048975239}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &781253067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+  m_PrefabInstance: {fileID: 81903565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84d3297aa63847999e2b39a9c196168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &813865919
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,10 +6063,10 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1765010638}
-          m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
-          m_MethodName: FadeIn
-          m_Mode: 1
+        - m_Target: {fileID: 403325027}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: CanvasQuadSelect
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6062,7 +6074,7 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 0
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1357681902}
@@ -6089,18 +6101,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 1765010638}
-          m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
-          m_MethodName: Select
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 0
         - m_Target: {fileID: 403325027}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: CanvasQuadSelect
@@ -6115,22 +6115,10 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1765010638}
-          m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
-          m_MethodName: Select
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 0
-        - m_Target: {fileID: 403325027}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: CanvasQuadSelect
-          m_Mode: 5
+        - m_Target: {fileID: 781253067}
+          m_TargetAssemblyTypeName: CanvasQuad, Assembly-CSharp
+          m_MethodName: FadeOut
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6141,7 +6129,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1765010638}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
           m_MethodName: Select
           m_Mode: 3
@@ -6180,7 +6168,6 @@ MonoBehaviour:
   objToEnableAfterGFTL: {fileID: 1354611026}
   playerWakeUpPosition: {x: 11.4, y: 9.15, z: -4.2}
   playerWakeUpOrientation: {x: 0, y: 90, z: 0}
-  gameManager: {fileID: 0}
 --- !u!4 &1101228272
 Transform:
   m_ObjectHideFlags: 0
@@ -6352,34 +6339,6 @@ PrefabInstance:
     - target: {fileID: 8567868712229875856, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
       propertyPath: m_Name
       value: Player (XR)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8567868712229875856, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743700148329803604, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743700148329803604, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.149994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743700148329803604, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743700148329803604, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743700148329803604, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743700148329803604, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7936,17 +7895,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1536927575 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
-  m_PrefabInstance: {fileID: 4380586123937358635}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84d3297aa63847999e2b39a9c196168, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1539003419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8443,17 +8391,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9130268295828459542, guid: e1d80ff9bf7014f29a7a6c825990c966, type: 3}
   m_PrefabInstance: {fileID: 1539003419}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1765010638 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-  m_PrefabInstance: {fileID: 1941924838}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2607b74ae7b54f2cb57a8a0ba104255, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1772401516
 GameObject:
   m_ObjectHideFlags: 0
@@ -8729,7 +8666,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1765010638}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
           m_MethodName: Select
           m_Mode: 3
@@ -9069,84 +9006,6 @@ Transform:
   - {fileID: 81903566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1941924838
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: SecondaryCanvasQuadGroup.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: SecondaryCanvasQuadGroup.Array.data[0]
-      value: 
-      objectReference: {fileID: 677256533}
-    - target: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: SecondaryCanvasQuadGroup.Array.data[1]
-      value: 
-      objectReference: {fileID: 1357681903}
-    - target: {fileID: 2367577160958758917, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: SecondaryCanvasQuadGroup.Array.data[2]
-      value: 
-      objectReference: {fileID: 1536927575}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717060185748951529, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976544084234895886, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_Name
-      value: CanvasQuadController
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976544084234895886, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 9034067046828834509, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e05d10fd6a79942e890a8a40bd8020fc, type: 3}
 --- !u!1 &1963711863
 GameObject:
   m_ObjectHideFlags: 0
@@ -21832,6 +21691,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7861631514568606678, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8983079091521197965, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 800
@@ -25922,6 +25785,10 @@ PrefabInstance:
     - target: {fileID: 7468503148277414038, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861631514568606678, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -35305,5 +35172,4 @@ SceneRoots:
   - {fileID: 403325026}
   - {fileID: 1715771169}
   - {fileID: 1925965106}
-  - {fileID: 1941924838}
   - {fileID: 1935637848}

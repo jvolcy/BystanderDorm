@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CampusSceneManager : MonoBehaviour
 {
-    GameManager gameManager = null;
+    //GameManager gameManager = null;
 
     [SerializeField] CanvasQuad BeginSimulationRef;
     [SerializeField] EventTrigger MelaninHallTriggerRef;
@@ -28,7 +28,7 @@ public class CampusSceneManager : MonoBehaviour
         if (!BellesDormTrigger) { BellesDormTrigger = BellesDormTriggerRef; }
         if (!MelaninHallTrigger) { MelaninHallTrigger = MelaninHallTriggerRef; }
     }
-
+    /*
     void Start()
     {
         Debug.Log("CampusSceneManager:Start()...");
@@ -50,6 +50,18 @@ public class CampusSceneManager : MonoBehaviour
             Debug.Log("CampusSceneManager:FindGameManager - did not find a GameManager.");
         }
     }
+    */
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            //put us in front of our room, facing the door
+            GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(new Vector3(0f, 0.1f, 5f), new Vector3(0f, 0f, 0f));
+        }
+    }
+
 
     public void LoadScene(string sceneName)
     {
@@ -95,16 +107,22 @@ public class CampusSceneManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
+        Debug.Log("CampusSceneManager:OnSceneLoad()...");
         if (bReadyToBeginSimulation && scene.name == "Campus Scene")
         {
+            Debug.Log("CampusSceneManager:OnSceneLoad()...returned from Melanin Hall.");
             BeginSimulation.Show(true);
             MelaninHallTrigger.gameObject.SetActive(false);
 
             //unsubscribe to the scene load event
             SceneManager.sceneLoaded -= OnSceneLoaded;
-
-
         }
+        /*
+        else
+        {
+            BeginSimulation.Hide(true);
+        }
+        */
     }
 
 
@@ -112,7 +130,7 @@ public class CampusSceneManager : MonoBehaviour
     //public void FadeIn(bool instant = false) { FindGameManager(); gameManager.FadeIn(instant); }
     //public void FadeOut(bool instant = false) { FindGameManager(); gameManager.FadeOut(instant); }
 
-    public void FadeIn(bool instant = false) { gameManager.FadeIn(instant); }
-    public void FadeOut(bool instant = false) { gameManager.FadeOut(instant); }
+    public void FadeIn(bool instant = false) { GameManager.instance.FadeIn(instant); }
+    public void FadeOut(bool instant = false) { GameManager.instance.FadeOut(instant); }
 
 }

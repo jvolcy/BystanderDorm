@@ -12,16 +12,16 @@ public class HallSceneManager : MonoBehaviour
     [SerializeField] Vector3 playerWakeUpPosition = new Vector3(11f, 9.15f, 0f);
     [SerializeField] Vector3 playerWakeUpOrientation = new Vector3(0f, 180f, 0f);
 
-    [HideInInspector]
-    public GameManager gameManager = null;
+    //[HideInInspector]
+    //public GameManager gameManager = null;
 
     // Start is called before the first frame update
 
     void Start()
     {
         Debug.Log("HallSceneManager:Start()...");
-        FindGameManager();
-        if (!gameManager)
+        //FindGameManager();
+        if (!GameManager.instance)
         {
             Debug.Log("HallSceneManager:Start()...Did not find a game manager. ******************");
         }
@@ -30,9 +30,9 @@ public class HallSceneManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        FindGameManager();
+        //FindGameManager();
 
-        if (!gameManager)
+        if (!GameManager.instance)
         {
             Debug.Log("HallSceneManager:LoadScene - did not find an GameManager.");
             Debug.Log("Could not load scene " + sceneName);
@@ -42,6 +42,7 @@ public class HallSceneManager : MonoBehaviour
         GameManager.LoadScene(sceneName);
     }
 
+    /*
     void FindGameManager()
     {
         if (gameManager) return;
@@ -51,12 +52,12 @@ public class HallSceneManager : MonoBehaviour
         {
             Debug.Log("HallSceneManager:FindGameManager - did not find a GameManager.");
         }
-
+    
     }
+    */
 
-
-    public void FadeIn(bool instant = false) { gameManager.FadeIn(instant); }
-    public void FadeOut(bool instant = false) { gameManager.FadeOut(instant); }
+    public void FadeIn(bool instant = false) { GameManager.instance.FadeIn(instant); }
+    public void FadeOut(bool instant = false) { GameManager.instance.FadeOut(instant); }
 
 
     /* ======================================================================
@@ -66,9 +67,9 @@ public class HallSceneManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            FindGameManager();
+            //FindGameManager();
             //put us in front of our room, facing the door
-            gameManager.Player.GetComponentInChildren<PlayerCtrl>().TelePort(new Vector3(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f));
+            GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(new Vector3(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f));
             objToEnableAfterGFTL.SetActive(true);
         }
 
@@ -89,8 +90,8 @@ public class HallSceneManager : MonoBehaviour
     public void PrepareRoomSceneSignalReceiver()
     {
         //Debug.Log("HallSceneManager: PrepareRoomSceneSignalReceiver()...");
-        FindGameManager();
-        gameManager.Player.GetComponentInChildren<PlayerCtrl>().TelePort(playerWakeUpPosition, playerWakeUpOrientation);
+        //FindGameManager();
+        GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(playerWakeUpPosition, playerWakeUpOrientation);
     }
 
 }

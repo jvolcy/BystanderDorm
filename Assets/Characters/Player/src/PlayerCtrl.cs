@@ -38,7 +38,7 @@ public class PlayerCtrl : MonoBehaviour
             Debug.Log("WARNING:PlayerCtrl:Awake() --> Did not find a ScreenFade child object.");
         }
 
-        GameManager.OnLoadScene += OnLoadScene;
+        GameManager.ExitingScene += OnExitingScene;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -184,7 +184,7 @@ public class PlayerCtrl : MonoBehaviour
     private void OnDestroy()
     {
         Debug.Log("ScreenFade: Unsubscribing to OnSelectCanvasQuad...");
-        GameManager.OnLoadScene -= OnLoadScene;
+        GameManager.ExitingScene -= OnExitingScene;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -196,7 +196,7 @@ public class PlayerCtrl : MonoBehaviour
     /// to load a new scene.
     /// </summary>
     /// <param name="sender"></param>
-    void OnLoadScene(object sender, System.EventArgs e)
+    void OnExitingScene(object sender, System.EventArgs e)
     {
         FadeOut();
     }

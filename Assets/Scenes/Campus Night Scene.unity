@@ -224,6 +224,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
+      propertyPath: ID
+      value: NightCampusIntro
+      objectReference: {fileID: 0}
+    - target: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: Scale
       value: 1
       objectReference: {fileID: 0}
@@ -560,15 +564,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: 3993f36c10d894ac6a0fba555ab5c8a3, type: 2}
     - {fileID: 11400000, guid: 06ae469018a0045358dc8e16dc2a9344, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1890877455}
-          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
-          m_MethodName: FadeOut
-          m_Mode: 6
+        - m_Target: {fileID: 463386928}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: CanvasQuadSelect
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -577,10 +580,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1890877455}
-          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
+        - m_Target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: LoadScene
           m_Mode: 5
           m_Arguments:
@@ -599,6 +600,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1768821873}
     m_Modifications:
+    - target: {fileID: 5837778404265862026, guid: e1d80ff9bf7014f29a7a6c825990c966, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8502490469126474412, guid: e1d80ff9bf7014f29a7a6c825990c966, type: 3}
       propertyPath: m_Name
       value: Player (Desktop)
@@ -667,7 +672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8980840103790921965, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: m_LocalPosition.x
@@ -714,6 +719,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
+--- !u!114 &463386928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
+  m_PrefabInstance: {fileID: 463386927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff5161a603c74d1188f071870fff29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &576665476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
@@ -1235,7 +1251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1890877456}
-  - component: {fileID: 1890877455}
+  - component: {fileID: 1890877457}
   m_Layer: 0
   m_Name: CampusNightSceneManager
   m_TagString: Untagged
@@ -1243,21 +1259,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1890877455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890877453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184bc71252857424ea20ab68ba3f22f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BeginSimulationRef: {fileID: 0}
-  MelaninHallTriggerRef: {fileID: 0}
-  BellesDormTriggerRef: {fileID: 0}
 --- !u!4 &1890877456
 Transform:
   m_ObjectHideFlags: 0
@@ -1273,6 +1274,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1890877457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890877453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b5e5674667c43dbb445bc0780c90df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1997149267
 GameObject:
   m_ObjectHideFlags: 0
