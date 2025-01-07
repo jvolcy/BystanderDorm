@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &77852641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
-  m_PrefabInstance: {fileID: 2045109354}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &105657528
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,17 +215,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &202138635 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1019154825794715084, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
-  m_PrefabInstance: {fileID: 1096592036}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44900d93856794af68f8726ef65641e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &207931872
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &207931873
 Transform:
   m_ObjectHideFlags: 0
@@ -704,7 +688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &999476213
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,9 +1158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184bc71252857424ea20ab68ba3f22f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeginSimulationRef: {fileID: 2045109355}
-  MelaninHallTriggerRef: {fileID: 1096592040}
-  BellesDormTriggerRef: {fileID: 202138635}
+  BeginSimulation: {fileID: 2045109355}
+  MelaninHallTrigger: {fileID: 1096592040}
 --- !u!4 &1560949080
 Transform:
   m_ObjectHideFlags: 0
@@ -1207,8 +1190,6 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 06ae469018a0045358dc8e16dc2a9344, type: 2}
-    - {fileID: 11400000, guid: 997f2d11a17514c6cabd0ed433100e88, type: 2}
-    - {fileID: 11400000, guid: 3096d4f64e6844f8fb48eb69a28ee698, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1235,22 +1216,6 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls: []
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CanvasQuadController, Assembly-CSharp
-          m_MethodName: FadeOut
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1642759404
 PrefabInstance:
@@ -1612,7 +1577,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 830951153796434348, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
   m_PrefabInstance: {fileID: 2045109354}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77852641}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a84d3297aa63847999e2b39a9c196168, type: 3}
@@ -1669,35 +1634,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 06ae469018a0045358dc8e16dc2a9344, type: 2}
     m_Events:
     - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 77852641}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1560949079}
-          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
-          m_MethodName: FadeOut
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: CampusN
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1560949079}
-          m_TargetAssemblyTypeName: CampusSceneManager, Assembly-CSharp
+        - m_Target: {fileID: 662528052}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: LoadScene
           m_Mode: 5
           m_Arguments:

@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     public static float SceneTransitionDelay = 2.25f;
     string NextScene;
 
+    public bool visitedMelaninHall = false;     //set to true after we visit Melanin Hall (used by CampusSceneManager)
+
     /* ======================================================================
      * 
      ====================================================================== */
