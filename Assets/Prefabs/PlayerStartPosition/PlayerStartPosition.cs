@@ -24,7 +24,7 @@ public class PlayerStartPosition : MonoBehaviour
         if (AutoMovePlayerOnSceneLoad)
         {
             //SetPlayerStartPosition();
-            Player.GetComponent<PlayerCtrl>().SetPosition(transform.position, transform.localEulerAngles);
+            Player.GetComponent<PlayerCtrl>().TelePort(transform.position, transform.localEulerAngles);
 
         }
 
@@ -69,7 +69,7 @@ public class PlayerStartPosition : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         Debug.Log("PlayerStartPosition: Loaded scene " + scene.name);
-        Player.GetComponent<PlayerCtrl>().SetPosition(transform.position, transform.localEulerAngles);
+        Player.GetComponent<PlayerCtrl>().TelePort(transform.position, transform.localEulerAngles);
         //SetPlayerStartPosition();
     }
 

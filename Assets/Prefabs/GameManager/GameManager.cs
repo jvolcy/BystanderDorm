@@ -17,24 +17,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject DesktopPlayerPrefab;
     [SerializeField] GameObject XRPlayerPrefab;
 
-    //[Space]
-    //[Header("Persistent GOs")]
-    //[SerializeField] GameObject[] DontDestroyObjList;
-
     [Space]
     [Header("Scenes")]
     //[SerializeField] string FirstScene = "Campus Scene";
 
     [SerializeField] Vector3 MelaninToCampusStartPosition = new Vector3(0f, 0f, 7f);
     [SerializeField] Vector3 MelaninToCampusStartRotation = new Vector3(0f, 180f, 0f);
+    [SerializeField] Transform MelaninToCampusPlayerPosition; 
 
     public static event EventHandler<string> SelectCanvasQuad;
     public static event EventHandler ExitingScene;   //invoked immediately before loading the next scene.
 
-    //the public sceneManager is used by the timelines
-    //SceneManager sceneManager;
-
-    //[HideInInspector]
+    [HideInInspector]
     public GameObject Player;
     PlayerCtrl playerCtrl;
 
@@ -198,7 +192,8 @@ public class GameManager : MonoBehaviour
         if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
         {
             Debug.Log("Relocating Player *********");
-            playerCtrl.SetPosition(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
+            //playerCtrl.TelePort(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
+            playerCtrl.TelePort(MelaninToCampusPlayerPosition);
         }
         else
         {
@@ -206,7 +201,8 @@ public class GameManager : MonoBehaviour
             if (playerStartPosition)
             {
                 Debug.Log("GM: Found a 'PlayerStartPosition marker' Relocating player...");
-                playerCtrl.SetPosition(playerStartPosition.position, playerStartPosition.localEulerAngles);
+                //playerCtrl.TelePort(playerStartPosition.position, playerStartPosition.localEulerAngles);
+                playerCtrl.TelePort(playerStartPosition);
             }
         }
 

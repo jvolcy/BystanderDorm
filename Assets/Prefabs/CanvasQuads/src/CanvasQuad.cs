@@ -340,7 +340,7 @@ public class CanvasQuad : MonoBehaviour
         }
         else
         {
-            Debug.Log(ID + "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            //Debug.Log(ID + "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
             Hide(true);
         }
 

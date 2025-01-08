@@ -438,8 +438,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
+      propertyPath: MelaninToCampusPlayerPosition
+      value: 
+      objectReference: {fileID: 1589357685}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: MelaninToCampusStartPosition.z
       value: 7
@@ -1217,6 +1221,37 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!1 &1589357684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589357685}
+  m_Layer: 0
+  m_Name: MelaninToCampusPlayerPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1589357685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589357684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1642759404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1694,7 +1729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7756329
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1702,7 +1737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.63118434
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1749,3 +1784,4 @@ SceneRoots:
   - {fileID: 1560949080}
   - {fileID: 1548926091}
   - {fileID: 2045109354}
+  - {fileID: 1589357685}

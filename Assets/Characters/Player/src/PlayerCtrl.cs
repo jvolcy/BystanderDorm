@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
+using Unity.XR.CoreUtils;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerCtrl : MonoBehaviour
     DualController[] dualControllers;
     bool ControllersFound = false;
     bool UsingHandControls;
+
+    XROrigin xrOrigin;
 
     /// <summary>
     /// Awake(): Enforece singleton: if there is already an object tagged as Player, self-destruct
@@ -38,6 +41,7 @@ public class PlayerCtrl : MonoBehaviour
             Debug.Log("WARNING:PlayerCtrl:Awake() --> Did not find a ScreenFade child object.");
         }
 
+        xrOrigin = GetComponent<XROrigin>();
         GameManager.ExitingScene += OnExitingScene;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -129,6 +133,18 @@ public class PlayerCtrl : MonoBehaviour
 
     }
 
+    public void TelePort(Transform t)
+    {
+        Vector3 camOffset = new Vector3(0f, xrOrigin.CameraYOffset, 0f);
+        xrOrigin.MoveCameraToWorldLocation(t.position + camOffset);
+        bool val = xrOrigin.MatchOriginUpCameraForward(t.up, t.forward);
+        //bool val = xrOrigin.MatchOriginUpOriginForward(t.up, t.forward);
+        if (!val)
+        {
+            Debug.Log("PlayerCtrl: TelePort: MatchOriginUpOriginForward() failed.");
+        }
+        //Physics.SyncTransforms();
+    }
 
     /// <summary>
     /// 
@@ -163,22 +179,6 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
-    /* ======================================================================
-     * 
-     ====================================================================== */
-    public void SetPosition(Vector3 position, Vector3 localEulerAngles)
-    {
-        transform.position = position;
-        transform.localEulerAngles = localEulerAngles;
-
-        //inputSubsystem.TryRecenter();
-
-        //var cam = GameObject.FindGameObjectWithTag("MainCamera"); ;
-        //cam.transform.position = Vector3.zero;
-        //cam.transform.rotation = Quaternion.identity;
-
-        Physics.SyncTransforms();
-    }
 
 
     private void OnDestroy()
