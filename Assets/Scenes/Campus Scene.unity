@@ -424,6 +424,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9130268295828459542, guid: e1d80ff9bf7014f29a7a6c825990c966, type: 3}
   m_PrefabInstance: {fileID: 337744421}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &643305139 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7794992648461658221, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+  m_PrefabInstance: {fileID: 1096592036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &662528051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1097,6 +1102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44900d93856794af68f8726ef65641e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1241790546 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3494496704430054979, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+  m_PrefabInstance: {fileID: 1096592036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1548926090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeginSimulation: {fileID: 2045109355}
   MelaninHallTrigger: {fileID: 1096592040}
+  BellesHallEntry: {fileID: 643305139}
+  MelaninHallEntry: {fileID: 1241790546}
+  MelaninToCampusPlayerPosition: {fileID: 1589357685}
 --- !u!4 &1560949080
 Transform:
   m_ObjectHideFlags: 0
@@ -1729,7 +1742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1737,7 +1750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1749,7 +1762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1400523603401536435, guid: 7445d27232f324f939c48bb4d9e75c0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

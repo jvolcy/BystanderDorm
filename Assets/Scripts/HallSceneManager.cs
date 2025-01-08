@@ -9,6 +9,8 @@ using UnityEngine.XR.Management;
 public class HallSceneManager : MonoBehaviour
 {
     [SerializeField] GameObject objToEnableAfterGFTL;   //for debugging only
+    [SerializeField] Transform playerWakeUpPoint;
+    [SerializeField] Transform roomEntryPoint;
     [SerializeField] Vector3 playerWakeUpPosition = new Vector3(11f, 9.15f, 0f);
     [SerializeField] Vector3 playerWakeUpOrientation = new Vector3(0f, 180f, 0f);
 
@@ -69,7 +71,7 @@ public class HallSceneManager : MonoBehaviour
         {
             //FindGameManager();
             //put us in front of our room, facing the door
-            GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(new Vector3(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f));
+            GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(roomEntryPoint); //(11f, 9.15f, 0f), new Vector3(0f, 180f, 0f)
             objToEnableAfterGFTL.SetActive(true);
         }
 
@@ -91,7 +93,7 @@ public class HallSceneManager : MonoBehaviour
     {
         //Debug.Log("HallSceneManager: PrepareRoomSceneSignalReceiver()...");
         //FindGameManager();
-        GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(playerWakeUpPosition, playerWakeUpOrientation);
+        GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(playerWakeUpPoint);
     }
 
 }

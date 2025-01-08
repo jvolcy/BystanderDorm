@@ -8,6 +8,9 @@ public class CampusSceneManager : MonoBehaviour
 
     [SerializeField] CanvasQuad BeginSimulation;
     [SerializeField] EventTrigger MelaninHallTrigger;
+    [SerializeField] Transform BellesHallEntry;
+    [SerializeField] Transform MelaninHallEntry;
+    [SerializeField] Transform MelaninToCampusPlayerPosition;
 
     private void Awake()
     {
@@ -21,7 +24,7 @@ public class CampusSceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             //put us in front of our room, facing the door
-            GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(new Vector3(0f, 0.1f, 5f), new Vector3(0f, 0f, 0f));
+            GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(MelaninHallEntry);
         }
     }
 
@@ -32,7 +35,7 @@ public class CampusSceneManager : MonoBehaviour
         if (sceneName == "MelaninHall")
         {
             Debug.Log("CampusSceneManager:LoadScene()...Visited MelaninHall set to true.");
-            GameManager.instance.visitedMelaninHall = true;
+            GameManager.visitedMelaninHall = true;
         }
 
         GameManager.LoadScene(sceneName);       //load the requested scene
@@ -50,13 +53,16 @@ public class CampusSceneManager : MonoBehaviour
     {
         Debug.Log("CampusSceneManager:OnSceneLoaded()...");
 
-        if (GameManager.instance.visitedMelaninHall == true)
+        if (GameManager.visitedMelaninHall == true)
         {
+            Debug.Log("CampusSceneManager: Melaning Hall visited.");
             GameManager.CanvasQuadSelect("BeginSimulation");
+            GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(MelaninToCampusPlayerPosition);
             MelaninHallTrigger.gameObject.SetActive(false);
         }
         else
         {
+            Debug.Log("CampusSceneManager: Melaning Hall NOT visited.");
             GameManager.CanvasQuadSelect("");
             MelaninHallTrigger.gameObject.SetActive(true);
         }

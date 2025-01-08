@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 using Unity.XR.CoreUtils;
+using UnityEngine.UIElements;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -122,26 +123,42 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     /// <param name="position">Position to teleport to</param>
     /// <param name="localEulers">Orientation at teleport point as localEuler angles.</param>
+    /*
     public void TelePort(Vector3 position, Vector3 localEulers)
     {
         //CharacterController characterController = GetComponent<CharacterController>();
         //characterController.enabled = false;
-        transform.position = position;
-        transform.localEulerAngles = localEulers;
-        Physics.SyncTransforms();
+        xrOrigin.transform.position = position;
+        xrOrigin.transform.localEulerAngles = localEulers;
+        //Physics.SyncTransforms();
         //characterController.enabled = true;
 
     }
+    */
 
     public void TelePort(Transform t)
     {
-        Vector3 camOffset = new Vector3(0f, xrOrigin.CameraYOffset, 0f);
-        xrOrigin.MoveCameraToWorldLocation(t.position + camOffset);
-        bool val = xrOrigin.MatchOriginUpCameraForward(t.up, t.forward);
-        //bool val = xrOrigin.MatchOriginUpOriginForward(t.up, t.forward);
-        if (!val)
+        if (GameManager.instance.playMode == GameManager.PlayMode.Desktop)
         {
-            Debug.Log("PlayerCtrl: TelePort: MatchOriginUpOriginForward() failed.");
+            transform.position = t.position;
+            transform.rotation = t.rotation;
+            Physics.SyncTransforms();
+        }
+        else    //XR
+        {
+            Vector3 camOffset = new Vector3(0f, xrOrigin.CameraYOffset, 0f);
+            bool val = xrOrigin.MoveCameraToWorldLocation(t.position + camOffset);
+            if (!val)
+            {
+                Debug.Log("PlayerCtrl: TelePort: MoveCameraToWorldLocation() failed.");
+            }
+
+            val = xrOrigin.MatchOriginUpCameraForward(t.up, t.forward);
+            //bool val = xrOrigin.MatchOriginUpOriginForward(t.up, t.forward);
+            if (!val)
+            {
+                Debug.Log("PlayerCtrl: TelePort: MatchOriginUpOriginForward() failed.");
+            }
         }
         //Physics.SyncTransforms();
     }

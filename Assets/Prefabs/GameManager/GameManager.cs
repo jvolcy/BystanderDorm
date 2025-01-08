@@ -3,27 +3,20 @@ using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;   //for EventHandler
+using System;
+using UnityEngine.XR.Management;   //for EventHandler
 
 public class GameManager : MonoBehaviour
 {
     //Select the playmode with an enum
-    enum PlayMode { Desktop, XR }
+    public enum PlayMode { Desktop, XR }
     [Header("Play Mode")]
-    [SerializeField] PlayMode playMode = PlayMode.Desktop;
+    public PlayMode playMode = PlayMode.Desktop;
 
     [Space]
     [Header("Player Prefabs")]
     [SerializeField] GameObject DesktopPlayerPrefab;
     [SerializeField] GameObject XRPlayerPrefab;
-
-    [Space]
-    [Header("Scenes")]
-    //[SerializeField] string FirstScene = "Campus Scene";
-
-    [SerializeField] Vector3 MelaninToCampusStartPosition = new Vector3(0f, 0f, 7f);
-    [SerializeField] Vector3 MelaninToCampusStartRotation = new Vector3(0f, 180f, 0f);
-    [SerializeField] Transform MelaninToCampusPlayerPosition; 
 
     public static event EventHandler<string> SelectCanvasQuad;
     public static event EventHandler ExitingScene;   //invoked immediately before loading the next scene.
@@ -39,10 +32,10 @@ public class GameManager : MonoBehaviour
     string CurrentScene = "None";
     string LastScene = "None";
 
-    public static float SceneTransitionDelay = 2.25f;
+    public float SceneTransitionDelay = 2.25f;
     string NextScene;
 
-    public bool visitedMelaninHall = false;     //set to true after we visit Melanin Hall (used by CampusSceneManager)
+    public static bool visitedMelaninHall = false;     //set to true after we visit Melanin Hall (used by CampusSceneManager)
 
     /* ======================================================================
      * 
@@ -110,12 +103,23 @@ public class GameManager : MonoBehaviour
 
     }
 
+    void dummy()
+    {
+        Debug.Log("XXXXXXXXXXXXXXXXXXXXXX dummy XXXXXXXXXXXXXXXXXXXXXX");
+        GameObject obj = new();
+        obj.transform.position = new Vector3(1.6299999952316285f, 0.0f, 4.0f);
+        obj.transform.rotation = new Quaternion(-0.012117132544517517f, 0.1727437525987625f, 0.002125272061675787f, 0.9848899841308594f);
+        GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(obj.transform);
+    }
+
 
     /* ======================================================================
      * Start is called before the first frame update
      ====================================================================== */
     void Start()
     {
+        //dummy();
+
         //Debug.Log("GM: Start()...");
         FadeIn();
     }
@@ -126,6 +130,23 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+
+            Transform playerStartPosition = GameObject.FindGameObjectWithTag("PlayerStartPosition").transform;
+            if (playerStartPosition)
+            {
+
+                Debug.Log("GM: Found a 'PlayerStartPosition marker' Relocating player...");
+                playerCtrl.TelePort(playerStartPosition);
+            }
+        }
+
+        if (Time.frameCount  == 10)
+        {
+            //Debug.Log("frame count!");
+            Debug.Log(Time.frameCount + ": init complete = " + XRGeneralSettings.Instance.Manager.isInitializationComplete); 
+        }
 
         /*
         if (Input.GetKeyDown(KeyCode.X))
@@ -192,16 +213,15 @@ public class GameManager : MonoBehaviour
         if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
         {
             Debug.Log("Relocating Player *********");
-            //playerCtrl.TelePort(MelaninToCampusStartPosition, MelaninToCampusStartRotation);
-            playerCtrl.TelePort(MelaninToCampusPlayerPosition);
+            //playerCtrl.TelePort(MelaninToCampusPlayerPosition);
         }
         else
         {
             Transform playerStartPosition = GameObject.FindGameObjectWithTag("PlayerStartPosition").transform;
             if (playerStartPosition)
             {
+
                 Debug.Log("GM: Found a 'PlayerStartPosition marker' Relocating player...");
-                //playerCtrl.TelePort(playerStartPosition.position, playerStartPosition.localEulerAngles);
                 playerCtrl.TelePort(playerStartPosition);
             }
         }
