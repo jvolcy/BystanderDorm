@@ -142,11 +142,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Time.frameCount  == 10)
-        {
-            //Debug.Log("frame count!");
-            Debug.Log(Time.frameCount + ": init complete = " + XRGeneralSettings.Instance.Manager.isInitializationComplete); 
-        }
 
         /*
         if (Input.GetKeyDown(KeyCode.X))
