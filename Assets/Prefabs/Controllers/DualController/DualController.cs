@@ -49,12 +49,17 @@ public class DualController : MonoBehaviour
         UseHandController(UsingHandController);
     }
 
-    /*
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
     {
-        if (Input.GetKeyDown(KeyCode.H)) { UseHandController(true); }
-        if (Input.GetKeyDown(KeyCode.D)) { UseHandController(false); }
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
     }
-    */
 }

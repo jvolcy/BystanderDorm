@@ -14,19 +14,6 @@ public class LightController : MonoBehaviour
     public Color AmbientLightColor = Color.black;
 
     /* ======================================================================
-     * Start is called before the first frame update
-     ====================================================================== */
-    //void Start()
-    //{
-        /*
-        if (DisableSkybox)
-        RenderSettings.skybox = null;
-
-        SetLightIntensities();
-        */
-    //}
-
-    /* ======================================================================
      * Update is called once per frame
      ====================================================================== */
     void Update()
@@ -37,36 +24,21 @@ public class LightController : MonoBehaviour
         }
     }
 
-    /* ======================================================================
-    * 
-    ====================================================================== */
-    /*
-    void SetLightIntensities()
+
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
     {
-        
-        //RenderSettings.ambientIntensity = SkyboxIntensity;
-        byte clr = (byte)(168 * SkyboxIntensity);
-        RenderSettings.ambientLight = new Color32(clr, clr, clr, 255);
-        //RenderSettings.reflectionIntensity = SkyboxIntensity;
-        foreach (Light light in HallLights)
-        {
-            light.intensity = HallLightIntensity;
-        }
-
-        foreach (Light light in RoomLights)
-        {
-            light.intensity = RoomLightIntensity;
-        }
-
-        //---------- Update our shadow registers ----------
-        oldSkyboxIntensity = SkyboxIntensity;
-        oldHallLightIntensity = HallLightIntensity;
-        oldRoomLightIntensity = RoomLightIntensity;
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
     }
 
-
-    */
-    //----------  ----------
 
     /* ======================================================================
      * 

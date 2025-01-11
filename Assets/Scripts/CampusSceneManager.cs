@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// This is the scene manager for the campus scene.  The project is
+/// organized such that there is a singleton GameManager that survives from
+/// scene to scene.  Each scene has a scene manager.
 public class CampusSceneManager : MonoBehaviour
 {
 
@@ -34,7 +37,7 @@ public class CampusSceneManager : MonoBehaviour
 
         if (sceneName == "MelaninHall")
         {
-            Debug.Log("CampusSceneManager:LoadScene()...Visited MelaninHall set to true.");
+            debug("CampusSceneManager:LoadScene()...Visited MelaninHall set to true.");
             GameManager.visitedMelaninHall = true;
         }
 
@@ -44,27 +47,41 @@ public class CampusSceneManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("CampusSceneManager: Unsubscribing to OnSceneLoaded...");
+        debug("CampusSceneManager: Unsubscribing to OnSceneLoaded...");
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        Debug.Log("CampusSceneManager:OnSceneLoaded()...");
+        debug("CampusSceneManager:OnSceneLoaded()...");
 
         if (GameManager.visitedMelaninHall == true)
         {
-            Debug.Log("CampusSceneManager: Melaning Hall visited.");
+            debug("CampusSceneManager: Melaning Hall visited.");
             GameManager.CanvasQuadSelect("BeginSimulation");
             GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(MelaninToCampusPlayerPosition);
             MelaninHallTrigger.gameObject.SetActive(false);
         }
         else
         {
-            Debug.Log("CampusSceneManager: Melaning Hall NOT visited.");
+            debug("CampusSceneManager: Melaning Hall NOT visited.");
             GameManager.CanvasQuadSelect("");
             MelaninHallTrigger.gameObject.SetActive(true);
         }
+    }
+
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
+    {
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
     }
 }

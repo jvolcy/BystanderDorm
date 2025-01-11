@@ -26,20 +26,20 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        Debug.Log("PlayerCtrl:Awake()...");
+        debug("Awake()...");
 
         var ExistingPlayers = GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log("# of existing players found: " + ExistingPlayers.Length);
+        debug("# of existing players found: " + ExistingPlayers.Length);
         if (ExistingPlayers.Length > 1)
         {
-            Debug.Log("Destroying TEMP Player...");
+            debug("Destroying TEMP Player...");
             Destroy(gameObject);
         }
 
         screenFade = GetComponentInChildren<ScreenFade>();
         if (screenFade == null)
         {
-            Debug.Log("WARNING:PlayerCtrl:Awake() --> Did not find a ScreenFade child object.");
+            debug("WARNING:Awake() --> Did not find a ScreenFade child object.");
         }
 
         xrOrigin = GetComponent<XROrigin>();
@@ -50,7 +50,7 @@ public class PlayerCtrl : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("PlayerCtrl:Start()...");
+        debug("Start()...");
         LocateControllers();
         UseHandControls(false);
         //FadeIn();
@@ -89,7 +89,7 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     public void FadeOut(bool instant = false)
     {
-        Debug.Log("PlayerCtrl:FadeOut()...");
+        debug("FadeOut()...");
         screenFade.FadeIn(instant);
     }
 
@@ -100,7 +100,7 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
     public void FadeIn(bool instant = false)
     {
-        Debug.Log("PlayerCtrl:FadeIn()...");
+        debug("FadeIn()...");
         screenFade.FadeOut(instant);
     }
 
@@ -111,7 +111,7 @@ public class PlayerCtrl : MonoBehaviour
         if (ControllersFound) return;
 
         dualControllers = GetComponentsInChildren<DualController>(true);
-        Debug.Log("PlayerCtrl: found " + dualControllers.Length + " DualController.");
+        debug("found " + dualControllers.Length + " DualController.");
 
         ControllersFound = dualControllers.Length == 2;
     }
@@ -150,14 +150,14 @@ public class PlayerCtrl : MonoBehaviour
             bool val = xrOrigin.MoveCameraToWorldLocation(t.position + camOffset);
             if (!val)
             {
-                Debug.Log("PlayerCtrl: TelePort: MoveCameraToWorldLocation() failed.");
+                debug("TelePort: MoveCameraToWorldLocation() failed.");
             }
 
             val = xrOrigin.MatchOriginUpCameraForward(t.up, t.forward);
             //bool val = xrOrigin.MatchOriginUpOriginForward(t.up, t.forward);
             if (!val)
             {
-                Debug.Log("PlayerCtrl: TelePort: MatchOriginUpOriginForward() failed.");
+                debug("TelePort: MatchOriginUpOriginForward() failed.");
             }
         }
         //Physics.SyncTransforms();
@@ -170,7 +170,7 @@ public class PlayerCtrl : MonoBehaviour
     public void SetHandColor(Color clr)
     {
         magicColorUpdates = GetComponentsInChildren<MagicColorUpdate>(true);
-        Debug.Log("Found " + magicColorUpdates.Length + " MagicColorUpdate components.");
+        debug("Found " + magicColorUpdates.Length + " MagicColorUpdate components.");
 
         foreach (var magicColorUpdate in magicColorUpdates)
         {
@@ -181,10 +181,10 @@ public class PlayerCtrl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("PlayerCtrl triggered by " + other.tag);
+        //debug("PlayerCtrl triggered by " + other.tag);
         if (other.CompareTag("MMM"))
         {
-            //Debug.Log("changing colors...");
+            //debug("changing colors...");
 
             //Get the color of the MMM that hit our mouth
             var renderer = other.GetComponent<Renderer>();
@@ -200,7 +200,7 @@ public class PlayerCtrl : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("ScreenFade: Unsubscribing to OnSelectCanvasQuad...");
+        debug("Unsubscribing to OnExitingScene and OnSceneLoaded...");
         GameManager.ExitingScene -= OnExitingScene;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -221,5 +221,20 @@ public class PlayerCtrl : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         FadeIn();
+    }
+
+
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
+    {
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
     }
 }

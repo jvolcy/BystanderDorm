@@ -68,7 +68,7 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     void Awake()
     {
-        Debug.Log(ID + ": CanvasQuad:Awake()...");
+        debug(ID + ": CanvasQuad:Awake()...");
 
         if (MainCamera != null)
         //user has specified the camera to use
@@ -91,7 +91,7 @@ public class CanvasQuad : MonoBehaviour
             //verify that there is at least one GO tagged as "MainCamera"
             if (gameObjects.Length == 0)
             {
-                Debug.Log("No object tagged as 'MainCamera' found... will try again in Start().");
+                debug("No object tagged as 'MainCamera' found... will try again in Start().");
                 //abort, we will try again in Start()
                 return;
             }
@@ -178,12 +178,12 @@ public class CanvasQuad : MonoBehaviour
 
         if (FadedOutOnStart || MinimizeOnStart)
         {
-            Debug.Log("CanvasQuad:OnEnable() --> Deactivating " + name);
+            debug("CanvasQuad:OnEnable() --> Deactivating " + name);
             CanvasChildObj.SetActive(false);
         }
         else
         {
-            Debug.Log("CanvasQuad:OnEnable() --> Aactivating " + name);
+            debug("CanvasQuad:OnEnable() --> Aactivating " + name);
             CanvasChildObj.SetActive(true);
         }
         */
@@ -198,10 +198,10 @@ public class CanvasQuad : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("CanvasQuad:Start()...");
+        debug("CanvasQuad:Start()...");
         if (!CameraFound)
         {
-            Debug.Log("CanvasQuad:Start()...looking for camera...");
+            debug("CanvasQuad:Start()...looking for camera...");
             Awake();
         }
 
@@ -218,16 +218,16 @@ public class CanvasQuad : MonoBehaviour
     {
         if (disableGO != null) StopCoroutine(disableGO);
         CanvasChildObj.SetActive(true);
-        //Debug.Log(name + ": CQC: Show()...");
+        //debug(name + ": CQC: Show()...");
 
         if (NoAnimation)
         {
-            //Debug.Log("Setting Canvas localScale to Vector3.one");
+            //debug("Setting Canvas localScale to Vector3.one");
             animator.Play("ShowInstantly");
         }
         else if (isMinimized)
         {
-            //Debug.Log("Showing Canvas.");
+            //debug("Showing Canvas.");
             animator.Play("Show");
         }
 
@@ -239,17 +239,17 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     public void Hide(bool NoAnimation = false)
     {
-        Debug.Log(name + ": CQC: Hide()...");
+        debug(name + ": CQC: Hide()...");
 
         if (NoAnimation)
         {
-            //Debug.Log("Setting Canvas localScale to Vector3.zero");
+            //debug("Setting Canvas localScale to Vector3.zero");
             animator.Play("HideInstantly");
             DisableGO(0.1f);
         }
         else if (!isMinimized)
         {
-            //Debug.Log("Hinding Canvas.");
+            //debug("Hinding Canvas.");
             animator.Play("Hide");
             DisableGO(2.0f);
         }
@@ -280,12 +280,12 @@ public class CanvasQuad : MonoBehaviour
 
         if (NoAnimation)
         {
-            //Debug.Log(name + ": CQC:FadeIn(NoAnimation)...");
+            //debug(name + ": CQC:FadeIn(NoAnimation)...");
             animator.Play("FadeInInstantly");
         }
         else //if (isFadedOut)
         {
-            //Debug.Log(name + ": CQC:FadeIn()...");
+            //debug(name + ": CQC:FadeIn()...");
             animator.Play("FadeIn");
         }
 
@@ -298,13 +298,13 @@ public class CanvasQuad : MonoBehaviour
     {
         if (NoAnimation)
         {
-            //Debug.Log(name + ": CQC:FadeOut(NoAnimation)...");
+            //debug(name + ": CQC:FadeOut(NoAnimation)...");
             animator.Play("FadeOutInstantly");
             DisableGO(0.1f);
         }
         else //if (!isFadedOut)
         {
-            //Debug.Log(name + ": CQC:FadeOut()...");
+            //debug(name + ": CQC:FadeOut()...");
             animator.Play("FadeOut");
             DisableGO(2.0f);
         }
@@ -314,7 +314,7 @@ public class CanvasQuad : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log(ID + ": Unsubscribing to OnSelectCanvasQuad...");
+        debug(ID + ": Unsubscribing to OnSelectCanvasQuad...");
         GameManager.SelectCanvasQuad -= OnSelectCanvasQuad;
         GameManager.ExitingScene -= OnExitingScene;
     }
@@ -340,12 +340,25 @@ public class CanvasQuad : MonoBehaviour
         }
         else
         {
-            //Debug.Log(ID + "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            //debug(ID + "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
             Hide(true);
         }
 
     }
 
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
+    {
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
+    }
 }
 
     /* ======================================================================

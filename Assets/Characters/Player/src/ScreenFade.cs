@@ -45,7 +45,7 @@ public class ScreenFade : MonoBehaviour
      ====================================================================== */
     void OnEnable()
     {
-        Debug.Log("ScreenFade:OnEnable()...");
+        debug("ScreenFade:OnEnable()...");
 
         //if we are in VR mode, disable any "Standalone Input Module" or
         //"Input System UI Input Module" in the scene
@@ -63,7 +63,7 @@ public class ScreenFade : MonoBehaviour
 
         if (!animator)
         {
-            Debug.Log("WARNING: ScreenFade:OnEnable() ... no <Animator> component found!");
+            debug("WARNING: ScreenFade:OnEnable() ... no <Animator> component found!");
         }
        
     }
@@ -78,12 +78,12 @@ public class ScreenFade : MonoBehaviour
 
         if (NoAnimation)
         {
-            //Debug.Log(name + ": CQC:FadeIn(NoAnimation)...");
+            //debug(name + ": CQC:FadeIn(NoAnimation)...");
             animator.Play("FadeInInstantly");
         }
         else //if (isFadedOut)
         {
-            //Debug.Log(name + ": CQC:FadeIn()...");
+            //debug(name + ": CQC:FadeIn()...");
             animator.Play("FadeIn");
         }
 
@@ -98,12 +98,12 @@ public class ScreenFade : MonoBehaviour
 
         if (NoAnimation)
         {
-            //Debug.Log(name + ": CQC:FadeOut(NoAnimation)...");
+            //debug(name + ": CQC:FadeOut(NoAnimation)...");
             animator.Play("FadeOutInstantly");
         }
         else //if (!isFadedOut)
         {
-            //Debug.Log(name + ": CQC:FadeOut()...");
+            //debug(name + ": CQC:FadeOut()...");
             animator.Play("FadeOut");
         }
 
@@ -111,7 +111,19 @@ public class ScreenFade : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
+    {
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
+    }
 
 
 }

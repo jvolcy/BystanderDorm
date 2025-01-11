@@ -51,53 +51,20 @@ public class XRController : MonoBehaviour
         animator.SetFloat("ThumbX", ThumbStick.x * (RightHand ? 1f : -1f));
         animator.SetFloat("ThumbY", ThumbStick.y);
 
-
-        /*
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            float val = ActivateValue.action.ReadValue<float>();
-            Debug.Log("RightActivateValue = " + val);
-
-            Vector2 val2 = TeleportDirection.action.ReadValue<Vector2>();
-            Debug.Log("RightTeleportDirection = " + val2);
-
-            float val4 = SelectValue.action.ReadValue<float>();
-            Debug.Log("RightSelectValue = " + val4);
-
-            //float val5 = RightActivateValue.action.ReadValue<float>();
-            //Debug.Log("RightActivateValue = " + val)5;
-
-        }
-        */
     }
 
-
-    /*
-    private void Activate(InputAction.CallbackContext obj)
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
     {
-        float val = obj.action.ReadValue<float>();
-        //obj.ReadValue<float>();
-        animator.SetFloat("Trigger",val);
-        Debug.Log("Activated--> " + val);
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
     }
-
-    private void DeActivate(InputAction.CallbackContext obj)
-    {
-        float val = obj.action.ReadValue<float>();
-        animator.SetFloat("Trigger", 0);
-        Debug.Log("De-Activated--> " + val);
-    }
-
-    private void Select(InputAction.CallbackContext obj)
-    {
-        animator.SetFloat("Bumper", 1);
-        Debug.Log("Selected!!");
-    }
-    private void DeSelect(InputAction.CallbackContext obj)
-    {
-        animator.SetFloat("Bumper", 0);
-        //Debug.Log("DeSelected!!");
-    }
-    */
 
 }

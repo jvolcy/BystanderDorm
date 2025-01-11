@@ -6,15 +6,35 @@ using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.XR.Management;   //for EventHandler
 
+/// This is the Game Manager script. The project is organized
+/// such that there is a singleton GameManager that survives from
+/// scene to scene.  Each scene has a scene manager that exists only in
+/// the scene.  The GM is a singleton with a few static members to support
+/// the scene managers and manage the overall game.  While a GM object
+/// exists in every scene for debugging purposes, the expected mode of
+/// operation is that the GM is instantiated in the start scene and
+/// survives all subsequent scene changes (do not destroy on load).  When
+/// any scene other than the 'Start' scene is loaded, its GM will presumably
+/// self-destruct pursuant to the singleton game logic as the GM from the
+/// previous scene will already exist.
 public class GameManager : MonoBehaviour
 {
-    //Select the playmode with an enum
+    //Select the playmode with an enum.
+    /// <summary>
+    /// The PlayMode enum specifies if we are operating in XR or Desktop
+    /// mode.  The option exists for development purposes only.  In XR
+    /// mode, the player is instantiated as an XOrigin object.  In Desktop
+    /// mode, the player is a first-person player object.
+    /// </summary>
     public enum PlayMode { Desktop, XR }
     [Header("Play Mode")]
     public PlayMode playMode = PlayMode.Desktop;
 
     [Space]
     [Header("Player Prefabs")]
+    /// The two PlayMode modalities require two different player prefabs.
+    /// Note that the player is instantiated by the GM on startup and
+    /// survives scene changes (do not destroy on load).
     [SerializeField] GameObject DesktopPlayerPrefab;
     [SerializeField] GameObject XRPlayerPrefab;
 
@@ -37,25 +57,30 @@ public class GameManager : MonoBehaviour
 
     public static bool visitedMelaninHall = false;     //set to true after we visit Melanin Hall (used by CampusSceneManager)
 
-    /* ======================================================================
-     * 
-     ====================================================================== */
+
+    /// <summary>
+    /// Awake()
+    /// </summary>
     private void Awake()
     {
-
+        /// Implement singleton GM
         if (instance == null)
         {
-            Debug.Log("New GM.");
+            debug("New GM.");
             instance = this;
         }
         else
         {
-            Debug.Log("A GM already exists... self-terminating.");
+            //self-terminate if there already exists a GM
+            debug("A GM already exists... self-terminating.");
             Destroy(this);
             return;
         }
 
-        Debug.Log("Enable/Disable XR/DESKTOP objects...");
+        /// Enable all objects tagged as XR and disalbe all objects as DESKTOP
+        /// if we are in XR mode.  Likewise, enable all objects tagged as
+        /// DESKTOP and disalbe all objects as XR if we are in DESKTOP mode.
+        debug("Enable/Disable XR/DESKTOP objects...");
         EnableDisableXrAndDesktopObjs();
 
         /* Per https://docs.unity3d.com/ScriptReference/MonoBehaviour.Awake.html:
@@ -86,7 +111,7 @@ public class GameManager : MonoBehaviour
             xrOrigin = Player.GetComponentInChildren<XROrigin>();
             if (xrOrigin == null)
             {
-                Debug.Log("GameManager: Could not find the XROrigin. ***************************");
+                debug("GameManager: Could not find the XROrigin. ***************************");
                 playerCtrl = null;
             }
             else
@@ -103,31 +128,20 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void dummy()
-    {
-        Debug.Log("XXXXXXXXXXXXXXXXXXXXXX dummy XXXXXXXXXXXXXXXXXXXXXX");
-        GameObject obj = new();
-        obj.transform.position = new Vector3(1.6299999952316285f, 0.0f, 4.0f);
-        obj.transform.rotation = new Quaternion(-0.012117132544517517f, 0.1727437525987625f, 0.002125272061675787f, 0.9848899841308594f);
-        GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(obj.transform);
-    }
 
 
-    /* ======================================================================
-     * Start is called before the first frame update
-     ====================================================================== */
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
-        //dummy();
-
-        //Debug.Log("GM: Start()...");
         FadeIn();
     }
 
 
-    /* ======================================================================
-     * Update is called once per frame
-     ====================================================================== */
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
@@ -137,41 +151,26 @@ public class GameManager : MonoBehaviour
             if (playerStartPosition)
             {
 
-                Debug.Log("GM: Found a 'PlayerStartPosition marker' Relocating player...");
+                debug("GM: Found a 'PlayerStartPosition marker' Relocating player...");
                 playerCtrl.TelePort(playerStartPosition);
             }
         }
 
-
-        /*
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("X");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Period))
-        {
-            //load the next scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Comma))
-        {
-            //load the prev scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
-        */
     }
 
 
-    /* ======================================================================
-     * 
-     ====================================================================== */
+    /// <summary>
+    /// Enable all objects tagged as XR and disalbe all objects as DESKTOP
+    /// if we are in XR mode.  Likewise, enable all objects tagged as
+    /// DESKTOP and disalbe all objects as XR if we are in DESKTOP mode.
+    /// This option is exists only to support development without an HMD.
+    /// </summary>
     public void EnableDisableXrAndDesktopObjs()
     {
         GameObject[] XR;
         GameObject[] DESKTOP;
 
+        /// find all objects tagged as XR and DESKTOP
         XR = GameObject.FindGameObjectsWithTag("XR");
         DESKTOP = GameObject.FindGameObjectsWithTag("DESKTOP");
 
@@ -195,7 +194,7 @@ public class GameManager : MonoBehaviour
      ====================================================================== */
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        Debug.Log("GM: Loaded scene " + CurrentScene + "(from " + LastScene + ").");
+        debug("GM: Loaded scene " + CurrentScene + "(from " + LastScene + ").");
 
         LastScene = CurrentScene;
         CurrentScene = scene.name;
@@ -207,7 +206,7 @@ public class GameManager : MonoBehaviour
         //Position the player in the scene
         if (LastScene == "MelaninHall" && CurrentScene == "Campus Scene")
         {
-            Debug.Log("Relocating Player *********");
+            debug("Relocating Player *********");
             //playerCtrl.TelePort(MelaninToCampusPlayerPosition);
         }
         else
@@ -216,14 +215,14 @@ public class GameManager : MonoBehaviour
             if (playerStartPosition)
             {
 
-                Debug.Log("GM: Found a 'PlayerStartPosition marker' Relocating player...");
+                debug("GM: Found a 'PlayerStartPosition marker' Relocating player...");
                 playerCtrl.TelePort(playerStartPosition);
             }
         }
 
         //unselect all quads after loading
         //CanvasQuadSelect("");
-        Debug.Log("GameManager:OnSceneLoaded()...Fading In...");
+        debug("GameManager:OnSceneLoaded()...Fading In...");
         FadeIn();
     }
 
@@ -268,7 +267,7 @@ public class GameManager : MonoBehaviour
 
         if (scene == null)
         {
-            Debug.Log("GM: Failed to Load scene " + NextScene + ".");
+            debug("GM: Failed to Load scene " + NextScene + ".");
             return;
         }
     }
@@ -279,7 +278,7 @@ public class GameManager : MonoBehaviour
         {
             if (!xrOrigin)
             {
-                Debug.Log("ERROR GameManager:UsePlayerHandModels() - No XROrigin.");
+                debug("ERROR GameManager:UsePlayerHandModels() - No XROrigin.");
                 return;
             }
             playerCtrl.UseHandControls(val);
@@ -295,7 +294,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("GameManager: Failed to parse color sting " + clrStr);
+            debug("GameManager: Failed to parse color sting " + clrStr);
         }
     }
 
@@ -305,7 +304,7 @@ public class GameManager : MonoBehaviour
         {
             if (!xrOrigin)
             {
-                Debug.Log("ERROR GameManager:SetHandColor() - No XROrigin.");
+                debug("ERROR GameManager:SetHandColor() - No XROrigin.");
                 return;
             }
             playerCtrl.SetHandColor(clr);
@@ -346,6 +345,20 @@ public class GameManager : MonoBehaviour
     public static void CanvasQuadSelect(string id)
     {
         SelectCanvasQuad?.Invoke(null, id);
+    }
+
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace debug() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
+    {
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
     }
 }
 

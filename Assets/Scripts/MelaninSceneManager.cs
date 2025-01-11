@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// This is the scene manager for the melanin hall scene.  The project is 
+/// organized such that there is a singleton GameManager that survives from
+/// scene to scene.  Each scene has a scene manager.
 public class MelaninSceneManager : MonoBehaviour
 {
     //public GameManager gameManager = null;
@@ -11,11 +14,11 @@ public class MelaninSceneManager : MonoBehaviour
     /*
     void Start()
     {
-        Debug.Log("MelaninSceneManager:Start()...");
+        debug("MelaninSceneManager:Start()...");
         FindGameManager();
         if (!gameManager)
         {
-            Debug.Log("MelaninSceneManager:Start()...Did not find a game manager. ******************");
+            debug("MelaninSceneManager:Start()...Did not find a game manager. ******************");
         }
     }
   */
@@ -26,8 +29,8 @@ public class MelaninSceneManager : MonoBehaviour
         /*
         if (!gameManager)
         {
-            Debug.Log("MelaninSceneManager:LoadScene - did not find an GameManager.");
-            Debug.Log("Could not load scene " + sceneName);
+            debug("MelaninSceneManager:LoadScene - did not find an GameManager.");
+            debug("Could not load scene " + sceneName);
             return;
         }
         */
@@ -41,7 +44,7 @@ public class MelaninSceneManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         if (!gameManager)
         {
-            Debug.Log("MelaninSceneManager:FindGameManager - did not find a GameManager.");
+            debug("MelaninSceneManager:FindGameManager - did not find a GameManager.");
         }
     }
     */
@@ -51,11 +54,17 @@ public class MelaninSceneManager : MonoBehaviour
     public void FadeOut(bool instant = false) { GameManager.instance.FadeOut(instant); }
 
 
-    /*
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
     {
-        
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
     }
-    */
 }

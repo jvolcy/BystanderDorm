@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
 
+/// This is the scene manager for the hall scene.  The project is 
+/// organized such that there is a singleton GameManager that survives from
+/// scene to scene.  Each scene has a scene manager.
 public class HallSceneManager : MonoBehaviour
 {
     [SerializeField] GameObject objToEnableAfterGFTL;   //for debugging only
@@ -21,11 +24,11 @@ public class HallSceneManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("HallSceneManager:Start()...");
+        debug("HallSceneManager:Start()...");
         //FindGameManager();
         if (!GameManager.instance)
         {
-            Debug.Log("HallSceneManager:Start()...Did not find a game manager. ******************");
+            debug("HallSceneManager:Start()...Did not find a game manager. ******************");
         }
     }
 
@@ -36,8 +39,8 @@ public class HallSceneManager : MonoBehaviour
 
         if (!GameManager.instance)
         {
-            Debug.Log("HallSceneManager:LoadScene - did not find an GameManager.");
-            Debug.Log("Could not load scene " + sceneName);
+            debug("HallSceneManager:LoadScene - did not find an GameManager.");
+            debug("Could not load scene " + sceneName);
             return;
         }
 
@@ -52,7 +55,7 @@ public class HallSceneManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         if (!gameManager)
         {
-            Debug.Log("HallSceneManager:FindGameManager - did not find a GameManager.");
+            debug("HallSceneManager:FindGameManager - did not find a GameManager.");
         }
     
     }
@@ -79,7 +82,7 @@ public class HallSceneManager : MonoBehaviour
         {
             //InputTracking.Recenter();
            // var x = XRGeneralSettings.Instance.Manager.activeLoader.GetLoadedSubsystem<XRInputSubsystem>().TryRecenter();
-            //Debug.Log("Recentering " + (x ? "succeeded." : "failed."));
+            //debug("Recentering " + (x ? "succeeded." : "failed."));
         }
     }
 
@@ -91,11 +94,24 @@ public class HallSceneManager : MonoBehaviour
      ====================================================================== */
     public void PrepareRoomSceneSignalReceiver()
     {
-        //Debug.Log("HallSceneManager: PrepareRoomSceneSignalReceiver()...");
+        //debug("HallSceneManager: PrepareRoomSceneSignalReceiver()...");
         //FindGameManager();
         GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(playerWakeUpPoint);
     }
 
+    /// <summary>
+    /// Helper function that prepends source file name and line number to
+    /// messages that target the Unity console.  Replace Debug.Log() calls
+    /// with calls to debug() to use this feature.
+    /// </summary>
+    /// <param name="msg">The msg to send to the console.</param>
+    void debug(string msg)
+    {
+        var stacktrace = new System.Diagnostics.StackTrace(true);
+        string currentFile = System.IO.Path.GetFileName(stacktrace.GetFrame(1).GetFileName());
+        int currentLine = stacktrace.GetFrame(1).GetFileLineNumber();  //frame 1 = caller
+        Debug.Log(currentFile + "[" + currentLine + "]: " + msg);
+    }
 }
 
 /* ======================================================================
