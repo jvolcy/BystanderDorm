@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 /* ======================================================================
- * CanvasQuad produces a floating canvas in world space that is suitable
+ * ScreenFade produces a floating canvas in world space that is suitable
  * for use in VR and on a Desktop application.  Use the Inspector
  * PlayMode option to specify the modality.
  * In either case, the floating canvas is parented to the main camera.
@@ -32,11 +32,8 @@ public class ScreenFade : MonoBehaviour
     public enum PlayMode { Desktop, XR }
     public PlayMode playMode = PlayMode.Desktop;
 
-    //state variable that tracks whether or not the CanvasQuad is faded out
+    //state variable that tracks whether or not the canvas is faded out
     bool isFadedOut = false;
-
-    //[SerializeField]
-    //GameObject CanvasChildObj;  //the child Canvas object associated with this CanvasQuad
 
     Animator animator;
 
@@ -45,7 +42,7 @@ public class ScreenFade : MonoBehaviour
      ====================================================================== */
     void OnEnable()
     {
-        debug("ScreenFade:OnEnable()...");
+        debug("OnEnable()...");
 
         //if we are in VR mode, disable any "Standalone Input Module" or
         //"Input System UI Input Module" in the scene
@@ -63,7 +60,7 @@ public class ScreenFade : MonoBehaviour
 
         if (!animator)
         {
-            debug("WARNING: ScreenFade:OnEnable() ... no <Animator> component found!");
+            debug("WARNING: OnEnable() ... no <Animator> component found!");
         }
        
     }

@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class CampusSceneManager : MonoBehaviour
 {
 
-    [SerializeField] CanvasQuad BeginSimulation;
+    [SerializeField] NotebookPage BeginSimulation;
     [SerializeField] EventTrigger MelaninHallTrigger;
     [SerializeField] Transform BellesHallEntry;
     [SerializeField] Transform MelaninHallEntry;
@@ -59,14 +59,14 @@ public class CampusSceneManager : MonoBehaviour
         if (GameManager.visitedMelaninHall == true)
         {
             debug("CampusSceneManager: Melaning Hall visited.");
-            GameManager.CanvasQuadSelect("BeginSimulation");
+            GameManager.NotebookPageSelect("BeginSimulation");
             GameManager.instance.Player.GetComponentInChildren<PlayerCtrl>().TelePort(MelaninToCampusPlayerPosition);
             MelaninHallTrigger.gameObject.SetActive(false);
         }
         else
         {
             debug("CampusSceneManager: Melaning Hall NOT visited.");
-            GameManager.CanvasQuadSelect("");
+            GameManager.NotebookPageSelect("");
             MelaninHallTrigger.gameObject.SetActive(true);
         }
     }

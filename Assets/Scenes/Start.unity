@@ -346,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Name
-      value: CanvasQuad_Warning
+      value: NotebookPageWarning
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_IsActive
@@ -382,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CanvasQuadSelect
+      value: NotebookPageSelect
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -475,7 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 219668844}
   m_Layer: 0
-  m_Name: CanvasQuads
+  m_Name: NotebookPages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,7 +595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Name
-      value: CanvasQuad_Title
+      value: NotebookPage_Title
       objectReference: {fileID: 0}
     - target: {fileID: 4343774203863185219, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -631,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CanvasQuadSelect
+      value: NotebookPageSelect
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Name
-      value: CanvasQuad_hands
+      value: NotebookPage_hands
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_IsActive
@@ -977,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CanvasQuadSelect
+      value: NotebookPageSelect
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1778,7 +1778,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 56333028}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CanvasQuadSelect
+        m_MethodName: NotebookPageSelect
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2617,7 +2617,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 56333028}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: CanvasQuadSelect
+          m_MethodName: NotebookPageSelect
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2844,7 +2844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Name
-      value: CanvasQuad_Practice
+      value: NotebookPage_Practice
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2912,7 +2912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CanvasQuadSelect
+      value: NotebookPageSelect
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3384,7 +3384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950132620794317281, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_Name
-      value: CanvasQuad_Credits
+      value: NotebookPage_Credits
       objectReference: {fileID: 0}
     - target: {fileID: 4343774203863185219, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3464,7 +3464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CanvasQuadSelect
+      value: NotebookPageSelect
       objectReference: {fileID: 0}
     - target: {fileID: 5136344924800384251, guid: 1940f68bf4e794ef1a152056f582b90c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3877,7 +3877,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 56333028}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CanvasQuadSelect
+        m_MethodName: NotebookPageSelect
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

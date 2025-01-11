@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject DesktopPlayerPrefab;
     [SerializeField] GameObject XRPlayerPrefab;
 
-    public static event EventHandler<string> SelectCanvasQuad;
+    public static event EventHandler<string> SelectNotebookPage;
     public static event EventHandler ExitingScene;   //invoked immediately before loading the next scene.
 
     [HideInInspector]
@@ -88,14 +88,14 @@ public class GameManager : MonoBehaviour
          * active GameObjects in the Scene are initialized, so you can safely 
          * use methods such as GameObject.FindWithTag to query other GameObjects.
          */
-        //configure our CanvasQuad objects
-        CanvasQuad[] quads = FindObjectsByType<CanvasQuad>(FindObjectsSortMode.None);
-        foreach (var quad in quads)
+        //configure our NotebookPage objects
+        NotebookPage[] notebookPages = FindObjectsByType<NotebookPage>(FindObjectsSortMode.None);
+        foreach (var page in notebookPages)
         {
             if (playMode == PlayMode.Desktop)
-            { quad.playMode = CanvasQuad.PlayMode.Desktop; }
+            { page.playMode = NotebookPage.PlayMode.Desktop; }
             else
-            { quad.playMode = CanvasQuad.PlayMode.XR; }
+            { page.playMode = NotebookPage.PlayMode.XR; }
         }
 
         //instantiate the player
@@ -220,8 +220,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //unselect all quads after loading
-        //CanvasQuadSelect("");
+        //unselect all NotebookPages after loading
         debug("GameManager:OnSceneLoaded()...Fading In...");
         FadeIn();
     }
@@ -315,10 +314,7 @@ public class GameManager : MonoBehaviour
 
     /// <summary>
     /// Helper function to fade out (fade to black) the display.
-    /// Note that we have to fade in the primary quad to create a
-    /// black-out of the display.
     /// </summary>
-    
     public void FadeOut(bool instant = false)
     {
         playerCtrl.FadeOut(instant);
@@ -327,8 +323,6 @@ public class GameManager : MonoBehaviour
 
     /// <summary>
     /// Helper function to fade in (fade from black) the display.
-    /// Note that we have to fade out the primar quad to create a
-    /// fade-in of the display.
     /// </summary>
     public void FadeIn(bool instant = false)
     {
@@ -336,15 +330,15 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Invoke the OnSelectCanvasQuad event.  All quads subscribers
+    /// Invoke the SelectNotebookPage event.  All notebookPage subscribers
     /// will receive the event.  The one whose id matches the parameter
     /// will "Show" itself.  All others will "Hide".  Set the id to a
-    /// string that matches none of the ids to force all quads to hide.
+    /// string that matches none of the ids to force all pages to hide.
     /// </summary>
     /// <param name="id"></param>
-    public static void CanvasQuadSelect(string id)
+    public static void NotebookPageSelect(string id)
     {
-        SelectCanvasQuad?.Invoke(null, id);
+        SelectNotebookPage?.Invoke(null, id);
     }
 
     /// <summary>

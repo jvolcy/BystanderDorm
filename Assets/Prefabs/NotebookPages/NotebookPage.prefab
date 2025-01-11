@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 830951153796434348}
   - component: {fileID: 6606058167033182218}
   m_Layer: 8
-  m_Name: CanvasQuad
+  m_Name: NotebookPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 /* ======================================================================
- * CanvasQuad produces a floating canvas in world space that is suitable
+ * NotebookPage produces a floating canvas in world space that is suitable
  * for use in VR and on a Desktop application.  Use the Inspector
  * PlayMode option to specify the modality.
  * In either case, the floating canvas is parented to the main camera.
@@ -26,7 +26,7 @@ using UnityEngine.UI;
  * editing the UI.  Reset it to 0,0,0 when done.  That way, the canvas
  * is not visible (in the "hide") state on startup.
  ====================================================================== */
-public class CanvasQuad : MonoBehaviour
+public class NotebookPage : MonoBehaviour
 {
     //Select the playmode with an enum
     public enum PlayMode { Desktop, XR }
@@ -36,25 +36,19 @@ public class CanvasQuad : MonoBehaviour
     public float DistanceFromCamera = 0.5f;
     public float Scale = 0.5f;
 
-    //[SerializeField][Tooltip("Whether or not the CanvasQuad is visible on startup.")]
-    //bool MinimizeOnStart = true;
-
-    //[SerializeField]
-    //[Tooltip("Whether or not the CanvasQuad is faded out on startup.")]
-    //bool FadedOutOnStart = false;
 
     [SerializeField]
-    [Tooltip("The unique ID for this Quad.")]
+    [Tooltip("The unique ID for this NB Page.")]
     string ID;
 
-    //state variable that tracks whether or not the CanvasQuad is visible
+    //state variable that tracks whether or not the NB Page is visible
     bool isMinimized;
 
-    //state variable that tracks whether or not the CanvasQuad is faded out
+    //state variable that tracks whether or not the NB Page is faded out
     bool isFadedOut;
 
     [SerializeField]
-    GameObject CanvasChildObj;  //the child Canvas object associated with this CanvasQuad
+    GameObject CanvasChildObj;  //the child Canvas object associated with this NB Page
 
     RectTransform canvasRectTransform;
 
@@ -68,7 +62,7 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     void Awake()
     {
-        debug(ID + ": CanvasQuad:Awake()...");
+        debug(ID + ":Awake()...");
 
         if (MainCamera != null)
         //user has specified the camera to use
@@ -149,46 +143,8 @@ public class CanvasQuad : MonoBehaviour
         var canvas = GetComponentInChildren<Canvas>();
         canvasRectTransform = canvas.GetComponent<RectTransform>();
 
-        /*
-        //faded on startup?
-        if (FadedOutOnStart)
-        {
-            isFadedOut = false;     //synchornize the state variable on startup
-            FadeOut(true);
-        }
-        else
-        {
-            isFadedOut = true;     //synchornize the state variable on startup
-            FadeIn(true);
-        }
-       
-        //visible on startup?
-        if (MinimizeOnStart)
-        {
-            isMinimized = false;     //synchornize the state variable on startup
-            Hide(true);
-        }
-        else
-        {
-            isMinimized = true;     //synchornize the state variable on startup
-            Show(true);
-        }
 
-        if (disableGO != null) StopCoroutine(disableGO);
-
-        if (FadedOutOnStart || MinimizeOnStart)
-        {
-            debug("CanvasQuad:OnEnable() --> Deactivating " + name);
-            CanvasChildObj.SetActive(false);
-        }
-        else
-        {
-            debug("CanvasQuad:OnEnable() --> Aactivating " + name);
-            CanvasChildObj.SetActive(true);
-        }
-        */
-
-        GameManager.SelectCanvasQuad += OnSelectCanvasQuad;
+        GameManager.SelectNotebookPage += OnSelectNotebookPage;
         GameManager.ExitingScene += OnExitingScene;
     }
 
@@ -198,10 +154,10 @@ public class CanvasQuad : MonoBehaviour
     
     void Start()
     {
-        debug("CanvasQuad:Start()...");
+        debug("Start()...");
         if (!CameraFound)
         {
-            debug("CanvasQuad:Start()...looking for camera...");
+            debug("Start()...looking for camera...");
             Awake();
         }
 
@@ -218,11 +174,9 @@ public class CanvasQuad : MonoBehaviour
     {
         if (disableGO != null) StopCoroutine(disableGO);
         CanvasChildObj.SetActive(true);
-        //debug(name + ": CQC: Show()...");
 
         if (NoAnimation)
         {
-            //debug("Setting Canvas localScale to Vector3.one");
             animator.Play("ShowInstantly");
         }
         else if (isMinimized)
@@ -239,11 +193,10 @@ public class CanvasQuad : MonoBehaviour
      ====================================================================== */
     public void Hide(bool NoAnimation = false)
     {
-        debug(name + ": CQC: Hide()...");
+        debug(name + ": Hide()...");
 
         if (NoAnimation)
         {
-            //debug("Setting Canvas localScale to Vector3.zero");
             animator.Play("HideInstantly");
             DisableGO(0.1f);
         }
@@ -314,8 +267,8 @@ public class CanvasQuad : MonoBehaviour
 
     private void OnDestroy()
     {
-        debug(ID + ": Unsubscribing to OnSelectCanvasQuad...");
-        GameManager.SelectCanvasQuad -= OnSelectCanvasQuad;
+        debug(ID + ": Unsubscribing to OnSelectNotebookPage...");
+        GameManager.SelectNotebookPage -= OnSelectNotebookPage;
         GameManager.ExitingScene -= OnExitingScene;
     }
 
@@ -332,7 +285,7 @@ public class CanvasQuad : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnSelectCanvasQuad(object sender, string target_id)
+    public void OnSelectNotebookPage(object sender, string target_id)
     {
         if (ID == target_id)
         {
