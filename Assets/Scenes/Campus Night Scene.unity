@@ -672,7 +672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8980840103790921965, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1286,6 +1286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b5e5674667c43dbb445bc0780c90df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BellesHallEntry: {fileID: 0}
+  MelaninHallEntry: {fileID: 0}
 --- !u!1 &1997149267
 GameObject:
   m_ObjectHideFlags: 0

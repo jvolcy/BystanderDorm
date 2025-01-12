@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: MelaninToCampusPlayerPosition
@@ -806,6 +806,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2644133296273155877, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2660548357633104252, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: On
       value: 0
@@ -929,6 +933,10 @@ PrefabInstance:
     - target: {fileID: 4366086851909048627, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: m_Name
       value: campus
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366086851909048627, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4556858985526412365, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: On
@@ -1067,6 +1075,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8263730268657385221, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304633804436486627, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
