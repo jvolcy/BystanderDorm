@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 8797814031505054153}
   - component: {fileID: 4685978622909303508}
   - component: {fileID: 5899226764174907551}
+  - component: {fileID: 8879565421518701651}
   m_Layer: 0
   m_Name: GlassPanel
   m_TagString: Untagged
@@ -1401,6 +1402,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8879565421518701651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962088785542298196}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.4340506, y: 61.910732, z: 5.887371}
+  m_Center: {x: 1.408182, y: 30.455353, z: 2.443702}
 --- !u!1 &2975514622509562140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,6 +3948,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5906144699983675262}
+  - component: {fileID: 6262551542786831380}
+  - component: {fileID: 7818568206182158063}
   m_Layer: 0
   m_Name: modularBuilding
   m_TagString: Untagged
@@ -3971,6 +3995,48 @@ Transform:
   - {fileID: 1713961929495734986}
   m_Father: {fileID: 158780975690732114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6262551542786831380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573599257061459176}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.96532404, y: 3.9594207, z: 7.772991}
+  m_Center: {x: 3.6060755, y: 2.1035874, z: -0.009434302}
+--- !u!65 &7818568206182158063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573599257061459176}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.609703, y: 3.9594207, z: 9.597722}
+  m_Center: {x: -1.2241402, y: 2.1035874, z: 0.094987884}
 --- !u!1 &8628723304492787833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,23 +4656,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5778817143374171107, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.2704841
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 5778817143374171107, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.27071205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5778817143374171107, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6533287
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 5778817143374171107, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6532343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5778817143374171107, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5778817143374171107, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -4614,7 +4680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5778817143374171107, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7726074481197838387, guid: 70420f56319b24bd6af214fd07b38f4d, type: 3}
       propertyPath: m_Materials.Array.data[0]
