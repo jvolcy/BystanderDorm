@@ -3035,18 +3035,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4711838735357076270, guid: a5ce2710ee7483244af20c6ebe770c5f, type: 3}
-      propertyPath: m_Reticle
-      value: 
-      objectReference: {fileID: 2743923082992707319, guid: 591ed3fc8306d264680187d065c7b933, type: 3}
-    - target: {fileID: 4711838735357076270, guid: a5ce2710ee7483244af20c6ebe770c5f, type: 3}
-      propertyPath: m_LineBendRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5679252929576753230, guid: a5ce2710ee7483244af20c6ebe770c5f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
