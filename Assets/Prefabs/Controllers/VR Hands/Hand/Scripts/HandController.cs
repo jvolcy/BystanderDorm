@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
 
 //[RequireComponent(typeof(ActionBasedController))]
 [RequireComponent(typeof(Animator))]
@@ -10,51 +12,25 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class HandController : MonoBehaviour
 {
 
-    //boolean: true = right hand; false = left hand
-    public bool RightHand = true;
-
-    ActionBasedController controller;
-    //public GameObject HandController;
+    //[SerializeField] XRInputValueReader<Vector2> m_XRI_StickInput;
+    [SerializeField] XRInputValueReader<float> XRI_ActivateInput;     //trigger
+    [SerializeField] XRInputValueReader<float> XRI_SelectInput;       //gripper
 
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("Hand Start");
         animator = GetComponent<Animator>();
-        controller = GetComponentInParent<ActionBasedController>();
-        controller.activateAction.action.started += Activate;
-        controller.selectAction.action.started += Select;
-        controller.activateAction.action.canceled += DeActivate;
-        controller.selectAction.action.started += Select;
-        controller.selectAction.action.canceled += DeSelect;
-
-        //scale x for left or right hand
-        transform.localScale = new Vector3(transform.localScale.x * (RightHand ? 1f : -1f), transform.localScale.y, transform.localScale.z);
     }
 
+    private void Update()
+    {
+        float triggerValue = XRI_ActivateInput.ReadValue();
+        float gripperValue = XRI_SelectInput.ReadValue();
 
-    private void Activate(InputAction.CallbackContext obj)
-    {
-        animator.SetBool("activate", true);
-        //Debug.Log("Activated!!");
-    }
+        animator.SetLayerWeight(1, triggerValue);
+        animator.SetLayerWeight(2, gripperValue);
 
-    private void DeActivate(InputAction.CallbackContext obj)
-    {
-        animator.SetBool("activate", false);
-        //Debug.Log("DeActivated!!");
-    }
-
-    private void Select(InputAction.CallbackContext obj)
-    {
-        animator.SetBool("select", true);
-        //Debug.Log("Selected!!");
-    }
-    private void DeSelect(InputAction.CallbackContext obj)
-    {
-        animator.SetBool("select", false);
-        //Debug.Log("DeSelected!!");
     }
 
     /// <summary>

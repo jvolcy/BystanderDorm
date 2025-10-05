@@ -174,7 +174,17 @@ public class PlayerCtrl : MonoBehaviour
 
         foreach (var magicColorUpdate in magicColorUpdates)
         {
-            magicColorUpdate.MagicUpdate(clr);
+            //because we have 2 controllers, it is possible for one to be offline.
+            //In such a case,we don't want the process to fail entirely.  Here, we
+            //will wrap this magicColorUpdate in a try-catch block.
+            try
+            {
+                magicColorUpdate.MagicUpdate(clr);
+            }
+            catch (System.Exception e)
+            {
+                debug(e.Message + ".  Is one of the controllers asleep or missing?");
+            }
         }
     }
 

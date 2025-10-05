@@ -31,6 +31,7 @@ public class MagicColorUpdate : MonoBehaviour
         mat = GetComponentInChildren<Renderer>().material;
         animator = GetComponent<Animator>();
 
+
         if (ParticleSystemPrefab)
         {
             var obj = Instantiate(ParticleSystemPrefab, transform);
@@ -57,7 +58,7 @@ public class MagicColorUpdate : MonoBehaviour
     }
 
     public void MagicUpdate()
-    {
+    {        
         animator.SetTrigger("updateColor");
     }
 
