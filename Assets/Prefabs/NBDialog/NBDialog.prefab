@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5549088573021028851, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6016454673907984547, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
       propertyPath: PlayOnAwake
@@ -104,6 +104,18 @@ PrefabInstance:
       propertyPath: dialogNodeGraph
       value: 
       objectReference: {fileID: 11400000, guid: cf86b734473fe49cb8241de0a66800a9, type: 2}
+    - target: {fileID: 6016454673907984547, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
+      propertyPath: DialogNodeOpen.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016454673907984547, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
+      propertyPath: DialogNodeClose.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016454673907984547, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
+      propertyPath: DialogTextTypeOutCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6065746119499238211, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
       propertyPath: _buttonPrefab
       value: 
@@ -157,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  TargetCameraTag: MainCamera
+  TargetCameraTag: UICamera
   RelativePosition: {x: 0, y: 0, z: 2}
   IncludeInactiveCameras: 0
 --- !u!114 &6937371633905230354

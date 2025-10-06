@@ -39,11 +39,11 @@ MonoBehaviour:
     width: 210
     height: 510
   IsDragging: 1
-  IsSelected: 1
+  IsSelected: 0
   NodeID: 1
   _nodeData:
     AvatarImage: {fileID: 0}
-    DialogText: '9:00pm
+    DialogText: '9:03pm
 
       <color=#ee0000><size=+.04><b>Y</b></size></color>ou
       are returning to your dorm, tired from a long study session for an upcoming
@@ -67,7 +67,7 @@ MonoBehaviour:
     ExternalFunctionToken: 
     Collapsed: 0
   ChildNodes:
-  - ChoiceText: Ok
+  - ChoiceText: OK
     ChildNode: {fileID: 0}
     ChildConnectionPoint: {x: 356.66666, y: 424}
 --- !u!114 &8634688261592700719

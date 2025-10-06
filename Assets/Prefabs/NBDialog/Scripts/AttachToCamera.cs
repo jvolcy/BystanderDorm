@@ -21,8 +21,9 @@ using UnityEngine.UI;
 public class AttachToCamera : MonoBehaviour
 {
     //Select the playmode with an enum
+    const string MainCameraTag = "MainCamera";
     public Camera MainCamera;
-    public string TargetCameraTag = "MainCamera";
+    public string TargetCameraTag = MainCameraTag;
     public Vector3 RelativePosition = Vector3.zero;
     public bool IncludeInactiveCameras = false;
     bool CameraFound = false;
@@ -32,6 +33,9 @@ public class AttachToCamera : MonoBehaviour
      ====================================================================== */
     void Awake()
     {
+        if (TargetCameraTag == null || TargetCameraTag == "")
+        { TargetCameraTag = MainCameraTag; }
+
         debug("Awake()...");
         FindCamera();
     }

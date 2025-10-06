@@ -607,6 +607,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7075570834461323220, guid: e1d80ff9bf7014f29a7a6c825990c966, type: 3}
+      propertyPath: m_TargetEye
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8502490469126474412, guid: e1d80ff9bf7014f29a7a6c825990c966, type: 3}
       propertyPath: m_Name
       value: Player (Desktop)
@@ -1387,21 +1391,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1560046698262503396, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: TargetCameraTag
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
       propertyPath: dialogNodeGraph
       value: 
       objectReference: {fileID: 11400000, guid: ed98fceb2d715b0408947d9b8b2830d3, type: 2}
-    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
-      propertyPath: DialogNodeClose.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
-      propertyPath: DialogTextTypeOutCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4378823579865699283, guid: 857eed2a943044140b44af0bf55458df, type: 3}
       propertyPath: m_Name
       value: NBDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378823579865699283, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8464734040313432074, guid: 857eed2a943044140b44af0bf55458df, type: 3}
       propertyPath: m_Pivot.x
