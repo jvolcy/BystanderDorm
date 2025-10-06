@@ -852,6 +852,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2149111219085397271, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: On
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2273943200564907279, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -953,6 +957,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4682393891594951818, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161356320048367591, guid: 4dc277b8e7d114fc8b889fa0141fe64a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1379,9 +1387,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 103005734915386152, guid: 857eed2a943044140b44af0bf55458df, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
+    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: dialogNodeGraph
+      value: 
+      objectReference: {fileID: 11400000, guid: ed98fceb2d715b0408947d9b8b2830d3, type: 2}
+    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: DialogNodeClose.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: DialogTextTypeOutCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4378823579865699283, guid: 857eed2a943044140b44af0bf55458df, type: 3}
       propertyPath: m_Name

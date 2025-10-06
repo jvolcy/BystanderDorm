@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 3696035954474418404}
   - component: {fileID: 6065746119499238211}
   m_Layer: 5
-  m_Name: XDialog_VR
+  m_Name: XDialog_WorldSpace
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 9595d4e2112164ced97e58a60192d0ca, type: 3}
   m_NavMeshLayer: 0

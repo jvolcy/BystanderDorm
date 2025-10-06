@@ -46,9 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMode: 0
   DesktopPlayerPrefab: {fileID: 8502490469126474412, guid: e1d80ff9bf7014f29a7a6c825990c966, type: 3}
-  XRPlayerPrefab: {fileID: 8567868712229875856, guid: 7487ac6b3403b574fa08d815e198e810, type: 3}
-  DontDestroyObjList:
-  - {fileID: 3089786223914572721}
-  - {fileID: 0}
-  - {fileID: 0}
-  FirstScene: Campus Scene
+  XRPlayerPrefab: {fileID: 2816730560676529945, guid: a5ce2710ee7483244af20c6ebe770c5f, type: 3}
+  Player: {fileID: 0}
+  SceneTransitionDelay: 2.25

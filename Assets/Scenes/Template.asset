@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33f741ea10ebcf842a91c9b871dd032a, type: 3}
-  m_Name: NightSceneOpeningDialog
+  m_Name: Template
   m_EditorClassIdentifier: 
   NodesList:
   - {fileID: 8634688261592700719}
@@ -34,20 +34,16 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 146.66666
+    x: 146
     y: -5
     width: 210
-    height: 510
+    height: 530
   IsDragging: 1
   IsSelected: 1
   NodeID: 1
   _nodeData:
-    AvatarImage: {fileID: 0}
-    DialogText: '9:00pm
-
-      <color=#ee0000><size=+.04><b>Y</b></size></color>ou
-      are returning to your dorm, tired from a long study session for an upcoming
-      exam.  Make your way to your room in Belles Dorm.'
+    AvatarImage: {fileID: 21300000, guid: 7dbec25a864f74d628678e2db35ae817, type: 3}
+    DialogText: The quick brown fox jumps over the lazy dog.
     UseCurrentVals: 0
     FontSize: 0.05
     TextPaddingPct: 0.05
@@ -58,8 +54,8 @@ MonoBehaviour:
     NormVPos: 0
     BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
     BackgroundImage: {fileID: 0}
-    HorzPanelRatio: 0
-    VertPanelRatio: 0.75
+    HorzPanelRatio: 0.3
+    VertPanelRatio: 0.5
     ButtonsWidthPct: 0.8
     ButtonFontSize: 0.05
     Timeout: -1
@@ -69,7 +65,10 @@ MonoBehaviour:
   ChildNodes:
   - ChoiceText: Ok
     ChildNode: {fileID: 0}
-    ChildConnectionPoint: {x: 356.66666, y: 424}
+    ChildConnectionPoint: {x: 356, y: 424}
+  - ChoiceText: Choice 2
+    ChildNode: {fileID: 0}
+    ChildConnectionPoint: {x: 356, y: 444}
 --- !u!114 &8634688261592700719
 MonoBehaviour:
   m_ObjectHideFlags: 0
