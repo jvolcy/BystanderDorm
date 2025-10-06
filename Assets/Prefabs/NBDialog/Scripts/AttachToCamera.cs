@@ -8,16 +8,21 @@ using UnityEngine.UI;
  * AttachToCamera parents the GameObject to which it is attached to the
  * main camera.
  * You may specify the camera in the Inspector or you may let the script
- * find it for you.  The srcipt will first search for active cameras
- * before looking for inactive ones.  It will search in Awake() and then
- * again in Start() if a camera is not found in Awake().  You may specify
- * whether or not it should consider inactive cameras in the search.
- * You can specify the relative position of the GO relative to the camera.
+ * automatically search for a camera with the specified tag (TargetCameraTag).
+ * The default tag is "MainCamera".
+ * The srcipt will first search for active cameras before looking for
+ * inactive cameras if the IncludeInactiveCameras option is selected.
+ * The search is carried out in Awake() and then again in Start() if a 
+ * camera is not found in Awake().  You may manually force a new search
+ * by calling the public "FindCamera" function.
+ * Once a camera is found, its relative position relative to the GO is
+ * specified in the RelativePosition parameter.
  ====================================================================== */
 public class AttachToCamera : MonoBehaviour
 {
     //Select the playmode with an enum
     public Camera MainCamera;
+    public string TargetCameraTag = "MainCamera";
     public Vector3 RelativePosition = Vector3.zero;
     public bool IncludeInactiveCameras = false;
     bool CameraFound = false;
@@ -59,7 +64,7 @@ public class AttachToCamera : MonoBehaviour
         else
         {
             //find all game objects that are tagged as the main camera
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("MainCamera");
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(TargetCameraTag);
 
             //Here is the sequence we will follow: 1) verify that there is at
             //least one GO tagged as "MainCamera". 2)If there is only one GO,

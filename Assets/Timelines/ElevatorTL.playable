@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 28.166666666666668
+    m_Start: 18.166666666666675
     m_ClipIn: 0
     m_Asset: {fileID: -7173656148468951877}
     m_Duration: 2.6644897959183673
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 23.65
+  m_Time: 13.650000000000002
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: c6aa65531dc234f588cca086ef8705a0, type: 2}
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 28.166666666666668
+    m_Start: 18.166666666666675
     m_ClipIn: 0
     m_Asset: {fileID: -6119761474386947157}
     m_Duration: 2
@@ -372,7 +372,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 28.166666666666668
+    m_PreExtrapolationTime: 18.166666666666675
     m_DisplayName: ElevatorOpen
   m_Markers:
     m_Objects: []
@@ -433,9 +433,9 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 0
+    m_ClipIn: 10
     m_Asset: {fileID: -1680363170052382075}
-    m_Duration: 29.98857142857143
+    m_Duration: 19.988571428571436
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3553790744604258942}
     m_EaseInDuration: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 29.933333333333334
+  m_Time: 19.933333333333366
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 165b1c500e85e4fb3a2ab6f41aeb9b9c, type: 2}
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 25.44326530612245
+    m_Start: 15.443265306122456
     m_ClipIn: 0
     m_Asset: {fileID: -4642346224621939747}
     m_Duration: 4.54530612244898
