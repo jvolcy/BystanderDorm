@@ -112,6 +112,7 @@ public class NotebookPage : MonoBehaviour
                 if (!CameraFound)
                 {
                     transform.parent = gameObjects[0].transform;
+                    CameraFound = true;
                 }
             }
         } //else (if (MainCamera != null))
