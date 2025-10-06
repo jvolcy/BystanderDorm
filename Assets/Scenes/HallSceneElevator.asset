@@ -34,8 +34,8 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 358.00003
-    y: 151
+    x: 358.66672
+    y: 150.33331
     width: 210
     height: 490
   IsDragging: 1
@@ -58,8 +58,8 @@ MonoBehaviour:
     NormVPos: 0
     BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
     BackgroundImage: {fileID: 0}
-    HorzPanelRatio: 0.3
-    VertPanelRatio: 0.5
+    HorzPanelRatio: 0
+    VertPanelRatio: 0.7
     ButtonsWidthPct: 0.8
     ButtonFontSize: 0.05
     Timeout: 13.5

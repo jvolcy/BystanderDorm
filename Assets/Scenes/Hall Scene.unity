@@ -7516,6 +7516,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 103005734915386152, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560046698262503396, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: TargetCameraTag
+      value: UICamera
+      objectReference: {fileID: 0}
     - target: {fileID: 4378823579865699283, guid: 857eed2a943044140b44af0bf55458df, type: 3}
       propertyPath: m_Name
       value: NBDialog

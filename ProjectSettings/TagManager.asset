@@ -10,6 +10,7 @@ TagManager:
   - XR
   - DESKTOP
   - MMM
+  - UICamera
   layers:
   - Default
   - TransparentFX

@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5549088573021028851, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6016454673907984547, guid: eb863af7d38db49168753cd2e2a09265, type: 3}
       propertyPath: PlayOnAwake
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+  TargetCameraTag: MainCamera
   RelativePosition: {x: 0, y: 0, z: 2}
   IncludeInactiveCameras: 0
 --- !u!114 &6937371633905230354
