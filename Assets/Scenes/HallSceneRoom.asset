@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8425244014401197414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: '[ Node 0004 ]'
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: 1018.3332
+    y: 88.66669
+    width: 210
+    height: 190
+  IsDragging: 1
+  IsSelected: 1
+  NodeID: 4
+  _nodeData:
+    AvatarImage: {fileID: 21300000, guid: 7dbec25a864f74d628678e2db35ae817, type: 3}
+    DialogText: Turn off the lamp to get the rest you deserve.
+    UseCurrentVals: 1
+    FontSize: 0.05
+    TextPaddingPct: 0.05
+    TypeDelay: 0.05
+    HScalePct: 1
+    VScalePct: 1
+    NormHPos: 0
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0
+    VertPanelRatio: 1
+    ButtonsWidthPct: 0.8
+    ButtonFontSize: 0.05
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes: []
+--- !u!114 &-2086942710865067712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: '[ Node 0003 ]'
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: 722.3333
+    y: 85.333374
+    width: 210
+    height: 210
+  IsDragging: 1
+  IsSelected: 0
+  NodeID: 3
+  _nodeData:
+    AvatarImage: {fileID: 21300000, guid: 7dbec25a864f74d628678e2db35ae817, type: 3}
+    DialogText: You've made it back to your room and prepare to settle in for a peaceful
+      night of rest.
+    UseCurrentVals: 1
+    FontSize: 0.05
+    TextPaddingPct: 0.05
+    TypeDelay: 0.05
+    HScalePct: 1
+    VScalePct: 1
+    NormHPos: 0
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0
+    VertPanelRatio: 1
+    ButtonsWidthPct: 0.8
+    ButtonFontSize: 0.05
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes:
+  - ChoiceText: 
+    ChildNode: {fileID: -8425244014401197414}
+    ChildConnectionPoint: {x: 932.3333, y: 214.33337}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f741ea10ebcf842a91c9b871dd032a, type: 3}
+  m_Name: HallSceneRoom
+  m_EditorClassIdentifier: 
+  NodesList:
+  - {fileID: 8634688261592700719}
+  - {fileID: 510252277689591055}
+  - {fileID: -2086942710865067712}
+  - {fileID: -8425244014401197414}
+  NodeToDrawLineFrom: {fileID: 0}
+  LinePosition: {x: 0, y: 0}
+  nodeSerialNumber: 4
+--- !u!114 &510252277689591055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: '[ Node 0001 ]'
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: 442.3333
+    y: 91.333374
+    width: 210
+    height: 510
+  IsDragging: 1
+  IsSelected: 0
+  NodeID: 1
+  _nodeData:
+    AvatarImage: {fileID: 21300000, guid: 7dbec25a864f74d628678e2db35ae817, type: 3}
+    DialogText: It's been a long day.
+    UseCurrentVals: 0
+    FontSize: 0.05
+    TextPaddingPct: 0.05
+    TypeDelay: 0.05
+    HScalePct: 0.3
+    VScalePct: 1
+    NormHPos: 0.7
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0
+    VertPanelRatio: 1
+    ButtonsWidthPct: 0.8
+    ButtonFontSize: 0.05
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes:
+  - ChoiceText: 
+    ChildNode: {fileID: -2086942710865067712}
+    ChildConnectionPoint: {x: 652.3333, y: 520.3334}
+--- !u!114 &8634688261592700719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: Start Node
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: 250.33331
+    y: 168.66672
+    width: 120
+    height: 60
+  IsDragging: 0
+  IsSelected: 0
+  NodeID: -1
+  _nodeData:
+    AvatarImage: {fileID: 0}
+    DialogText: '!START!'
+    UseCurrentVals: 0
+    FontSize: 10
+    TextPaddingPct: 0.05
+    TypeDelay: 0.05
+    HScalePct: 1
+    VScalePct: 1
+    NormHPos: 0
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0.3
+    VertPanelRatio: 0.5
+    ButtonsWidthPct: 0.8
+    ButtonFontSize: 10
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes:
+  - ChoiceText: X
+    ChildNode: {fileID: 510252277689591055}
+    ChildConnectionPoint: {x: 310.3333, y: 198.66672}

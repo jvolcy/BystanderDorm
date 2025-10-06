@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33f741ea10ebcf842a91c9b871dd032a, type: 3}
-  m_Name: NightSceneOpeningDialog
+  m_Name: HallSceneDecision1
   m_EditorClassIdentifier: 
   NodesList:
   - {fileID: 8634688261592700719}
@@ -34,42 +34,57 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 384.00003
-    y: 121
+    x: 505.3333
+    y: 28.333336
     width: 210
-    height: 510
+    height: 590
   IsDragging: 1
-  IsSelected: 0
+  IsSelected: 1
   NodeID: 1
   _nodeData:
-    AvatarImage: {fileID: 0}
-    DialogText: '9:03pm
+    AvatarImage: {fileID: 21300000, guid: 7dbec25a864f74d628678e2db35ae817, type: 3}
+    DialogText: '
 
-      <color=#ee0000><size=+.04><b>Y</b></size></color>ou
-      are returning to your dorm, tired from a long study session for an upcoming
-      exam.  Make your way to your room in Belles Dorm.'
+      You hear a disturbance nextdoor, but you are unsure what
+      it is.  What will you do?'
     UseCurrentVals: 0
     FontSize: 0.05
     TextPaddingPct: 0.05
     TypeDelay: 0.05
     HScalePct: 1
-    VScalePct: 1
+    VScalePct: 1.2
     NormHPos: 0
-    NormVPos: 0
+    NormVPos: -0.3
     BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
     BackgroundImage: {fileID: 0}
     HorzPanelRatio: 0
-    VertPanelRatio: 0.75
-    ButtonsWidthPct: 0.4
-    ButtonFontSize: 0.05
+    VertPanelRatio: 0.15
+    ButtonsWidthPct: 0.85
+    ButtonFontSize: 0.03
     Timeout: -1
     ChildNodeOnTimeout: 0
     ExternalFunctionToken: 
     Collapsed: 0
   ChildNodes:
-  - ChoiceText: OK
+  - ChoiceText: Do not get involved.  The neighbor did mention you should ignore
+      any loud noises coming from her room.
     ChildNode: {fileID: 0}
-    ChildConnectionPoint: {x: 594, y: 550}
+    ChildConnectionPoint: {x: 715.3333, y: 457.33334}
+  - ChoiceText: 'Go knock on her door: do a wellness check on your neighbor, ignoring
+      her warning to not disturb.'
+    ChildNode: {fileID: 0}
+    ChildConnectionPoint: {x: 715.3333, y: 477.33334}
+  - ChoiceText: Immediately report the incident to the RA,  risking explelling your
+      neighbor from the dorm.
+    ChildNode: {fileID: 0}
+    ChildConnectionPoint: {x: 715.3333, y: 497.33334}
+  - ChoiceText: Wait until the morning and file an anonymous  incident report with
+      the Title IX Office.
+    ChildNode: {fileID: 0}
+    ChildConnectionPoint: {x: 715.3333, y: 517.3333}
+  - ChoiceText: Pull the fire alarm to create a disturbance.
+    ChildNode: {fileID: 0}
+    ChildConnectionPoint: {x: 715.3333, y: 537.3333}
 --- !u!114 &8634688261592700719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,11 +101,11 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 193.33337
-    y: 197
+    x: 169.33336
+    y: 297.66666
     width: 120
     height: 60
-  IsDragging: 0
+  IsDragging: 1
   IsSelected: 0
   NodeID: -1
   _nodeData:
@@ -117,4 +132,4 @@ MonoBehaviour:
   ChildNodes:
   - ChoiceText: X
     ChildNode: {fileID: 510252277689591055}
-    ChildConnectionPoint: {x: 253.33337, y: 227}
+    ChildConnectionPoint: {x: 229.33336, y: 327.66666}
