@@ -145,8 +145,8 @@ public class NotebookPage : MonoBehaviour
         canvasRectTransform = canvas.GetComponent<RectTransform>();
 
 
-        GameManager.SelectNotebookPage += OnSelectNotebookPage;
-        GameManager.ExitingScene += OnExitingScene;
+        //GameManager.SelectNotebookPage += OnSelectNotebookPage;
+        //GameManager.ExitingScene += OnExitingScene;
     }
 
     /* ======================================================================
@@ -269,7 +269,7 @@ public class NotebookPage : MonoBehaviour
     private void OnDestroy()
     {
         debug(ID + ": Unsubscribing to OnSelectNotebookPage...");
-        GameManager.SelectNotebookPage -= OnSelectNotebookPage;
+        //GameManager.SelectNotebookPage -= OnSelectNotebookPage;
         GameManager.ExitingScene -= OnExitingScene;
     }
 

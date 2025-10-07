@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2615113649411530505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: '[ Node 0002 ]'
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: 460.66727
+    y: 97.3333
+    width: 210
+    height: 610
+  IsDragging: 1
+  IsSelected: 1
+  NodeID: 2
+  _nodeData:
+    AvatarImage: {fileID: 0}
+    DialogText: <br>Select a Skin Tone
+    UseCurrentVals: 0
+    FontSize: 0.05
+    TextPaddingPct: 0.05
+    TypeDelay: 0.025
+    HScalePct: 1.5
+    VScalePct: 1
+    NormHPos: 0.15
+    NormVPos: 0
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundImage: {fileID: 21300000, guid: 4eed15cef582fae48b8eb954edc373bb, type: 3}
+    HorzPanelRatio: 0
+    VertPanelRatio: 0.115
+    ButtonsWidthPct: 0.5
+    ButtonFontSize: 0.04
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes:
+  - ChoiceText: Gray
+    ChildNode: {fileID: 982635911018351299}
+    ChildConnectionPoint: {x: 670.66724, y: 526.3333}
+  - ChoiceText: White Chocolate
+    ChildNode: {fileID: 982635911018351299}
+    ChildConnectionPoint: {x: 670.66724, y: 546.3333}
+  - ChoiceText: Cafe-au-Lait
+    ChildNode: {fileID: 982635911018351299}
+    ChildConnectionPoint: {x: 670.66724, y: 566.3333}
+  - ChoiceText: Caramel
+    ChildNode: {fileID: 982635911018351299}
+    ChildConnectionPoint: {x: 670.66724, y: 586.3333}
+  - ChoiceText: Milk Chocolate
+    ChildNode: {fileID: 982635911018351299}
+    ChildConnectionPoint: {x: 670.66724, y: 606.3333}
+  - ChoiceText: Mocha
+    ChildNode: {fileID: 982635911018351299}
+    ChildConnectionPoint: {x: 670.66724, y: 626.3333}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f741ea10ebcf842a91c9b871dd032a, type: 3}
+  m_Name: StartScene
+  m_EditorClassIdentifier: 
+  NodesList:
+  - {fileID: 8634688261592700719}
+  - {fileID: 510252277689591055}
+  - {fileID: -2615113649411530505}
+  - {fileID: 2358299846560779790}
+  - {fileID: 982635911018351299}
+  NodeToDrawLineFrom: {fileID: 0}
+  LinePosition: {x: 0, y: 0}
+  nodeSerialNumber: 4
+--- !u!114 &510252277689591055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: '[ Node 0001 ]'
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: -325.99973
+    y: -86.33336
+    width: 210
+    height: 510
+  IsDragging: 1
+  IsSelected: 0
+  NodeID: 1
+  _nodeData:
+    AvatarImage: {fileID: 0}
+    DialogText: '<color=#ee0000><size=+0.04><b>WARNING</b></size></color>
+
+      The
+      following contains contains graphic content of a sexual and/or violent nature
+      that may be harmful or traumatizing to some audiences. Discretion is advised.  '
+    UseCurrentVals: 0
+    FontSize: 0.05
+    TextPaddingPct: 0.05
+    TypeDelay: 0.025
+    HScalePct: 1
+    VScalePct: 1
+    NormHPos: 0
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0
+    VertPanelRatio: 0.8
+    ButtonsWidthPct: 0.4
+    ButtonFontSize: 0.04
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes:
+  - ChoiceText: <u><b>C</b></u>ontinue
+    ChildNode: {fileID: 2358299846560779790}
+    ChildConnectionPoint: {x: -115.999725, y: 342.66663}
+--- !u!114 &982635911018351299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: '[ Node 0004 ]'
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: 747.3333
+    y: -517.33325
+    width: 210
+    height: 490
+  IsDragging: 1
+  IsSelected: 0
+  NodeID: 4
+  _nodeData:
+    AvatarImage: {fileID: 0}
+    DialogText: Loading...
+    UseCurrentVals: 0
+    FontSize: 0.1
+    TextPaddingPct: 0.05
+    TypeDelay: 0.05
+    HScalePct: 1
+    VScalePct: 1
+    NormHPos: 0
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0
+    VertPanelRatio: 1
+    ButtonsWidthPct: 0.8
+    ButtonFontSize: 0.05
+    Timeout: 3
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes: []
+--- !u!114 &2358299846560779790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: '[ Node 0003 ]'
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: 70.00011
+    y: -307.6667
+    width: 210
+    height: 530
+  IsDragging: 1
+  IsSelected: 0
+  NodeID: 3
+  _nodeData:
+    AvatarImage: {fileID: 0}
+    DialogText: 
+    UseCurrentVals: 0
+    FontSize: 0.05
+    TextPaddingPct: 0.05
+    TypeDelay: 0.025
+    HScalePct: 1
+    VScalePct: 1
+    NormHPos: 0
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0
+    VertPanelRatio: 0
+    ButtonsWidthPct: 0.7
+    ButtonFontSize: 0.04
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes:
+  - ChoiceText: <u><b>P</b></u>ractice using the controls
+    ChildNode: {fileID: 982635911018351299}
+    ChildConnectionPoint: {x: 280.00012, y: 121.33331}
+  - ChoiceText: '<u><b>I</b></u>''m familiar with the controls.<br>No practice needed. '
+    ChildNode: {fileID: -2615113649411530505}
+    ChildConnectionPoint: {x: 280.00012, y: 141.33331}
+--- !u!114 &8634688261592700719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe12514c6914cca9ee6fddfa001614, type: 3}
+  m_Name: Start Node
+  m_EditorClassIdentifier: 
+  ConnectedNodesList: []
+  NodeGraph: {fileID: 11400000}
+  Rect:
+    serializedVersion: 2
+    x: -499.33334
+    y: 130.99995
+    width: 120
+    height: 60
+  IsDragging: 1
+  IsSelected: 0
+  NodeID: -1
+  _nodeData:
+    AvatarImage: {fileID: 0}
+    DialogText: '!START!'
+    UseCurrentVals: 0
+    FontSize: 10
+    TextPaddingPct: 0.05
+    TypeDelay: 0.05
+    HScalePct: 1
+    VScalePct: 1
+    NormHPos: 0
+    NormVPos: 0
+    BackgroundColor: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 0.5882353}
+    BackgroundImage: {fileID: 0}
+    HorzPanelRatio: 0.3
+    VertPanelRatio: 0.5
+    ButtonsWidthPct: 0.8
+    ButtonFontSize: 10
+    Timeout: -1
+    ChildNodeOnTimeout: 0
+    ExternalFunctionToken: 
+    Collapsed: 0
+  ChildNodes:
+  - ChoiceText: X
+    ChildNode: {fileID: -2615113649411530505}
+    ChildConnectionPoint: {x: -439.33334, y: 160.99995}

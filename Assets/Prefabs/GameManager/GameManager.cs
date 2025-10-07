@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject DesktopPlayerPrefab;
     [SerializeField] GameObject XRPlayerPrefab;
 
-    public static event EventHandler<string> SelectNotebookPage;
+    //public static event EventHandler<string> SelectNotebookPage;
     public static event EventHandler ExitingScene;   //invoked immediately before loading the next scene.
 
     [HideInInspector]
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
          * use methods such as GameObject.FindWithTag to query other GameObjects.
          */
         //configure our NotebookPage objects
+        /*
         NotebookPage[] notebookPages = FindObjectsByType<NotebookPage>(FindObjectsSortMode.None);
         foreach (var page in notebookPages)
         {
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour
             else
             { page.playMode = NotebookPage.PlayMode.XR; }
         }
+        */
 
         //instantiate the player
 
@@ -160,6 +162,33 @@ public class GameManager : MonoBehaviour
 
 
     /// <summary>
+    /// Function that finds all GOs with the specified tag.  Optinally,
+    /// you may specify whether or not to include inactive GOs in the
+    /// search.  Inactives are included by default.
+    /// </summary>
+    /// <param name="tag">The tag to search for.</param>
+    /// <param name="includeInactiveObjects">Whether or not inactive GameObjects should be included in the search.</param>
+    /// <returns></returns>
+    GameObject[] FindAllGameObjectsByTag(string tag, bool includeInactiveObjects = true)
+    {
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        List<GameObject> taggedObjects = new List<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.CompareTag(tag))
+            {
+                if (obj.activeInHierarchy || includeInactiveObjects) //if it's inactive and/or whether or not we are accepting inactives
+                {
+                    taggedObjects.Add(obj);
+                }
+            }
+        }
+        return taggedObjects.ToArray();
+    }
+
+
+    /// <summary>
     /// Enable all objects tagged as XR and disalbe all objects as DESKTOP
     /// if we are in XR mode.  Likewise, enable all objects tagged as
     /// DESKTOP and disalbe all objects as XR if we are in DESKTOP mode.
@@ -171,8 +200,13 @@ public class GameManager : MonoBehaviour
         GameObject[] DESKTOP;
 
         /// find all objects tagged as XR and DESKTOP
-        XR = GameObject.FindGameObjectsWithTag("XR");
-        DESKTOP = GameObject.FindGameObjectsWithTag("DESKTOP");
+        //XR = GameObject.FindGameObjectsWithTag("XR");
+        //DESKTOP = GameObject.FindGameObjectsWithTag("DESKTOP");
+        XR = FindAllGameObjectsByTag("XR");
+        DESKTOP = FindAllGameObjectsByTag("DESKTOP");
+
+        debug(XR.Length + " XR Objects found.");
+        debug(DESKTOP.Length + " DESKTOP Objects found.");
 
         //Enable/Disable XR/DESKTOP player and other GOs
         if (playMode == PlayMode.Desktop)
@@ -182,8 +216,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            foreach (var xr in XR) { xr.SetActive(true); }
             foreach (var desktop in DESKTOP) { desktop.SetActive(false); }
+            foreach (var xr in XR) { xr.SetActive(true); }
         }
     }
 
@@ -336,11 +370,12 @@ public class GameManager : MonoBehaviour
     /// string that matches none of the ids to force all pages to hide.
     /// </summary>
     /// <param name="id"></param>
+    /*
     public static void NotebookPageSelect(string id)
     {
         SelectNotebookPage?.Invoke(null, id);
     }
-
+    */
     /// <summary>
     /// Helper function that prepends source file name and line number to
     /// messages that target the Unity console.  Replace debug() calls

@@ -42,6 +42,9 @@ public class PlayerCtrl : MonoBehaviour
             debug("WARNING:Awake() --> Did not find a ScreenFade child object.");
         }
 
+        LocateControllers();
+
+
         xrOrigin = GetComponent<XROrigin>();
         GameManager.ExitingScene += OnExitingScene;
         SceneManager.sceneLoaded += OnSceneLoaded;
