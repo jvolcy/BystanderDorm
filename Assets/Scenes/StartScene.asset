@@ -16,8 +16,8 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 460.66727
-    y: 97.3333
+    x: 904.66754
+    y: 294.66663
     width: 210
     height: 610
   IsDragging: 1
@@ -47,22 +47,22 @@ MonoBehaviour:
   ChildNodes:
   - ChoiceText: Gray
     ChildNode: {fileID: 982635911018351299}
-    ChildConnectionPoint: {x: 670.66724, y: 526.3333}
+    ChildConnectionPoint: {x: 1114.6675, y: 723.6666}
   - ChoiceText: White Chocolate
     ChildNode: {fileID: 982635911018351299}
-    ChildConnectionPoint: {x: 670.66724, y: 546.3333}
+    ChildConnectionPoint: {x: 1114.6675, y: 743.6666}
   - ChoiceText: Cafe-au-Lait
     ChildNode: {fileID: 982635911018351299}
-    ChildConnectionPoint: {x: 670.66724, y: 566.3333}
+    ChildConnectionPoint: {x: 1114.6675, y: 763.6666}
   - ChoiceText: Caramel
     ChildNode: {fileID: 982635911018351299}
-    ChildConnectionPoint: {x: 670.66724, y: 586.3333}
+    ChildConnectionPoint: {x: 1114.6675, y: 783.6666}
   - ChoiceText: Milk Chocolate
     ChildNode: {fileID: 982635911018351299}
-    ChildConnectionPoint: {x: 670.66724, y: 606.3333}
+    ChildConnectionPoint: {x: 1114.6675, y: 803.6666}
   - ChoiceText: Mocha
     ChildNode: {fileID: 982635911018351299}
-    ChildConnectionPoint: {x: 670.66724, y: 626.3333}
+    ChildConnectionPoint: {x: 1114.6675, y: 823.6666}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: -325.99973
-    y: -86.33336
+    x: 118.00035
+    y: 110.99997
     width: 210
     height: 510
   IsDragging: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   ChildNodes:
   - ChoiceText: <u><b>C</b></u>ontinue
     ChildNode: {fileID: 2358299846560779790}
-    ChildConnectionPoint: {x: -115.999725, y: 342.66663}
+    ChildConnectionPoint: {x: 328.00037, y: 540}
 --- !u!114 &982635911018351299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +152,8 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 747.3333
-    y: -517.33325
+    x: 1191.3335
+    y: -319.9999
     width: 210
     height: 490
   IsDragging: 1
@@ -197,8 +197,8 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 70.00011
-    y: -307.6667
+    x: 514.0001
+    y: -110.33334
     width: 210
     height: 530
   IsDragging: 1
@@ -228,10 +228,10 @@ MonoBehaviour:
   ChildNodes:
   - ChoiceText: <u><b>P</b></u>ractice using the controls
     ChildNode: {fileID: 982635911018351299}
-    ChildConnectionPoint: {x: 280.00012, y: 121.33331}
+    ChildConnectionPoint: {x: 724.0001, y: 318.66666}
   - ChoiceText: '<u><b>I</b></u>''m familiar with the controls.<br>No practice needed. '
     ChildNode: {fileID: -2615113649411530505}
-    ChildConnectionPoint: {x: 280.00012, y: 141.33331}
+    ChildConnectionPoint: {x: 724.0001, y: 338.66666}
 --- !u!114 &8634688261592700719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,8 +248,8 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: -499.33334
-    y: 130.99995
+    x: -55.333282
+    y: 328.3333
     width: 120
     height: 60
   IsDragging: 1
@@ -278,5 +278,5 @@ MonoBehaviour:
     Collapsed: 0
   ChildNodes:
   - ChoiceText: X
-    ChildNode: {fileID: -2615113649411530505}
-    ChildConnectionPoint: {x: -439.33334, y: 160.99995}
+    ChildNode: {fileID: 510252277689591055}
+    ChildConnectionPoint: {x: 4.6667175, y: 358.3333}

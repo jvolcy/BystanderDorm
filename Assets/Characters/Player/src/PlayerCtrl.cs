@@ -81,7 +81,12 @@ public class PlayerCtrl : MonoBehaviour
         {
             UseHandControls(!UsingHandControls);
         }
-    
+
+        if (Input.GetKeyDown(KeyCode.B)) { screenFade.Black(); }
+        if (Input.GetKeyDown(KeyCode.N)) { screenFade.Fade2Black(); }
+        if (Input.GetKeyDown(KeyCode.C)) { screenFade.Clear(); }
+        if (Input.GetKeyDown(KeyCode.V)) { screenFade.Fade2Clear(); }
+
     }
 
 
@@ -93,7 +98,16 @@ public class PlayerCtrl : MonoBehaviour
     public void FadeOut(bool instant = false)
     {
         debug("FadeOut()...");
-        screenFade.FadeIn(instant);
+        //screenFade.FadeIn(instant);
+
+        if (instant)
+        {
+            screenFade.Black();
+        }
+        else //if (!isFadedOut)
+        {
+            screenFade.Fade2Black();
+        }
     }
 
     /// <summary>
@@ -104,7 +118,15 @@ public class PlayerCtrl : MonoBehaviour
     public void FadeIn(bool instant = false)
     {
         debug("FadeIn()...");
-        screenFade.FadeOut(instant);
+        //screenFade.FadeOut(instant);
+        if (instant)
+        {
+            screenFade.Clear();
+        }
+        else //if (isFadedOut)
+        {
+            screenFade.Fade2Clear();
+        }
     }
 
 
