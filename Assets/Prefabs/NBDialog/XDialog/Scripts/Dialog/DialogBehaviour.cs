@@ -41,7 +41,7 @@ namespace spelmanXR
         public event Action DialogFinished;
         public event Action <string>DialogTextTypeOutCompleted;
         public event Action <string>DialogNodeOpen;
-        public event Action <string>DialogNodeClose;
+        public event Action <(string, int)>DialogNodeClose;
         public event Action<DialogNode> DialogNodeSetUp;
         public event Action DialogTextCharWritten;
         public event Action<string> DialogTextSkipped;
@@ -274,7 +274,7 @@ namespace spelmanXR
             //Debug.Log("DialogBehaviour:LoadNextPanel() ...");
 
             //signal that the current node is closing
-            DialogNodeClose?.Invoke(CurrentDialogNode.nodeData.ExternalFunctionToken);
+            DialogNodeClose?.Invoke((CurrentDialogNode.nodeData.ExternalFunctionToken, _ChildNodeToLoadIndex));
 
             Node childNodeToLoad = null;
 

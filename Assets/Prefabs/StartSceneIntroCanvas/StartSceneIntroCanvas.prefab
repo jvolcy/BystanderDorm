@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6080594017280241156}
   - component: {fileID: 5680798873504268582}
   m_Layer: 5
-  m_Name: StartScentIntroCanvas
+  m_Name: StartSceneIntroCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

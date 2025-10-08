@@ -45,6 +45,13 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     PlayerCtrl playerCtrl;
 
+    public static Color32[] HandColors = { new Color32(0x8E, 0x8E, 0x8E, 0xFF),    //Gray
+                                    new Color32(0xF4, 0xD2, 0xAC, 0xFF),    //White Chocolate
+                                    new Color32(0xEF, 0xAB, 0x87, 0xFF),    //Cafe-au-Lait
+                                    new Color32(0xC0, 0x73, 0x3F, 0xFF),    //Caramel
+                                    new Color32(0x8E, 0x4B, 0x23, 0xFF),    //Milk Chocolate
+                                    new Color32(0x58, 0x2E, 0x16, 0xFF)};   //Mocha
+
     XROrigin xrOrigin = null;
 
     static public GameManager instance;
@@ -315,6 +322,17 @@ public class GameManager : MonoBehaviour
                 return;
             }
             playerCtrl.UseHandControls(val);
+        }
+    }
+    public void SetHandColor(int index)
+    {
+        if (index < HandColors.Length)
+        {
+            SetHandColor(HandColors[index]);
+        }
+        else
+        {
+            Debug.Log($"HandColor index {index} out of range.  Valid range is 0 to {HandColors.Length-1}.");
         }
     }
 

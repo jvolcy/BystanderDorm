@@ -57,8 +57,8 @@ public class XDialog : MonoBehaviour
     public UnityEvent<string> DialogNodeOpen;
     [Tooltip("A function to be called when typeout of the dialog text is completed.  The node's token string is passed to the function.")]
     public UnityEvent <string> DialogTextTypeOutCompleted;
-    [Tooltip("A function to be called when a dialog node is closed.  The node's token string is passed to the function.")]
-    public UnityEvent<string> DialogNodeClose;
+    [Tooltip("A function to be called when a dialog node is closed.  A (string, int) tuple containing the node's token string as well as the index of the button clicked is passed to the function.")]
+    public UnityEvent<(string, int)> DialogNodeClose;
 
     // Awake is called before Start()
     void Awake()

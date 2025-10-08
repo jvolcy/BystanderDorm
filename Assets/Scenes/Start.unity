@@ -135,9 +135,49 @@ PrefabInstance:
       propertyPath: PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: DialogNodeClose.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1381124215}
+    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: DialogNodeClose.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NBDialogCloseCallback
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238601437517611640, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: DialogNodeClose.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StartSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4378823579865699283, guid: 857eed2a943044140b44af0bf55458df, type: 3}
       propertyPath: m_Name
       value: NBDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230475315952436049, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: _nextSentenceKeyCodes.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230475315952436049, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: '_nextSentenceKeyCodes.Array.data[0]'
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230475315952436049, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: '_nextSentenceKeyCodes.Array.data[1]'
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230475315952436049, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: '_nextSentenceKeyCodes.Array.data[2]'
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230475315952436049, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: '_nextSentenceKeyCodes.Array.data[3]'
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230475315952436049, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: '_nextSentenceKeyCodes.Array.data[4]'
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230475315952436049, guid: 857eed2a943044140b44af0bf55458df, type: 3}
+      propertyPath: '_nextSentenceKeyCodes.Array.data[5]'
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 8464734040313432074, guid: 857eed2a943044140b44af0bf55458df, type: 3}
       propertyPath: m_Pivot.x
@@ -490,6 +530,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2621688814996880265, guid: e9dea9af0c2af4e54998381b0af2553c, type: 3}
   m_PrefabInstance: {fileID: 6362806581216946424}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381124214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381124216}
+  - component: {fileID: 1381124215}
+  m_Layer: 0
+  m_Name: StartSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1381124215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381124214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d0cf8af6395416f98f380d610ce513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HandSelectToken: HandSelectToken
+  LoadCampusSceneToken: LoadCampusSceneToken
+--- !u!4 &1381124216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381124214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.01815, y: 1.64871, z: -8.48753}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506941476
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1623735870799264875, guid: ef219016bbc27b6409c4fca9f5a39326, type: 3}
       propertyPath: m_Name
-      value: StartScentIntroCanvas
+      value: StartSceneIntroCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7298344714665328227, guid: ef219016bbc27b6409c4fca9f5a39326, type: 3}
       propertyPath: m_AnchorMax.y
@@ -948,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: playMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5208708770331678956, guid: 3c75cb2504b24724c815cbe1d3ce1243, type: 3}
       propertyPath: XRPlayerPrefab
@@ -1086,3 +1172,4 @@ SceneRoots:
   - {fileID: 1891518503802528807}
   - {fileID: 6362806581216946424}
   - {fileID: 64522308}
+  - {fileID: 1381124216}
