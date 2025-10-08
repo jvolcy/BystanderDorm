@@ -12,7 +12,7 @@ using UnityEngine;
 /// </summary>
 public class MagicColorUpdate : MonoBehaviour
 {
-    [SerializeField] string comment = "The GameObject this component is attached to " +
+    [SerializeField] const string comment = "The GameObject this component is attached to " +
         "must have a <Renderer> component.  Further, the material associated " +
         "with that <Renderer> must have emissions enabled.  Also, the " +
         "emission's 'Global Illumination' must be set to 'None'.";

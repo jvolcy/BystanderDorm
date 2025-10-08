@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR;
-using UnityEngine.SceneManagement;
 using Unity.XR.CoreUtils;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -248,14 +249,28 @@ public class PlayerCtrl : MonoBehaviour
     /// to load a new scene.
     /// </summary>
     /// <param name="sender"></param>
-    void OnExitingScene(object sender, System.EventArgs e)
+    void OnExitingScene(object sender, System.EventArgs args)
     {
-        FadeOut();
+        try
+        {
+            FadeOut();
+        }
+        catch (Exception e)
+        {
+            debug("*****FadeOut Exception: " + e.Message);
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        FadeIn();
+        try
+        {
+            FadeIn();
+        }
+        catch (Exception e)
+        {
+            debug("*****FadeIn Exception: " + e.Message);
+        }
     }
 
 

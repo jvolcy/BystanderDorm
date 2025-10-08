@@ -369,7 +369,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void FadeOut(bool instant = false)
     {
-        playerCtrl.FadeOut(instant);
+        try
+        { 
+            playerCtrl.FadeOut(instant);
+        }
+        catch (Exception e)
+        {
+            debug("*****FacdOut Exception: " + e.Message);
+        }
     }
     
 
@@ -378,7 +385,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void FadeIn(bool instant = false)
     {
-        playerCtrl.FadeIn(instant);
+        try
+        {
+            playerCtrl.FadeIn(instant);
+        }
+        catch (Exception e)
+        {
+            debug("*****FadeIn Exception: " + e.Message);
+        }
     }
 
     /// <summary>
